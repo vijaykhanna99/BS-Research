@@ -234,7 +234,7 @@ const HomeContent = () => {
                             {/* Announcements List */}
                             <div className="space-y-4">
                                 {[
-                                    { text: "Admission for 2026-2027 coming soon", new: true, date: "2026-01-29" },
+                                    { text: "Admissions for the Academic Year 2026–2027: Coming Soon", new: true, date: "2026-01-29" },
                                     { text: "UG Academic Calendar Jan-April Semester", new: false, date: "2026-01-01", link: "/assets/UG%20Academic%20Calendar%20Jan-Apr%202026%20(2).pdf" },
                                     { text: "Detailed timetable for 2nd Sem Jan-April 2026 released", new: false, date: "2026-01-01", link: "/assets/2nd%20Semester%20Class%20Schdule%20of%20Jan-Apr%202026%20Term%20II%20B.Sc%20(Res)%20%26%20B.Tech%20(M%26C)%20(1)%C2%A0(5).pdf" },
                                     { text: "Detailed timetable for 4th Sem Jan-April 2026 released", new: false, date: "2026-01-01", link: "/assets/4th%20Semester%20Class%20schedule%20of%20Jan-Apr%202026%20Term%20B%20Sc(Res)%20%26%20B.Tech%20(M%26C)%2009.01.2026%C2%A0(1).pdf" },
