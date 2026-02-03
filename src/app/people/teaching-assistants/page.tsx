@@ -1,17 +1,19 @@
-"use client";
-import React from "react";
-import { Users } from "lucide-react";
+import PlaceholderList from "@/components/people/lists/PlaceholderList";
 
-export default function TeachingAssistantsPage() {
+export default function StandaloneTAPage() {
     return (
-        <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-8 text-center">
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
-                <Users className="w-10 h-10" />
+        <div className="min-h-screen bg-slate-50 py-16 px-4">
+            <div className="max-w-7xl mx-auto">
+                <div className="mb-12 text-center">
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 tracking-tight">
+                        Teaching Assistants
+                    </h1>
+                    <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                        Supporting undergraduate coursework and laboratories.
+                    </p>
+                </div>
+                <PlaceholderList name="Teaching Assistants" />
             </div>
-            <h1 className="text-3xl font-bold text-slate-800 mb-2">Teaching Assistants</h1>
-            <p className="text-slate-500 max-w-lg">
-                Department-wise list of teaching assistants is coming soon.
-            </p>
         </div>
     );
 }

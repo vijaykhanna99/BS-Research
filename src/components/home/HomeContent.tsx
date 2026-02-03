@@ -1,14 +1,17 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, EffectFade } from "swiper/modules";
+import { Autoplay, Navigation, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import MessageFromUGDeans from "./MessageFromUGDeans";
+import "swiper/css/pagination";
+import AboutProgramme from "./AboutProgramme";
 import AskIISc from "./AskIISc";
-import { ArrowRight, Megaphone, Newspaper, ChevronRight, Share2, Calendar } from "lucide-react";
+import { ArrowRight, Megaphone, Newspaper, ChevronRight, ChevronLeft, Share2, Calendar } from "lucide-react";
 import Link from "next/link";
+import ScienceDisciplines from "./ScienceDisciplines";
 
 const HomeContent = () => {
     // Assets paths
@@ -61,27 +64,53 @@ const HomeContent = () => {
 
             {/* Hero Carousel */}
             <div className="relative h-[480px]">
+                <style>{`
+                    .swiper-pagination-bullet {
+                        width: 12px;
+                        height: 12px;
+                        background: transparent;
+                        border: 2px solid rgba(255, 255, 255, 0.8);
+                        opacity: 1;
+                        transition: all 0.3s ease;
+                        margin: 0 8px !important; /* Force spacing */
+                    }
+                    .swiper-pagination-bullet-active {
+                        background: #007bff; /* Bright Blue */
+                        border-color: #007bff;
+                        transform: scale(1.1);
+                    }
+                `}</style>
                 <Swiper
-                    modules={[Autoplay, Navigation, EffectFade]}
+                    modules={[Autoplay, Navigation, EffectFade, Pagination]}
                     slidesPerView={1}
                     loop={true}
-                    speed={2000}
+                    speed={800}
                     autoplay={{
-                        delay: 2500,
+                        delay: 3500,
                         disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
                     }}
                     navigation={{
                         nextEl: ".custom-next",
                         prevEl: ".custom-prev",
                     }}
-                    className="relative"
+                    className="relative w-full h-full"
                 >
                     <SwiperSlide>
-                        <img
-                            src={championsImg1}
-                            alt="IISc Campus"
-                            className="w-full h-[480px] object-cover"
-                        />
+                        <ScienceDisciplines />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="relative w-full h-[480px]">
+                            <Image
+                                src={championsImg1}
+                                alt="IISc Campus"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white">
                                 <h1 className="text-5xl font-bold mb-4 uppercase">
@@ -91,11 +120,14 @@ const HomeContent = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img
-                            src={labImage}
-                            alt="Lab Image"
-                            className="w-full h-[480px] object-cover"
-                        />
+                        <div className="relative w-full h-[480px]">
+                            <Image
+                                src={labImage}
+                                alt="Lab Image"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white">
                                 <h1 className="text-5xl font-bold mb-4 uppercase">
@@ -105,11 +137,14 @@ const HomeContent = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <img
-                            src={highlightImage}
-                            alt="Highlights"
-                            className="w-full h-[480px] object-cover"
-                        />
+                        <div className="relative w-full h-[480px]">
+                            <Image
+                                src={highlightImage}
+                                alt="Highlights"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
                             <div className="text-center text-white">
                                 <h1 className="text-5xl font-bold mb-4 uppercase">
@@ -119,171 +154,126 @@ const HomeContent = () => {
                         </div>
                     </SwiperSlide>
                 </Swiper>
-                <button className="custom-prev absolute left-10 top-1/2 transform -translate-y-1/2 p-4 rounded-full z-10 w-auto h-auto">
-                    <i className="fa fa-chevron-left text-4xl text-white"></i>
+                <button className="custom-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/30 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-200 active:scale-90 shadow-lg hover:shadow-xl group" aria-label="Previous Slide">
+                    <ChevronLeft className="w-6 h-6 group-hover:-translate-x-0.5 transition-transform" />
                 </button>
-                <button className="custom-next absolute right-10 top-1/2 transform -translate-y-1/2 p-4 rounded-full z-10 w-auto h-auto">
-                    <i className="fa fa-chevron-right text-4xl text-white"></i>
+                <button className="custom-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/30 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-200 active:scale-90 shadow-lg hover:shadow-xl group" aria-label="Next Slide">
+                    <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
                 </button>
             </div>
 
             {/* Components Section */}
             <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl space-y-8">
                 <div>
-                    <MessageFromUGDeans />
-                </div>
-                <div>
-                    <AskIISc />
+                    <AboutProgramme />
                 </div>
             </div>
 
-            {/* Divider with generous but correct spacing */}
-            <div className="container mx-auto px-4 max-w-7xl">
-                <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent my-4"></div>
-            </div>
-
-            {/* Unified News & Announcements Section */}
+            {/* Unified News & Announcements Section - Moved Here */}
             <div className="py-12 bg-white">
                 <div className="container mx-auto px-4 max-w-7xl">
+                    {/* Main Section Header */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Latest News & Announcements</h2>
+                        <div className="h-1 w-24 bg-blue-900 mx-auto mt-6 rounded-full"></div>
+                    </div>
+
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-                        {/* LEFT COLUMN: News */}
+                        {/* LEFT COLUMN: LATEST NEWS */}
                         <div className="flex flex-col">
-                            {/* Header */}
-                            <div className="flex items-center justify-between mb-8 pb-2 border-b-2 border-slate-100">
-                                <div className={sectionHeaderClass}>
-                                    <div className="p-2 bg-blue-600 rounded-lg text-white shadow-sm shadow-blue-200">
-                                        <Newspaper className="w-6 h-6" />
-                                    </div>
-                                    <h2 className={headingClass}>Latest Updates</h2>
-                                </div>
-                                <span className="text-sm font-bold text-slate-400 cursor-not-allowed flex items-center gap-1 opacity-70">
-                                    View All <ArrowRight className="w-4 h-4" />
-                                </span>
-                            </div>
+                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8 border-b border-slate-200 pb-2">Latest News</h3>
 
-                            {/* News List */}
-                            <div className="space-y-4">
+                            <div className="space-y-8">
                                 {[
                                     {
                                         title: "IISc Team Wins Gold Medal and Receives Best SDG Impact Nomination at iGEM 2025",
-                                        image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+                                        desc: "A multidisciplinary team of undergraduates has secured a gold medal for their innovative project on sustainable synthetic biology solutions...",
                                         tag: "Achievement",
-                                        date: "October 2025",
+                                        date: "OCTOBER 01, 2025",
                                         link: "/news/igem-2025-gold-medal"
                                     },
                                     {
-                                        title: "IISc Team Achieves Historic 6th Rank at PLANCKS 2025 International Physics Competition",
-                                        image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+                                        title: "IISc Team Achieves Historic 6th Rank at PLANCKS 2025",
+                                        desc: "The physics team made history by securing the 6th rank globally in the prestigious PLANCKS international physics competition...",
                                         tag: "Achievement",
-                                        date: "May 2025",
+                                        date: "MAY 25, 2025",
                                         link: "/news/plancks-2025-achievement"
                                     },
                                     {
                                         title: "IISc Team Secures First Place at Indian Young Physicists’ League (IYPL) 2025",
-                                        image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+                                        desc: "The institute's team has won the prestigious national championship, showcasing exceptional problem-solving skills in theoretical physics...",
                                         tag: "Achievement",
-                                        date: "May 2025",
+                                        date: "MAY 20, 2025",
                                         link: "/news/iypl-2025-first-place"
-                                    },
+                                    }
 
-                                ].slice(0, 4).map((item, i) => (
-                                    <Link key={i} href={item.link} className="flex gap-4 group cursor-pointer items-start p-4 bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 rounded-2xl transition-all duration-300 block">
-                                        <div className="relative w-12 h-12 shrink-0 overflow-hidden rounded-lg shadow-sm">
-                                            <img
-                                                src={item.image}
-                                                alt="thumbnail"
-                                                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                            />
-                                        </div>
-                                        <div className="flex-1 min-w-0 py-1">
-                                            <div className={newsMetaClass}>
-                                                <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${item.tag === 'Achievement' ? 'bg-amber-100 text-amber-700' :
-                                                    item.tag === 'Research' ? 'bg-purple-100 text-purple-700' :
-                                                        'bg-blue-100 text-blue-700'
+                                ].map((item, i) => (
+                                    <Link key={i} href={item.link} className="block group border-b border-slate-100 pb-8 last:border-0 last:pb-0">
+                                        <div className="flex-1 min-w-0">
+                                            {/* Badge and Date Line */}
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <span className={`px-2 py-0.5 rounded-[4px] text-[10px] font-bold uppercase tracking-wide border ${item.tag === 'Achievement' ? 'bg-amber-50 text-amber-700 border-amber-200' :
+                                                    item.tag === 'Research' ? 'bg-purple-50 text-purple-700 border-purple-200' :
+                                                        'bg-blue-50 text-blue-700 border-blue-200'
                                                     }`}>
                                                     {item.tag}
                                                 </span>
-                                                <span className="text-slate-300">•</span>
-                                                <span>{formatDate(item.date)}</span>
+                                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                                                    • {item.date}
+                                                </span>
                                             </div>
-                                            <h3 className={newsTitleClass}>
+
+                                            <h4 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors leading-tight line-clamp-2">
                                                 {item.title}
-                                            </h3>
+                                            </h4>
+                                            <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">
+                                                {item.desc}
+                                            </p>
                                         </div>
                                     </Link>
                                 ))}
                             </div>
                         </div>
 
-                        {/* RIGHT COLUMN: Announcements */}
-                        <div className="flex flex-col">
-                            {/* Header */}
-                            <div className="flex items-center justify-between mb-8 pb-2 border-b-2 border-slate-100">
-                                <div className={sectionHeaderClass}>
-                                    <div className="p-2 bg-orange-600 rounded-lg text-white shadow-sm shadow-orange-200">
-                                        <Megaphone className="w-6 h-6" />
-                                    </div>
-                                    <h2 className={headingClass}>Announcements</h2>
-                                </div>
-                                <span className="text-sm font-bold text-slate-400 cursor-not-allowed flex items-center gap-1 opacity-70" title="Coming Soon">
-                                    Archive <ArrowRight className="w-4 h-4" />
-                                </span>
-                            </div>
+                        {/* RIGHT COLUMN: ANNOUNCEMENTS */}
+                        <div className="flex flex-col pl-0 lg:pl-8">
+                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-8 border-b border-slate-200 pb-2">Announcements</h3>
 
-                            {/* Announcements List */}
                             <div className="space-y-4">
                                 {[
-                                    { text: "Admissions for the Academic Year 2026–2027: Coming Soon", new: true, date: "2026-01-29" },
-                                    { text: "UG Academic Calendar Jan-April Semester", new: false, date: "2026-01-01", link: "/assets/UG%20Academic%20Calendar%20Jan-Apr%202026%20(2).pdf" },
-                                    { text: "Detailed timetable for 2nd Sem Jan-April 2026 released", new: false, date: "2026-01-01", link: "/assets/2nd%20Semester%20Class%20Schdule%20of%20Jan-Apr%202026%20Term%20II%20B.Sc%20(Res)%20%26%20B.Tech%20(M%26C)%20(1)%C2%A0(5).pdf" },
-                                    { text: "Detailed timetable for 4th Sem Jan-April 2026 released", new: false, date: "2026-01-01", link: "/assets/4th%20Semester%20Class%20schedule%20of%20Jan-Apr%202026%20Term%20B%20Sc(Res)%20%26%20B.Tech%20(M%26C)%2009.01.2026%C2%A0(1).pdf" },
-                                    { text: "Detailed timetable for 6th Sem Jan-April 2026 released", new: false, date: "2026-01-01", link: "/assets/6th%20Semester%20Class%20Schedule%20Jan-Apr%202026%20Term%20B.Sc%20%26%20B.Tech%2009.01.2026.pdf" }
-                                ].map((item, i) => {
-                                    const content = (
-                                        <div className="group flex gap-4 items-start p-4 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all duration-300 cursor-pointer">
-                                            <div className="mt-1">
-                                                {item.new ? (
-                                                    <div className="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
-                                                        <Megaphone className="w-4 h-4 animate-pulse" />
-                                                    </div>
-                                                ) : (
-                                                    <div className="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
-                                                        <ChevronRight className="w-4 h-4" />
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="flex-1">
-                                                <div className="flex items-center gap-2 mb-1">
-                                                    {item.new && (
-                                                        <span className="text-[10px] font-extrabold uppercase text-white bg-orange-500 px-2 py-0.5 rounded shadow-sm shadow-orange-200">
-                                                            New
-                                                        </span>
-                                                    )}
-                                                    <span className={announceDateClass}>{formatDate(item.date)}</span>
-                                                </div>
-                                                <p className={announceTextClass}>
-                                                    {item.text}
-                                                </p>
+                                    { text: "Admissions for the Academic Year 2026–2027: Coming Soon", icon: "🎓", date: "JANUARY 29, 2026", link: "#" },
+                                    { text: "UG Academic Calendar Jan-April Semester", icon: "📅", date: "JANUARY 01, 2026", link: "/assets/UG%20Academic%20Calendar%20Jan-Apr%202026%20(2).pdf" },
+                                    { text: "Detailed timetable for 2nd Sem Jan-April 2026 released", icon: "📝", date: "JANUARY 01, 2026", link: "/assets/2nd%20Semester%20Class%20Schdule%20of%20Jan-Apr%202026%20Term%20II%20B.Sc%20(Res)%20%26%20B.Tech%20(M%26C)%20(1)%C2%A0(5).pdf" },
+                                    { text: "Detailed timetable for 4th Sem Jan-April 2026 released", icon: "📝", date: "JANUARY 01, 2026", link: "/assets/4th%20Semester%20Class%20schedule%20of%20Jan-Apr%202026%20Term%20B%20Sc(Res)%20%26%20B.Tech%20(M%26C)%2009.01.2026%C2%A0(1).pdf" },
+                                    { text: "Detailed timetable for 6th Sem Jan-April 2026 released", icon: "📝", date: "JANUARY 01, 2026", link: "/assets/6th%20Semester%20Class%20Schedule%20Jan-Apr%202026%20Term%20B.Sc%20%26%20B.Tech%2009.01.2026.pdf" }
+                                ].map((item, i) => (
+                                    <a key={i} href={item.link} className="block group bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all duration-200 p-5 rounded-lg cursor-pointer">
+                                        <div className="flex justify-between items-start mb-2">
+                                            <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">{item.date}</span>
+                                            <div className="text-slate-300 group-hover:text-blue-500 transition-colors transform group-hover:translate-x-0.5">
+                                                <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+                                                    <path d="M7 10l5 5 5-5z" />
+                                                </svg>
                                             </div>
                                         </div>
-                                    );
-
-                                    if (item.link) {
-                                        return (
-                                            <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="block">
-                                                {content}
-                                            </a>
-                                        );
-                                    }
-
-                                    return <div key={i}>{content}</div>;
-                                })}
+                                        <div className="flex gap-3 items-start">
+                                            <span className="text-lg leading-none mt-0.5">{item.icon}</span>
+                                            <p className="text-sm font-bold text-slate-800 leading-snug group-hover:text-blue-700 transition-colors">
+                                                {item.text}
+                                            </p>
+                                        </div>
+                                    </a>
+                                ))}
                             </div>
                         </div>
 
                     </div>
                 </div>
+            </div>
+
+            <div>
+                <AskIISc />
             </div>
         </div>
     );

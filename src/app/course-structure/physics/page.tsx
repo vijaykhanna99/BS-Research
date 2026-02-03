@@ -4,7 +4,7 @@ import DepartmentTemplate from "@/components/course-structure/DepartmentTemplate
 
 const physicsData = {
     name: "Physics",
-    image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/physics-dept.jpg",
     description: "Understand the fundamental forces and laws of the universe.",
     overview: "The Physics major provides a strong grounding in both theoretical and experimental physics. The program covers the entire spectrum from classical mechanics and electromagnetism to quantum mechanics and statistical physics. Students have the opportunity to engage in cutting-edge research in various frontier areas of physics.",
     tag: "Physical Sciences",
@@ -16,10 +16,15 @@ const physicsData = {
             title: "Semester 4",
             courses: [
                 {
-                    code: "UP 202T",
+                    code: "UP 202",
                     name: "Intermediate Mechanics, Oscillations and Waves",
-                    credits: "2:0",
-                    instructor: "Nirmal Raj",
+                    credits: "2:1",
+                    instructor: "Nirmal Raj, R. Ganesan, D. S. Nadig",
+                    instructors: [
+                        { name: "Nirmal Raj", profile: "https://sites.google.com/view/nirmal-raj" },
+                        { name: "R. Ganesan", profile: "https://physics.iisc.ac.in/people/r-ganesan/" },
+                        { name: "D. S. Nadig", profile: "https://cct.iisc.ac.in/d-s-nadig/" }
+                    ],
                     isElective: false,
                     description: "Special theory of relativity. Lorentz transformations. Energy-momentum relation. Lorentz four-vectors. Motion in non-inertial frames. Fictitious forces. Coriolis force. Foucault pendulum. Basic scattering theory. Vibrations of particles on a circle and a line. Orthonormal basis. Wave equation. Fourier transform Phase space. Hamiltonian equations, fixed points and stability. Nonlinear equations. Chaos. Logistics map and period doubling. Fluid mechanics. Euler equation. Bernoulli’s equation. Waves in fluids. Gravity waves. Viscosity. Navier-Stokes equation. Basic ideas about turbulence. Elasticity. Strain and stress tensors. Elastic moduli. Bending of rods. Waves in solids.",
                     instructorProfile: "https://sites.google.com/view/nirmal-raj",
@@ -37,21 +42,15 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UP 202L",
-                    name: "Intermediate Mechanics, Oscillations and Waves (Lab)",
-                    credits: "0:1",
-                    instructor: "R. Ganesan and D. S. Nadig",
-                    instructors: [
-                        { name: "R. Ganesan", profile: "https://physics.iisc.ac.in/people/r-ganesan/" },
-                        { name: "D. S. Nadig", profile: "https://cct.iisc.ac.in/d-s-nadig/" }
-                    ],
-                    isElective: false,
-                },
-                {
-                    code: "UP 203T",
+                    code: "UP 203",
                     name: "Intermediate Electromagnetism and the Quantum Physics of Radiation",
-                    credits: "2:0",
-                    instructor: "Ranjan Laha",
+                    credits: "2:1",
+                    instructor: "Ranjan Laha, Victor S Muthu, Abha Misra",
+                    instructors: [
+                        { name: "Ranjan Laha", profile: "https://chep.iisc.ac.in/faculty/" },
+                        { name: "Victor S Muthu", profile: "https://physics.iisc.ac.in/people/d-victor-suvisesha-muthu/" },
+                        { name: "Abha Misra", profile: "http://iap.iisc.ac.in/abha-misra/" }
+                    ],
                     isElective: false,
                     description: "Electromagnetic Waves: Wave equation from Maxwell’s equations, polarization, energy and momentum in EM waves, propagation in linear media, reflection and refraction, Snell’s law and Fresnel’s equations, Brewster angle and total internal reflection. EM waves in conductors, skin depth, simple theories for dispersion of EM waves. Wave guides and coaxial cables, optical fibers Geometrical optics: Fermat’s principle, Snell’s law, reflection and refraction at spherical surfaces, convex and concave mirrors and lenses, real and virtual images. Physical Optics: Coherence, Young’s two slit experiment, multiple slits, diffraction grating, wavelength resolution and fringe visibility, Newton’s rings, Michelson and Fabry-Perot interferometer, diffraction from rectangular and circular apertures, Airy disc and resolving power of microscopes. Quantum optics: Photons, spontaneous and stimulated emission, Einstein A and B coefficients and relation to the Planck distribution, rate equations for absorption and emission, two level and three level systems, population inversion and light amplification, optical resonators and the basic working principle of a laser, examples of lasers: Ruby, He-Ne, semiconductor etc.",
                     instructorProfile: "https://chep.iisc.ac.in/faculty/",
@@ -62,21 +61,15 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UP 203L",
-                    name: "Intermediate Electromagnetism and the Quantum Physics of Radiation (Lab)",
-                    credits: "0:1",
-                    instructor: "Victor S Muthu and Abha Misra",
-                    instructors: [
-                        { name: "Victor S Muthu", profile: "https://physics.iisc.ac.in/people/d-victor-suvisesha-muthu/" },
-                        { name: "Abha Misra", profile: "http://iap.iisc.ac.in/abha-misra/" }
-                    ],
-                    isElective: false,
-                },
-                {
-                    code: "UP 204T",
+                    code: "UP 204",
                     name: "Intermediate Thermal Physics and the Physics of Materials",
-                    credits: "2:0",
-                    instructor: "Prabal Maiti",
+                    credits: "2:1",
+                    instructor: "Prabal Maiti, Upendra Behera, Minakshi Nayak",
+                    instructors: [
+                        { name: "Prabal Maiti", profile: "https://physics.iisc.ac.in/~maiti/" },
+                        { name: "Upendra Behera", profile: "https://iiscprofiles.irins.org/profile/54856" },
+                        { name: "Minakshi Nayak", profile: "" }
+                    ],
                     isElective: false,
                     instructorProfile: "https://physics.iisc.ac.in/~maiti/",
                     description: "Review of kinetic theory and thermodynamics, Free energies, Phases and phase transitions, Vander Waals gas and the liquid gas transition, Thermodynamics of magnetic systems, Ensembles and rules of Statistical Mechanics, The Ideal Maxwell-Boltzmann Gas, The Ideal Fermi Gas, The Ideal Bose Gas, Crystal Structure, Lattice Vibrations, Band theory of electrons in crystalline solids, Thermal properties of crystalline solids.",
@@ -88,19 +81,8 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UP 204L",
-                    name: "Intermediate Thermal Physics and the Physics of Materials (Lab)",
-                    credits: "0:1",
-                    instructor: "Upendra Behera and Minakshi Nayak",
-                    instructors: [
-                        { name: "Upendra Behera", profile: "https://iiscprofiles.irins.org/profile/54856" },
-                        { name: "Minakshi Nayak", profile: "" }
-                    ],
-                    isElective: false,
-                },
-                {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
+                    code: "UHS**",
+                    name: "Humanities",
                     credits: "2:0",
                     instructor: "-",
                     isElective: true,
@@ -168,8 +150,8 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "PH 211L",
-                    name: "General Physics (Lab)",
+                    code: "PH 211",
+                    name: "General Physics Laboratory",
                     credits: "0:3",
                     instructor: "T Das Gupta and Srimanta Middey",
                     instructors: [
@@ -180,8 +162,8 @@ const physicsData = {
                     description: "Identification of NaCl monocrystals (with X-ray unit). Gamma ray absorption with Multi Channel Analyzer (calibration & attenuation coefficient). NMR: Nuclear Magnetic Resonance (find the magnetogyric ratio of Hydrogen and Fluorine). Velocity of sound in liquids (Raman-Nath experiment). Normal modes in (3D) acoustic chamber. Solar cell (IV Characteristics). UV-VIS spectroscopy (Band gap of semiconductor, thickness measurement). X-ray fluorescence with Multi Channel Analyzer. Rutherford Scattering. Elastic Plastic Deformation."
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
+                    code: "UHS**",
+                    name: "Humanities",
                     credits: "2:0",
                     instructor: "-",
                     isElective: true,
@@ -236,8 +218,8 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
+                    code: "UHS**",
+                    name: "Humanities",
                     credits: "2:0",
                     instructor: "-",
                     isElective: true,

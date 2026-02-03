@@ -4,7 +4,7 @@ import DepartmentTemplate from "@/components/course-structure/DepartmentTemplate
 
 const mathData = {
     name: "Mathematics",
-    image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/mathematics-dept.jpg",
     description: "Dive into the language of the universe through numbers and logic.",
     overview: "The Mathematics major focuses on the core areas of modern mathematics, including algebra, analysis, topology, and geometry. The program is designed to develop rigorous mathematical thinking and problem-solving skills, preparing students for research in pure and applied mathematics.",
     tag: "Formal Sciences",
@@ -47,9 +47,9 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -130,9 +130,9 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -214,9 +214,9 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,

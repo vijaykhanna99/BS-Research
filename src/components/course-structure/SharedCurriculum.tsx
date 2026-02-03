@@ -1,49 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { MoveLeft, ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, CheckCircle2 } from "lucide-react";
+import { MoveLeft, Info, AlignLeft, BookOpen, X, AlertCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { electiveMonth, semesters } from "./sharedCurriculumData";
+import { semesters } from "./sharedCurriculumData";
 
-export interface DepartmentTemplateProps {
-    name: string;
-    image: string;
-    description: string; // Brief description
-    overview: string; // Longer overview text
-    tag: string;
-    colorClass: string;
-    bgClass: string;
-    staff?: {
-        coordinators?: string[];
-        instructorsUg?: string[];
-        teachingAssistants?: string[];
-    };
-    majorSemesters: any[]; // The specific semester requirements for this major
-    electives: any[]; // Nested array structure matching existing logic
-    electiveMonthData?: { title: string }[]; // Optional override, default to global
-    electivesIntro?: React.ReactNode; // Optional intro text for electives
-    hideElectiveMonthTabs?: boolean;
-    customMastersContent?: React.ReactNode; // Optional custom content for Master's degree section
-}
-
-const DepartmentTemplate = ({
-    name,
-    image,
-    overview,
-    staff,
-    majorSemesters,
-    electives,
-    electiveMonthData = electiveMonth,
-    electivesIntro,
-    hideElectiveMonthTabs = false,
-    customMastersContent
-}: DepartmentTemplateProps) => {
+const SharedCurriculum = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const [electiveTab, setElectiveTab] = useState(0);
     const [selectedCourse, setSelectedCourse] = useState<any>(null);
 
-    // Use major semesters directly
-    const currentSemester = majorSemesters[activeTab];
+    const currentSemester = semesters[activeTab];
 
     return (
         <div className="bg-white pb-8 font-sans text-gray-900">
@@ -56,7 +22,7 @@ const DepartmentTemplate = ({
                     <MoveLeft className="w-5 h-5 mr-2" /> Back
                 </Link>
                 <span className="text-lg font-bold text-gray-800 hidden md:block">
-                    {name} Major
+                    Shared Curriculum
                 </span>
             </div>
 
@@ -64,7 +30,7 @@ const DepartmentTemplate = ({
             <div
                 className="relative w-full h-[300px] flex items-center justify-center bg-gray-900"
                 style={{
-                    backgroundImage: `url('${image}')`,
+                    backgroundImage: `url('/assets/hero-course-structure.jpg')`, // Generic academic background
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
@@ -75,89 +41,36 @@ const DepartmentTemplate = ({
                         Bachelor of Science (Research)
                     </span>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
-                        {name}
+                        Shared Curriculum
                     </h1>
+                    <p className="text-gray-200 text-lg mt-2 max-w-2xl mx-auto">
+                        Foundation Phase (Semesters 1-3)
+                    </p>
                 </div>
             </div>
 
             {/* Main Content Container */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
 
-                {/* 1. Basic Structure */}
+                {/* 1. Course Overview */}
                 <div className="mb-12">
                     <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                        Basic Structure
+                        Overview
                     </h2>
-
-                    <div className="prose max-w-none text-gray-700 mb-8">
+                    <div className="prose max-w-none text-gray-700">
                         <p className="text-lg leading-relaxed">
-                            {overview}
+                            The first three semesters are common to all students, designed to build a strong foundation in Physics, Chemistry, Mathematics, Biology, Engineering, and Earth & Environmental Science. This interdisciplinary approach ensures that students develop a holistic understanding of scientific principles before specializing in a major discipline.
                         </p>
                     </div>
-
-                    {/* Degree Award Requirement Table */}
-                    <div className="overflow-x-auto border border-gray-300 rounded-lg shadow-sm mb-6">
-                        <table className="w-full text-center border-collapse min-w-[800px]">
-                            <thead>
-
-                                <tr className="bg-white">
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Basic Course<br />(Sem 1-3)</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Engineering<br />(Sem 2-3)</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Humanities<br />(Sem 1-6)</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Major and Project</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Minor<br />(Optional)</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-1/6 align-middle">Electives<br />(Assortment Courses)</th>
-                                    <th className="px-4 py-3 font-bold text-gray-900 border border-gray-300 w-[100px] align-middle">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr className="bg-white hover:bg-gray-50 transition-colors">
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">40</td>
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">6</td>
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">9</td>
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">51</td>
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">15</td>
-                                    <td className="px-4 py-3 text-gray-900 border border-gray-300 font-medium">10 - 25</td>
-                                    <td rowSpan={2} className="px-4 py-3 text-gray-900 border border-gray-300 font-bold text-lg">131</td>
-                                </tr>
-                                <tr className="bg-white hover:bg-gray-50 transition-colors">
-                                    <td colSpan={4} className="border border-gray-300 bg-gray-50/50"></td>
-                                    <td colSpan={2} className="px-4 py-3 text-gray-900 border border-gray-300 font-bold">25*</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div className="space-y-2 mt-4 text-sm text-gray-700 bg-gray-50 p-4 rounded border border-gray-200">
-                        <p className="font-bold text-gray-900">NOTE:</p>
-                        <ol className="list-decimal pl-5 space-y-1">
-                            <li><strong>*Students not opting for a minor</strong> should fulfil 25 credits of assortment courses.</li>
-                            <li>To be eligible for a minor, a student should fulfil 15 credits from the minor pool.</li>
-                            <li>Excess credit(s) from any pool will be counted towards assortment credits.</li>
-                        </ol>
-                    </div>
-
-                    {/* Original Overview Text - moved below table if needed, or keeping it as intro above? 
-                        User asked to replace "Course Overview" with "Basic Structure" and add table.
-                        I will preserve the `overview` prop content below the table as it might contain important text intro.
-                    */}
-
-
-                    {/* Staff Section Removed as requested */}
-
                 </div>
 
                 {/* 2. Semester-wise Course Requirement */}
-                {/* 2. Semester-wise Course Requirement */}
                 <div className="mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2">Semester-wise Course Requirements</h2>
-                    <p className="text-gray-600 mb-6 text-sm">
-                        To view the common shared curriculum (Semesters 1-3), please <Link href="/course-structure/shared-curriculum" className="text-blue-600 font-bold hover:underline">click here</Link>.
-                    </p>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Semester-wise Course Requirements</h2>
 
-                    {/* Tabs */}
+                    {/* Tabs - Showing only Semesters 1-3 */}
                     <div className="flex flex-wrap gap-2 mb-6">
-                        {majorSemesters.map((sem: any, index: number) => (
+                        {semesters.slice(0, 3).map((sem: any, index: number) => (
                             <button
                                 key={`tab-${index}`}
                                 onClick={() => setActiveTab(index)}
@@ -178,51 +91,88 @@ const DepartmentTemplate = ({
                                 <table className="w-full text-sm text-left border-collapse min-w-[600px]">
                                     <thead className="bg-gray-50 text-gray-900 font-bold border-b border-gray-300">
                                         <tr>
+                                            <th className="px-4 py-3 border-r border-gray-300 w-32 md:w-40 whitespace-nowrap hidden md:table-cell">Course Type</th>
                                             <th className="px-4 py-3 border-r border-gray-300 w-24 md:w-32 whitespace-nowrap">Course Code</th>
                                             <th className="px-4 py-3 border-r border-gray-300 min-w-[200px]">Course Name</th>
                                             <th className="px-4 py-3 border-r border-gray-300 w-1/4 min-w-[150px]">Instructor</th>
-                                            <th className="px-4 py-3 border-r border-gray-300 text-center w-20">Credits</th>
+                                            <th className="px-4 py-3 text-center w-20">Credits</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
                                         {currentSemester.courses?.map((course: any, index: number) => {
+                                            // Handle "OR" row if it exists
                                             if (course.name === "OR") {
                                                 return (
                                                     <tr key={index} className="bg-gray-50">
-                                                        <td colSpan={4} className="px-4 py-2 text-center text-xs font-bold text-gray-500 border-b border-gray-200">OR</td>
+                                                        <td colSpan={5} className="px-4 py-2 text-center text-xs font-bold text-gray-500 border-b border-gray-200">OR</td>
                                                     </tr>
                                                 );
                                             }
+
+                                            // Calculate rowSpan for Course Type
+                                            const isFirstOfType = index === 0 || course.type !== currentSemester.courses[index - 1].type;
+                                            let rowSpan = 1;
+                                            if (isFirstOfType && course.type) {
+                                                for (let i = index + 1; i < currentSemester.courses.length; i++) {
+                                                    if (currentSemester.courses[i].type === course.type) {
+                                                        rowSpan++;
+                                                    } else {
+                                                        break;
+                                                    }
+                                                }
+                                            }
+
                                             return (
                                                 <tr key={index} className="hover:bg-gray-50 transition-colors">
+                                                    {/* Course Type Cell with RowSpan */}
+                                                    {isFirstOfType && (
+                                                        <td
+                                                            rowSpan={rowSpan}
+                                                            className="px-4 py-3 text-sm font-bold text-gray-800 border-r border-gray-200 bg-white align-top hidden md:table-cell"
+                                                        >
+                                                            <div className="sticky top-20">
+                                                                {course.type}
+                                                                {/* Special condition for Basic Courses in Sem 2 & 3 */}
+                                                                {course.type === "Basic Courses" && (currentSemester.title === "Semester 2" || currentSemester.title === "Semester 3") && (
+                                                                    <span className="block text-xs font-normal text-gray-500 mt-1 italic">
+                                                                        Choose any Three out of Four courses
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                    )}
+
                                                     <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200 whitespace-nowrap">
                                                         <button
                                                             onClick={() => {
-                                                                if (course.name.includes("Elective")) {
-                                                                    document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' });
-                                                                } else if (course.detailsLink) {
+                                                                if (course.detailsLink) {
                                                                     window.open(course.detailsLink, '_blank');
                                                                 } else if (!course.disableDetails) {
                                                                     setSelectedCourse(course);
                                                                 }
                                                             }}
-                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink && !course.name.includes("Elective") ? 'cursor-default hover:no-underline' : ''}`}
+                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink ? 'cursor-default hover:no-underline' : ''}`}
                                                         >
-                                                            {course.code}
+                                                            {course.code.includes("**") ? (
+                                                                <>
+                                                                    {course.code.replace("**", "")}
+                                                                    <span className="font-bold ml-0.5 text-black">**</span>
+                                                                </>
+                                                            ) : (
+                                                                course.code
+                                                            )}
                                                         </button>
                                                     </td>
                                                     <td className="px-4 py-3 text-gray-900 border-r border-gray-200">
                                                         <button
                                                             onClick={() => {
-                                                                if (course.name.includes("Elective")) {
-                                                                    document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' });
-                                                                } else if (course.detailsLink) {
+                                                                if (course.detailsLink) {
                                                                     window.open(course.detailsLink, '_blank');
                                                                 } else if (!course.disableDetails) {
                                                                     setSelectedCourse(course);
                                                                 }
                                                             }}
-                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink && !course.name.includes("Elective") ? 'cursor-default hover:no-underline' : ''}`}
+                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink ? 'cursor-default hover:no-underline' : ''}`}
                                                         >
                                                             {course.name}
                                                         </button>
@@ -263,12 +213,12 @@ const DepartmentTemplate = ({
                                         {/* Footer Rows */}
                                         {(currentSemester as any).ReducedLoad && (
                                             <tr className="bg-gray-50 font-bold">
-                                                <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-600">Reduced Load</td>
+                                                <td colSpan={4} className="px-4 py-3 text-right border-r border-gray-200 text-gray-600">Reduced Load</td>
                                                 <td className="px-4 py-3 text-center text-gray-900">{(currentSemester as any).ReducedLoad}</td>
                                             </tr>
                                         )}
                                         <tr className="bg-gray-50 font-bold border-t-2 border-gray-300">
-                                            <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-900">Total Credits</td>
+                                            <td colSpan={4} className="px-4 py-3 text-right border-r border-gray-200 text-gray-900">Total Credits</td>
                                             <td className="px-4 py-3 text-center text-gray-900">{currentSemester.totalCredits}</td>
                                         </tr>
                                     </tbody>
@@ -278,16 +228,17 @@ const DepartmentTemplate = ({
                     )}
 
                     {/* Requirement Note */}
-                    {activeTab <= 2 && (
+                    {(activeTab === 1 || activeTab === 2) && (
                         <div className="bg-gray-50 p-4 rounded border border-gray-200 mb-8">
                             <div className="text-sm text-gray-700">
                                 <span className="font-bold text-gray-900">Note:</span>{" "}
                                 <div className="mt-2 space-y-4">
+                                    {/* Section 2: Humanities */}
                                     <div className="flex gap-2">
                                         <span className="font-bold text-black text-lg leading-none mt-0.5">**</span>
                                         <div className="text-gray-800 space-y-1">
                                             <div className="font-semibold text-gray-900 mb-1">Humanities:</div>
-                                            <div className="block"><strong className="font-semibold text-gray-900">A.</strong> Humanities courses cannot be dropped in both semesters IV and V.</div>
+                                            <div className="block"><strong className="font-semibold text-gray-900">A.</strong> Humanities courses cannot be dropped in both semesters II and III.</div>
                                             <div className="block"><strong className="font-semibold text-gray-900">B.</strong> Students must complete 9 credits in humanities pool by the end of six semester.</div>
                                         </div>
                                     </div>
@@ -297,200 +248,7 @@ const DepartmentTemplate = ({
                     )}
 
 
-
-                    {/* Recommended Course Load */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">Recommended Course Load</h3>
-                    <div className="border border-gray-300 rounded overflow-hidden shadow-sm">
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left text-sm border-collapse min-w-[500px]">
-                                <thead className="bg-gray-50 font-bold text-gray-900 border-b border-gray-300">
-                                    <tr>
-                                        <th className="px-4 py-3 w-1/4 border-r border-gray-300 whitespace-nowrap">Semester</th>
-                                        <th className="px-4 py-3 w-1/2 border-r border-gray-300 min-w-[200px]">Criteria</th>
-                                        <th className="px-4 py-3 w-1/4 whitespace-nowrap">Credits</th>
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-gray-200">
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200">I</td>
-                                        <td className="px-4 py-3 text-gray-700 border-r border-gray-200">Student needs to register for a fixed number of credits</td>
-                                        <td className="px-4 py-3 text-gray-900">18</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200">II</td>
-                                        <td className="px-4 py-3 text-gray-700 border-r border-gray-200">No CGPA and TGPA requirements</td>
-                                        <td className="px-4 py-3 text-gray-900">Min.: 17 and Max.: 21</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200">III</td>
-                                        <td className="px-4 py-3 text-gray-700 border-r border-gray-200">No CGPA and TGPA requirements</td>
-                                        <td className="px-4 py-3 text-gray-900">Min.: 17 and Max.: 21</td>
-                                    </tr>
-                                    {/* Semester IV */}
-                                    <tr className="hover:bg-gray-50 border-t border-gray-200">
-                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200 row-span-2 align-top" rowSpan={2}>IV</td>
-                                        <td className="px-4 py-3 text-gray-700 border-r border-gray-200 border-b border-gray-100">CGPA &lt; 8.0</td>
-                                        <td className="px-4 py-3 text-gray-900 border-b border-gray-100">Min.: 15 and Max.: 17</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="px-4 py-3 font-bold text-gray-900 border-r border-gray-200">CGPA ≥ 8.0</td>
-                                        <td className="px-4 py-3 font-bold text-gray-900">Min.: 15 and Max.: 21</td>
-                                    </tr>
-                                    {/* Semester V to VIII */}
-                                    <tr className="hover:bg-gray-50 border-t border-gray-200">
-                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200 row-span-2 align-top" rowSpan={2}>V to VIII</td>
-                                        <td className="px-4 py-3 text-gray-700 border-r border-gray-200 border-b border-gray-100">CGPA &lt; 8.0 or Preceding term TGPA &lt; 8.0</td>
-                                        <td className="px-4 py-3 text-gray-900 border-b border-gray-100">Min.: 16 and Max.: 18</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50">
-                                        <td className="px-4 py-3 font-bold text-gray-900 border-r border-gray-200">CGPA ≥ 8.0 or Preceding term TGPA ≥ 8.0</td>
-                                        <td className="px-4 py-3 font-bold text-gray-900">Min.: 16 and Max.: 21</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
-
-                {/* 3. Core Electives */}
-                <div className="mb-12" id="core-electives">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-2 border-b-2 border-gray-900 pb-2 inline-block">
-                        Suggested Core Electives:
-                    </h2>
-                    {electivesIntro ? (
-                        <div className="text-gray-700 text-sm mt-4 mb-4 leading-relaxed">
-                            {electivesIntro}
-                        </div>
-                    ) : (
-                        <p className="text-gray-700 text-sm mt-4 mb-4 leading-relaxed">
-                            Below is the list of core electives available for students majoring in {name}.
-                            These electives are offered by various departments under the relevant Sciences Department.
-                        </p>
-                    )}
-
-                    {!hideElectiveMonthTabs && (
-                        <>
-                            <div className="mb-6 text-sm text-gray-700 space-y-2">
-                                <p><strong className="text-gray-900">Note:</strong></p>
-                                <p><strong className="text-gray-900">January–April Semester:</strong> Select courses offered in the January intake. These courses are designed for students beginning their studies at the start of the year.</p>
-                                <p><strong className="text-gray-900">August–December Semester:</strong> Select courses offered in the August intake, suitable for students starting in the second half of the year.</p>
-                            </div>
-
-                            <div className="flex gap-4 mb-8 border-b border-gray-200">
-                                {electiveMonthData.map((month, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => setElectiveTab(idx)}
-                                        className={`px-6 py-2 text-sm font-bold transition-colors relative top-[1px] ${electiveTab === idx
-                                            ? "bg-blue-700 text-white rounded-t"
-                                            : "bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-t"
-                                            }`}
-                                    >
-                                        {month.title}
-                                    </button>
-                                ))}
-                            </div>
-
-                        </>
-                    )}
-
-                    {electives?.[electiveTab]?.length > 0 && (electives[electiveTab][0].credits || electives[electiveTab][0].instructor) ? (
-                        <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-                            <div className="overflow-x-auto max-h-[800px] overflow-y-auto custom-scrollbar">
-                                <table className="w-full text-sm text-left relative">
-                                    <thead className="bg-gray-50 text-gray-900 font-bold border-b border-gray-200 sticky top-0 z-10 shadow-sm">
-                                        <tr>
-                                            <th className="px-6 py-3 border-r border-gray-200 whitespace-nowrap w-32 bg-gray-50">Course Code</th>
-                                            <th className="px-6 py-3 border-r border-gray-200 min-w-[250px] bg-gray-50">Title</th>
-                                            <th className="px-6 py-3 border-r border-gray-200 whitespace-nowrap w-24 text-center bg-gray-50">Credits</th>
-                                            <th className="px-6 py-3 whitespace-nowrap min-w-[200px] bg-gray-50">Instructors</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-gray-200">
-                                        {electives[electiveTab].map((sub: any, i: number) => (
-                                            <tr key={i} className="hover:bg-gray-50 transition-colors">
-                                                <td className="px-6 py-3 font-bold text-blue-600 border-r border-gray-200">{sub.code}</td>
-                                                <td className="px-6 py-3 text-gray-900 font-medium border-r border-gray-200">{sub.name}</td>
-                                                <td className="px-6 py-3 text-center text-gray-700 border-r border-gray-200">{sub.credits || "-"}</td>
-                                                <td className="px-6 py-3 text-gray-700">{sub.instructor || "-"}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-                            {electives?.[electiveTab]?.map((sub: any, i: number) => (
-                                <div key={i} className="flex flex-col gap-1 group">
-                                    <div className="flex items-start gap-2">
-                                        <span className="text-sm font-bold text-blue-600 whitespace-nowrap">{sub.code}</span>
-                                        <span className="text-sm text-gray-900 font-medium leading-tight group-hover:text-blue-700 transition-colors">
-                                            {sub.name}
-                                        </span>
-                                    </div>
-                                    {sub.description && (
-                                        <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                                            {sub.description}
-                                        </p>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-
-                {/* 4. Continuing Master's Degree */}
-                <div className="mb-4">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-gray-900 pb-2 inline-block">
-                        Continuing Master's Degree
-                    </h2>
-
-                    {customMastersContent ? (
-                        customMastersContent
-                    ) : (
-                        <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                            <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                                Students have the option to continue for their 5th year to obtain a <strong>Master of Science degree</strong>.
-                            </p>
-
-                            <div className="space-y-8">
-                                {/* Eligibility */}
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-                                        <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
-                                        Eligibility Criteria
-                                    </h4>
-                                    <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                                        <li>Have completed all the requirements of the Bachelor of Science degree at the end of their 8th semester</li>
-                                        <li>Have a <strong>CGPA of 7.0 or more</strong> at the end of their 8th semester.</li>
-                                    </ul>
-                                </div>
-
-                                {/* Requirements */}
-                                <div>
-                                    <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-                                        <span className="w-1.5 h-6 bg-purple-600 rounded-full"></span>
-                                        Degree Requirements (32 Credits)
-                                    </h4>
-                                    <ul className="list-disc pl-5 space-y-4 text-gray-700">
-                                        <li>
-                                            <strong>13 Credits of Coursework</strong> in the 9th and 10th semesters.
-                                            <p className="text-sm text-gray-500 mt-1 italic">
-                                                (Note: Students are required to have completed a minimum of 10 credits of courses, across the 10 semesters of the Bachelor of Science/Master of Science programme.)
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <strong>A Project of 20 Credits</strong> in the 9th and 10th semesters.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-
 
                 {/* Course Details Modal */}
                 {selectedCourse && typeof document !== 'undefined' && createPortal(
@@ -638,4 +396,4 @@ const DepartmentTemplate = ({
     );
 };
 
-export default DepartmentTemplate;
+export default SharedCurriculum;

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from 'next/image';
 import { ExternalLink, Calendar, Users, HelpCircle, ArrowRight } from "lucide-react";
 import { MdDescription } from "react-icons/md";
 
@@ -64,10 +65,12 @@ const Admissions = () => {
 
             {/* Header Content with Image - Full Width */}
             <div className="relative w-full h-[300px] overflow-hidden">
-                <img
+                <Image
                     src="/assets/champions.png"
                     alt="Admission Header"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    priority
                 />
                 <div className="absolute inset-0 bg-slate-900/80"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">

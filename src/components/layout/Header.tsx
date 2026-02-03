@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Search, ChevronDown } from 'lucide-react';
 
 export default function Header() {
@@ -7,17 +8,20 @@ export default function Header() {
             <div className="container mx-auto px-4 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
                 {/* Logo and Title Section */}
                 <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-start">
-                    <img
+                    <Image
                         src="https://iisc.ac.in/wp-content/uploads/2020/08/IISc_Master_Seal.jpg"
                         alt="IISc Logo"
+                        width={80}
+                        height={80}
                         className="w-16 h-16 md:w-20 md:h-20 object-contain shrink-0"
+                        priority
                     />
                     <div className="flex flex-col">
                         <h1 className="text-xl md:text-3xl font-bold text-blue-900 tracking-tight leading-tight">
-                            Indian Institute of Science
+                            Bachelor of Science (Research)
                         </h1>
                         <span className="text-sm md:text-xl text-gray-600 font-medium">
-                            Bachelor of Science (Research)
+                            Indian Institute of Science Bangalore
                         </span>
                     </div>
                 </div>

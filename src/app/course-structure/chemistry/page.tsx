@@ -4,7 +4,7 @@ import DepartmentTemplate from "@/components/course-structure/DepartmentTemplate
 
 const chemistryData = {
     name: "Chemistry",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/chemistry-dept.jpg",
     description: "Study matter, its properties, composition, and reactivity.",
     overview: "The Chemistry major offers a rigorous journey through the fundamental principles of chemical sciences. From understanding atomic structures to complex organic synthesis and physical chemistry, students are equipped with both theoretical knowledge and practical laboratory skills. The curriculum includes specialized electives and a significant research component.",
     tag: "Chemical Sciences",
@@ -21,7 +21,7 @@ const chemistryData = {
             title: "Semester 4",
             courses: [
                 {
-                    code: "UC 202 / UCY 204",
+                    code: "UCY 204",
                     name: "Thermodynamics and Electrochemistry",
                     credits: "3:0",
                     instructor: "Naga Phani Aetukuri",
@@ -40,7 +40,7 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 204 / UCY 205",
+                    code: "UCY 205",
                     name: "Inorganic Chemistry: Chemistry Of Elements",
                     credits: "3:0",
                     instructor: "Susanta Hazra",
@@ -55,7 +55,7 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 205 / UCY 206",
+                    code: "UCY 206",
                     name: "Basic Organic Reactions",
                     credits: "3:0",
                     instructor: "Santanu Mukherjee",
@@ -70,9 +70,9 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 207T",
+                    code: "UC 207",
                     name: "Instrumental Methods of Chemical Analysis",
-                    credits: "2:0",
+                    credits: "2:1",
                     instructor: "Veerabhadrarao Kaliginedi and Anoop Thomas",
                     isElective: false,
                     instructorProfile: "https://ipc.iisc.ac.in/vk_lab/",
@@ -86,25 +86,13 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 207L",
-                    name: "Instrumental Methods of Chemical Analysis (Lab)",
-                    credits: "0:1",
-                    instructor: "Veerabhadrarao Kaliginedi and Anoop Thomas",
-                    isElective: false,
-                    instructorProfile: "https://ipc.iisc.ac.in/vk_lab/",
-                    instructors: [
-                        { name: "Veerabhadrarao Kaliginedi", profile: "https://ipc.iisc.ac.in/vk.php" },
-                        { name: "Anoop Thomas", profile: "https://ipc.iisc.ac.in/at.php" }
-                    ],
-                    description: "Practical experiments associated with Instrumental Methods of Chemical Analysis.",
-                },
-                {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
+                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
                 },
                 {
                     code: "EL",
@@ -191,9 +179,9 @@ const chemistryData = {
                     description: "Synthesis of Fe-acac complex, Acetylferrocene, Tris-(8-hydroxyquinoline) aluminium, VO(acac)2, Suzuki-Miyaura cross-coupling, Synthesis of Pd2(dba)3, Mn (III) salen complex, polyoxometallate complexes, Ni (II) Schiff base complexes, Europium (III) and Terbium (III) complexes, Cu(I) catalyzed fast and organic solvent-free tandem click chemistry, Cr-coordination complexes, Wittig reaction, Grignard Reaction, Diels Alder reaction, Oxidation of Isoborneol to Camphor, Reduction and other synthesis.",
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -250,7 +238,7 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 303/CY 303",
+                    code: "UCY 303",
                     name: "Basic Organometallic Chemistry",
                     credits: "3:0",
                     instructor: "P Thilagar",
@@ -263,9 +251,9 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UC 302/UCY 302",
+                    code: "UCY 302",
                     name: "Physical and Analytical Chemistry (Lab)",
-                    credits: "0:1/0:3",
+                    credits: "0:3",
                     instructor: "Soumen Ghosh",
                     isElective: false,
                     description: "Chemical kinetics. Langmuir adsorption, chemical analysis by potentiometric and conductometric methods, cyclic voltammetry, flame photometry, electronic states by UV-Visible spectroscopy, IR spectroscopy, solid state chemistry synthesis of solids and chemical analysis. Thermogravimetry. X-ray diffraction, electrical and magnetic properties of solids. Vacuum techniques in preparative chemistry.",
@@ -275,9 +263,9 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -333,9 +321,9 @@ const chemistryData = {
             title: "Semester 8",
             courses: [
                 {
-                    code: "UC 400/UCY 400",
+                    code: "UCY 400",
                     name: "Bachelor's Project",
-                    credits: "0:14/0:12",
+                    credits: "0:12",
                     instructor: "Coord: Anoop Thomas",
                     isElective: false,
                     disableDetails: true,

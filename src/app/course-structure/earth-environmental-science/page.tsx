@@ -4,7 +4,7 @@ import DepartmentTemplate from "@/components/course-structure/DepartmentTemplate
 
 const earthScienceData = {
     name: "Earth & Environmental Science",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/earth-science-dept.jpg",
     description: "Investigate the Earth's systems and environmental challenges.",
     overview: "The Earth & Environmental Science major offers an interdisciplinary approach to understanding the Earth's systems. The curriculum covers topics ranging from climate science and environmental chemistry to geochemistry and ecological systems, preparing students to address critical environmental challenges.",
     tag: "Planetary Sciences",
@@ -16,26 +16,17 @@ const earthScienceData = {
             title: "Semester 4",
             courses: [
                 {
-                    code: "UEES 206T",
+                    code: "UEES 206",
                     name: "Experimental Methods in Environmental Chemistry",
-                    credits: "2:0",
+                    credits: "2:1",
                     instructor: "Sreenivasan Ramaswami",
                     isElective: false,
-                    description: "Introduction to enviro/water laboratory: fundamental instruments, lab water types and grades of chemicals. Solutions: concentration, dilution factor, preparing solutions. Water quality parameters: pH, electrical conductivity, turbidity & dissolved oxygen. Solids in water: total, suspended, dissolved. Hardness and alkalinity. Spectrophotometric determination: principle, limits, determination of ammonium-nitrogen, phosphatephosphorous. Nitrogen in water – determination of nitrogen compounds (N-NH +, N-NO -, N-NO - and TN) and material balance. Organic parameters: COD, BOD, TOC. Chromatographic techniques, determination of anions by ion chromatography. Different wastewater sources, water & environmental pollution.",
+                    description: "Introduction to enviro/water laboratory: fundamental instruments, lab water types and grades of chemicals. Solutions: concentration, dilution factor, preparing solutions. Water quality parameters: pH, electrical conductivity, turbidity & dissolved oxygen. Solids in water: total, suspended, dissolved. Hardness and alkalinity. Spectrophotometric determination: principle, limits, determination of ammonium-nitrogen, phosphatephosphorous. Nitrogen in water – determination of nitrogen compounds (N-NH +, N-NO -, N-NO - and TN) and material balance. Organic parameters: COD, BOD, TOC. Chromatographic techniques, determination of anions by ion chromatography. Different wastewater sources, water & environmental pollution. Lab component includes: Safety instructions, pH meter calibration, conductivity measurement, turbidity standards, DO measurement, hardness/alkalinity determination, and nitrogen compound analysis.",
                     instructorProfile: "https://www.suspaani-lab.com/team/sreenivasan-ramaswami",
                     books: [
                         "APHA, Standard methods for the examination of water and wastewater. American Public Health Association, 23rd edition, Washington DC, (2017)",
                         "ISO standards"
                     ]
-                },
-                {
-                    code: "UEES 206L",
-                    name: "Experimental Methods in Environmental Chemistry (Lab)",
-                    credits: "0:1",
-                    instructor: "Sreenivasan Ramaswami",
-                    isElective: false,
-                    description: "Safety instructions. Introduction to enviro/water laboratory: grades of chemicals, glassware classes, checking pipettes; pH meter calibration and pH measurement in different water samples. pH of solutions of acids and bases of different strengths. Electrical conductivity of different water samples. Conductivity of solutions with varying NaCl content; Turbidity standards and calibration; Determination of turbidity in water samples. Dissolved oxygen measurement by iodometric method and optical probe; Determination of total, suspended, and dissolved solids concentrations in water samples; Determination of hardness and alkalinity of water samples; Determination of ammonium-N: calibration curve and measurement; Calibration curves for nitrite-N and nitrate-N; Determination of ammonium-N, nitrite-N, nitrate-N and total nitrogen in water samples. Material balance; Determination.",
-                    instructorProfile: "https://www.suspaani-lab.com/team/sreenivasan-ramaswami",
                 },
                 {
                     code: "UEES 207",
@@ -53,12 +44,12 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UEES 208T",
+                    code: "UEES 208",
                     name: "Introduction To Mineralogy and Petrology",
-                    credits: "2:0",
+                    credits: "2:1",
                     instructor: "K. Sajeev",
                     isElective: false,
-                    description: "Introduction to crystallography and mineralogy, Classification and nomenclature of sedimentary, igneous, and metamorphic rocks and their textures, igneous structures and field relationships, introduction to thermodynamics and phase rule, chemical petrology, Mantle melting, Magma diversity, tectonics and magmatism, metamorphic textures and mineral assemblages, Metamorphic facies and reactions, Geochronological methods",
+                    description: "Introduction to crystallography and mineralogy, Classification and nomenclature of sedimentary, igneous, and metamorphic rocks and their textures, igneous structures and field relationships, introduction to thermodynamics and phase rule, chemical petrology, Mantle melting, Magma diversity, tectonics and magmatism, metamorphic textures and mineral assemblages, Metamorphic facies and reactions, Geochronological methods. Lab component includes: Study of minerals and rocks in hand specimens, optical mineralogy, and study of thin sections.",
                     instructorProfile: "https://ceas.iisc.ac.in/author/sajeev-krishnan/",
                     books: [
                         "John D. Winter, Principles of Igneous and Metamorphic Petrology, 2nd Edition, 2010",
@@ -66,18 +57,9 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UEES 208L",
-                    name: "Introduction To Mineralogy and Petrology (Lab)",
-                    credits: "0:1",
-                    instructor: "K. Sajeev",
-                    isElective: false,
-                    description: "Study of minerals and rocks in hand specimens, optical mineralogy, and study of thin sections.",
-                    instructorProfile: "https://ceas.iisc.ac.in/author/sajeev-krishnan/",
-                },
-                {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -102,24 +84,15 @@ const earthScienceData = {
                 {
                     code: "UEES 301T",
                     name: "Introduction to Earth Systems",
-                    credits: "2:0",
+                    credits: "2:1",
                     instructor: "Sambuddha Misra",
                     isElective: false,
-                    description: "Geological time scale and Evolution of Vertebrates, invertebrate and Plants, Origin Of Atmosphere and compositional-structural-energy evolution, Greenhouse effect, oxygenation and genesis of ozone layer, Evidence of early Life, residence time of trace gases in the atmosphere, radiation laws and budget, glacial interglacial cycles, Carbon cycle, rock cycle, energy balance model, Hydrosphere, hydrological cycle, Ocean circulation, aqueous contamination and effect on biosystem, weathering and erosion, evolution of ocean, Life diversification.",
+                    description: "Geological time scale and Evolution of Vertebrates, invertebrate and Plants, Origin Of Atmosphere and compositional-structural-energy evolution, Greenhouse effect, oxygenation and genesis of ozone layer, Evidence of early Life, residence time of trace gases in the atmosphere, radiation laws and budget, glacial interglacial cycles, Carbon cycle, rock cycle, energy balance model, Hydrosphere, hydrological cycle, Ocean circulation, aqueous contamination and effect on biosystem, weathering and erosion, evolution of ocean, Life diversification. Lab includes: Geochemistry of Earth's crust, mantle, core; radiometric dating.",
                     instructorProfile: "https://ceas.iisc.ac.in/author/sambuddha-misra/",
                     books: [
                         "Roland Martin, Earth’s evolving systems; The history of Planet Earth 2nd edition",
                         "Steven M. Stanley and John A. Luczaj Earth System History, W. H. Freeman and Company"
                     ]
-                },
-                {
-                    code: "UES 301L",
-                    name: "Introduction To Earth Systems (Lab)",
-                    credits: "0:1",
-                    instructor: "Sambuddha Misra",
-                    isElective: false,
-                    description: "Geochemistry of Earth's crust, mantle, core; radiometric dating.",
-                    instructorProfile: "https://ceas.iisc.ac.in/author/sambuddha-misra/",
                 },
                 {
                     code: "UES 314",
@@ -137,12 +110,12 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UEES 313T",
+                    code: "UEES 313",
                     name: "Experimental Methods in Environmental Engineering",
-                    credits: "2:0",
+                    credits: "2:1",
                     instructor: "Yagnaseni Roy",
                     isElective: false,
-                    description: "Selection strategy of environmental remediation method for practical applications, Adsorption for pollutants in liquid and gaseous effluents - mechanisms of adsorption, isotherm & kinetic studies, desorption overview of packed and fluidized beds for practical scale. Absorption for CO2 sequestration - stripping, practical implementation in tray and packed columns, system design and sizing. Zero liquid discharge by evaporative techniques - energy requirement calculation, determination of salt composition. Coagulation, flocculation, and sedimentation - fundamental principles, design and sizing of settling tanks. Membrane filtration - osmotic pressure, fouling, practical-scale system design parameters. Environmental impact of discussed remediation techniques - fuel requirement, global warming potential.",
+                    description: "Selection strategy of environmental remediation method for practical applications, Adsorption for pollutants in liquid and gaseous effluents - mechanisms of adsorption, isotherm & kinetic studies, desorption overview of packed and fluidized beds for practical scale. Absorption for CO2 sequestration - stripping, practical implementation in tray and packed columns, system design and sizing. Zero liquid discharge by evaporative techniques - energy requirement calculation, determination of salt composition. Coagulation, flocculation, and sedimentation - fundamental principles, design and sizing of settling tanks. Membrane filtration - osmotic pressure, fouling, practical-scale system design parameters. Environmental impact of discussed remediation techniques - fuel requirement, global warming potential. Lab component includes: Batch adsorption of dye molecules, CO2 absorption, Evaporation experiments, and Filtration studies.",
                     instructorProfile: "https://www.s3iisc.com/people",
                     books: [
                         "“Industrial Separation Processes: Fundamentals”, André B. de Haan, Hans Bosch, Year: 2013, Publisher: De Gruyter",
@@ -150,18 +123,9 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UEES 313L",
-                    name: "Experimental Methods in Environmental Engineering (Lab)",
-                    credits: "0:1",
-                    instructor: "Yagnaseni Roy",
-                    isElective: false,
-                    description: "Batch adsorption of dye molecules using activated carbon, desorption using sodium hydroxide solution. Implementation of the same in a lab-scale adsorption column; CO2 absorption in a packed column; Evaporation experiment of water from artificial seawater and measurement of boiling point elevation. Evaporation of water can be done to obtain distilled water as well as to obtain salt crystals, thereby illustrating the concept of zero liquid discharge; Calculation of solubility limit of salts in artificial sweater using software (PHREEQC) and demonstration of the same in the lab; Coagulation and flocculation of humic acid using alum; Filtration of solution with dye molecules using a stirred vacuum filtration setup, investigation of different membrane samples (microfiltration, ultrafiltration, nanofiltration, reverse osmosis).",
-                    instructorProfile: "https://www.s3iisc.com/people",
-                },
-                {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -201,9 +165,9 @@ const earthScienceData = {
                     instructorProfile: null,
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,

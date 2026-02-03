@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from 'next/image';
 import { ArrowLeft, Calendar, MapPin, Award, User, Leaf } from "lucide-react";
 import Link from "next/link";
 
@@ -19,10 +20,12 @@ export default function IgemAchievementPage() {
                 <article className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     {/* Hero Image */}
                     <div className="relative h-[300px] md:h-[400px] w-full">
-                        <img
-                            src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+                        <Image
+                            src="/assets/chemistry-dept.jpg"
                             alt="Biological research in a laboratory"
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-600 text-white text-xs font-bold uppercase tracking-wider rounded-lg mb-4 w-fit">

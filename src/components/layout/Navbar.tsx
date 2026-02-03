@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X } from "lucide-react";
+import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X, ChevronRight, Info, BookOpen, GraduationCap } from "lucide-react";
 
 interface NavbarProps {
     // Props are no longer needed for page navigation but kept for compatibility if needed
@@ -82,41 +82,66 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 Course Structure <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
                             </Link>
 
-                            {/* Course Structure Dropdown */}
+                            {/* Course Structure Dropdown - Nested Menu Style */}
                             <div
-                                className="absolute left-1/2 -translate-x-1/2 mt-0 w-64 bg-white text-gray-800 shadow-xl rounded-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-slate-100 overflow-hidden ring-1 ring-black/5"
+                                className="absolute left-1/2 -translate-x-1/2 mt-0 w-72 bg-white text-gray-800 shadow-2xl rounded-xl z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-slate-100 overflow-visible ring-1 ring-black/5"
                             >
-                                <div className="py-2">
+                                <div className="p-2 space-y-1">
+                                    {/* Option 1: Shared Curriculum */}
                                     <Link
-                                        href="/course-structure/biology"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                                        href="/course-structure/shared-curriculum"
+                                        className="group/item flex items-center gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors relative"
                                     >
-                                        Biology
+                                        <div className="p-2 bg-purple-50 text-purple-600 rounded-md group-hover/item:bg-purple-600 group-hover/item:text-white transition-colors shrink-0">
+                                            <BookOpen className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-sm text-gray-900">Shared Curriculum</div>
+                                            <div className="text-[10px] font-semibold text-purple-600 uppercase tracking-wide">Semesters 1-3</div>
+                                        </div>
                                     </Link>
-                                    <Link
-                                        href="/course-structure/chemistry"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Chemistry
-                                    </Link>
-                                    <Link
-                                        href="/course-structure/physics"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Physics
-                                    </Link>
-                                    <Link
-                                        href="/course-structure/mathematics"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Mathematics
-                                    </Link>
-                                    <Link
-                                        href="/course-structure/earth-environmental-science"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Earth & Env. Science
-                                    </Link>
+
+                                    {/* Option 2: Majors (Nested Dropdown) */}
+                                    <div className="group/majors relative">
+                                        <button className="w-full flex items-center justify-between gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors text-left cursor-default">
+                                            <div className="flex items-center gap-3">
+                                                <div className="p-2 bg-blue-50 text-blue-600 rounded-md group-hover/majors:bg-blue-600 group-hover/majors:text-white transition-colors shrink-0">
+                                                    <GraduationCap className="w-5 h-5" />
+                                                </div>
+                                                <div>
+                                                    <div className="font-bold text-sm text-gray-900">Majors</div>
+                                                    <div className="text-[10px] font-semibold text-blue-600 uppercase tracking-wide">Semesters 4-8</div>
+                                                </div>
+                                            </div>
+                                            <ChevronRight className="w-4 h-4 text-slate-400 group-hover/majors:text-blue-600 transition-colors" />
+                                        </button>
+
+                                        {/* Nested Flyout Menu */}
+                                        <div className="absolute left-full top-0 ml-2 w-60 bg-white shadow-xl rounded-xl border border-slate-100 p-2 opacity-0 invisible group-hover/majors:opacity-100 group-hover/majors:visible transition-all duration-200 transform -translate-x-2 group-hover/majors:translate-x-0 ring-1 ring-black/5">
+                                            <div className="space-y-0.5">
+                                                <Link href="/course-structure/biology" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-green-50/50 hover:text-green-700 transition-colors group/link">
+                                                    <span className="w-2 h-2 rounded-full bg-green-500 group-hover/link:scale-125 transition-transform"></span>
+                                                    <span className="text-sm font-bold text-slate-700">Biology</span>
+                                                </Link>
+                                                <Link href="/course-structure/chemistry" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-purple-50/50 hover:text-purple-700 transition-colors group/link">
+                                                    <span className="w-2 h-2 rounded-full bg-purple-500 group-hover/link:scale-125 transition-transform"></span>
+                                                    <span className="text-sm font-bold text-slate-700">Chemistry</span>
+                                                </Link>
+                                                <Link href="/course-structure/physics" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-blue-50/50 hover:text-blue-700 transition-colors group/link">
+                                                    <span className="w-2 h-2 rounded-full bg-blue-500 group-hover/link:scale-125 transition-transform"></span>
+                                                    <span className="text-sm font-bold text-slate-700">Physics</span>
+                                                </Link>
+                                                <Link href="/course-structure/mathematics" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-red-50/50 hover:text-red-700 transition-colors group/link">
+                                                    <span className="w-2 h-2 rounded-full bg-red-500 group-hover/link:scale-125 transition-transform"></span>
+                                                    <span className="text-sm font-bold text-slate-700">Mathematics</span>
+                                                </Link>
+                                                <Link href="/course-structure/earth-environmental-science" className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-teal-50/50 hover:text-teal-700 transition-colors group/link">
+                                                    <span className="w-2 h-2 rounded-full bg-teal-500 group-hover/link:scale-125 transition-transform"></span>
+                                                    <span className="text-sm font-bold text-slate-700">Earth & Env. Science</span>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -198,7 +223,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                         </li>
                         <li className="relative group perspective">
                             <Link
-                                href="/people/administration"
+                                href="/people"
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 flex items-center text-sm font-semibold tracking-wide rounded-md my-1"
                             >
                                 People <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
@@ -210,10 +235,16 @@ const Navbar: React.FC<NavbarProps> = () => {
                             >
                                 <div className="py-2">
                                     <Link
-                                        href="/people/administration"
+                                        href="/people/deans"
                                         className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
                                     >
-                                        Dean & Co-ordinators
+                                        Deans
+                                    </Link>
+                                    <Link
+                                        href="/people/coordinators"
+                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                                    >
+                                        Coordinators
                                     </Link>
                                     <Link
                                         href="/people/instructors"
@@ -245,10 +276,10 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 Contact Us
                             </Link>
                         </li>
-                    </ul>
+                    </ul >
 
                     {/* Mobile Menu Dropdown */}
-                    <div className={`${isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'} md:hidden absolute top-full left-0 w-full bg-blue-900 shadow-xl overflow-y-auto transition-all duration-300 ease-in-out`}>
+                    < div className={`${isMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'} md:hidden absolute top-full left-0 w-full bg-blue-900 shadow-xl overflow-y-auto transition-all duration-300 ease-in-out`}>
                         <ul className="flex flex-col p-4 space-y-2">
                             <li>
                                 <Link href="/" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
@@ -265,12 +296,21 @@ const Navbar: React.FC<NavbarProps> = () => {
                                     Course Structure <ChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === 'course-structure' ? 'rotate-180' : ''}`} />
                                 </button>
                                 <div className={`${activeSubmenu === 'course-structure' ? 'block' : 'hidden'} pl-8 pr-4 py-2 space-y-2 bg-blue-950/50 rounded-md mt-1`}>
-                                    <Link href="/course-structure" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Overview</Link>
-                                    <Link href="/course-structure/biology" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Biology</Link>
-                                    <Link href="/course-structure/chemistry" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Chemistry</Link>
-                                    <Link href="/course-structure/physics" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Physics</Link>
-                                    <Link href="/course-structure/mathematics" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Mathematics</Link>
-                                    <Link href="/course-structure/earth-environmental-science" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Earth & Env. Science</Link>
+
+                                    <Link href="/course-structure/shared-curriculum" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>
+                                        <div className="flex items-center gap-2">
+                                            <BookOpen className="w-4 h-4" />
+                                            <span>Shared Curriculum (Sem 1-3)</span>
+                                        </div>
+                                    </Link>
+
+                                    <div className="pt-3 pb-1 text-xs font-bold text-blue-400 uppercase tracking-widest pl-1">Majors (Sem 4-8)</div>
+
+                                    <Link href="/course-structure/biology" className="block py-2 pl-4 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Biology</Link>
+                                    <Link href="/course-structure/physics" className="block py-2 pl-4 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Physics</Link>
+                                    <Link href="/course-structure/chemistry" className="block py-2 pl-4 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Chemistry</Link>
+                                    <Link href="/course-structure/mathematics" className="block py-2 pl-4 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Mathematics</Link>
+                                    <Link href="/course-structure/earth-environmental-science" className="block py-2 pl-4 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Earth & Env. Science</Link>
                                 </div>
                             </li>
 
@@ -320,7 +360,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                                     People <ChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === 'people' ? 'rotate-180' : ''}`} />
                                 </button>
                                 <div className={`${activeSubmenu === 'people' ? 'block' : 'hidden'} pl-8 pr-4 py-2 space-y-2 bg-blue-950/50 rounded-md mt-1`}>
-                                    <Link href="/people/administration" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Dean & Co-ordinators</Link>
+                                    <Link href="/people/deans" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Deans</Link>
+                                    <Link href="/people/coordinators" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Coordinators</Link>
                                     <Link href="/people/instructors" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>UG Instructors</Link>
                                     <Link href="/people/teaching-assistants" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Teaching Assistants</Link>
                                     <Link href="/people/office-staff" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Office Staff</Link>
@@ -333,11 +374,11 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 </Link>
                             </li>
                         </ul>
-                    </div>
+                    </div >
 
-                </div>
-            </div>
-        </nav>
+                </div >
+            </div >
+        </nav >
     );
 };
 

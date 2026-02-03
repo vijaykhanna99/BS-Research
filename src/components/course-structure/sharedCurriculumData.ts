@@ -5,6 +5,7 @@ export const semesters = [
         courses: [
             {
                 code: "UMA 101",
+                type: "Basic Courses",
                 name: "Analysis and Linear Algebra I",
                 credits: "4:0",
                 instructor: "Soumya Das",
@@ -17,8 +18,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UBL 101T/UBL 101L",
-                name: "Introductory Biology I (Theory/Lab)",
+                code: "UBL 101",
+                type: "Basic Courses",
+                name: "Introductory Biology I",
                 credits: "3:1",
                 instructor: "Sumanta Bagchi",
                 isElective: false,
@@ -40,8 +42,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UCY 101/UCY 101L",
-                name: "Introductory Chemistry I (Theory/Lab)",
+                code: "UCY 101",
+                type: "Basic Courses",
+                name: "Introductory Chemistry I",
                 credits: "3:1",
                 instructor: "Anshu Pandey",
                 isElective: false,
@@ -54,8 +57,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UPHT 101T/UPHT 101L",
-                name: "Introductory Physics I (Theory/Lab)",
+                code: "UPHT 101",
+                type: "Basic Courses",
+                name: "Introductory Physics I",
                 credits: "3:1",
                 instructor: "Sebabrata Mukherjee",
                 isElective: false,
@@ -73,7 +77,8 @@ export const semesters = [
             },
             {
                 code: "UHS",
-                name: "Humanities (Mandatory)",
+                type: "Humanities",
+                name: "Humanities",
                 credits: "2:0",
                 instructor: "-",
                 isElective: false,
@@ -88,6 +93,7 @@ export const semesters = [
         courses: [
             {
                 code: "UENG 103",
+                type: "Engineering",
                 name: "Introduction to Earth and Its Environment",
                 credits: "3:0",
                 instructor: "Ramananda Chakrabarti, Attreyee Ghosh and Sambuddha Misra",
@@ -105,8 +111,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UBL 102/UBL 102L",
-                name: "Introductory Biology II (Theory/Lab)",
+                code: "UBL 102",
+                type: "Basic Courses",
+                name: "Introductory Biology II",
                 credits: "3:1",
                 instructor: "Dipshikha Chakravortty",
                 isElective: false,
@@ -123,8 +130,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UCY 102/UCY 102L",
-                name: "Introductory Chemistry II (Theory/Lab)",
+                code: "UCY 102",
+                type: "Basic Courses",
+                name: "Introductory Chemistry II",
                 credits: "3:1",
                 instructor: "Sreedhara M B",
                 isElective: false,
@@ -140,6 +148,7 @@ export const semesters = [
             },
             {
                 code: "UMA 102",
+                type: "Basic Courses",
                 name: "Analysis and Linear Algebra II",
                 credits: "4:0",
                 instructor: "Purvi Gupta",
@@ -155,8 +164,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UPH 102T/UPH 102L",
-                name: "Introductory Physics II (Theory/Lab)",
+                code: "UPH 102",
+                type: "Basic Courses",
+                name: "Introductory Physics II",
                 credits: "3:1",
                 instructor: "Gaurav Narain",
                 isElective: false,
@@ -169,17 +179,19 @@ export const semesters = [
                 ]
             },
             {
-                code: "UHS",
-                name: "Humanities (Optional)",
-                credits: "2-0",
+                code: "UHS**",
+                type: "Humanities",
+                name: "Humanities",
+                credits: "0-2",
                 instructor: "-",
                 isElective: true,
                 instructorProfile: "",
                 detailsLink: "/assets/Humanities%20Courses.%20.pdf",
             },
             {
-                code: "UENG 102T/UENG 102L",
-                name: "Electrical and Electronics Engineering (Theory/Lab)",
+                code: "UENG 102",
+                type: "Optional Elective",
+                name: "Electrical and Electronics Engineering",
                 credits: "3:1",
                 instructor: "Deepak D'Souza, Kaushik Basu",
                 isElective: true,
@@ -190,13 +202,14 @@ export const semesters = [
                 ],
             },
         ],
-        totalCredits: "17-21",
+        totalCredits: "15-21",
     },
     {
         title: "Semester 3",
         courses: [
             {
                 code: "UENG 201",
+                type: "Engineering",
                 name: "Introduction to Materials Science",
                 credits: "3:0",
                 instructor: "Suchandrima Das",
@@ -208,8 +221,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UBL 201/UBL 201L",
-                name: "Introductory Biology III (Theory/Lab)",
+                code: "UBL 201",
+                type: "Basic Courses",
+                name: "Introductory Biology III",
                 credits: "3:1",
                 instructor: "Dipankar Nandi",
                 isElective: false,
@@ -223,8 +237,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UCY 201/UCY 201L",
-                name: "Introductory Chemistry III (Theory/Lab)",
+                code: "UCY 201",
+                type: "Basic Courses",
+                name: "Introductory Chemistry III",
                 credits: "3:1",
                 instructor: "Akkattu T Biju",
                 isElective: false,
@@ -241,6 +256,7 @@ export const semesters = [
             },
             {
                 code: "UMA 201",
+                type: "Basic Courses",
                 name: "Probability and Statistics",
                 credits: "4:0",
                 instructor: "Sanchayan Sen",
@@ -257,8 +273,9 @@ export const semesters = [
                 ]
             },
             {
-                code: "UPH 201T/UPH 201L",
-                name: "Introductory Physics III (Theory/Lab)",
+                code: "UPH 201",
+                type: "Basic Courses",
+                name: "Introductory Physics III",
                 credits: "3:1",
                 instructor: "Prerna Sharma",
                 isElective: false,
@@ -275,17 +292,19 @@ export const semesters = [
                 ]
             },
             {
-                code: "UHS",
-                name: "Humanities (Optional)",
+                code: "UHS**",
+                type: "Humanities",
+                name: "Humanities",
                 credits: "2-0",
                 instructor: "-",
                 isElective: true,
                 instructorProfile: "",
-                detailsLink: "/assets/Humanities Courses. .pdf",
+                detailsLink: "/assets/Humanities%20Courses.%20.pdf",
             },
             {
-                code: "UENG 101T/UENG 101L",
-                name: "Algorithms and Programming (Theory/Lab)",
+                code: "UENG 101",
+                type: "Optional Elective",
+                name: "Algorithms and Programming",
                 credits: "3:1",
                 instructor: "L Sunil Chandran, Viraj Kumar",
                 isElective: true,
@@ -296,7 +315,7 @@ export const semesters = [
                 ],
             },
         ],
-        totalCredits: "17-21",
+        totalCredits: "15-21",
     },
 ];
 

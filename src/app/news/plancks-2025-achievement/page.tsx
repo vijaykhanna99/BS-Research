@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from 'next/image';
 import { ArrowLeft, Calendar, Share2, MapPin, User, Award } from "lucide-react";
 import Link from "next/link";
 
@@ -19,10 +20,12 @@ export default function PlancksAchievementPage() {
                 <article className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
                     {/* Hero Image */}
                     <div className="relative h-[300px] md:h-[400px] w-full">
-                        <img
-                            src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+                        <Image
+                            src="/assets/physics-dept.jpg"
                             alt="Physics equations on a chalkboard"
-                            className="w-full h-full object-cover"
+                            fill
+                            className="object-cover"
+                            priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg mb-4 w-fit">

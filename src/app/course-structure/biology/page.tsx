@@ -4,7 +4,7 @@ import DepartmentTemplate from "@/components/course-structure/DepartmentTemplate
 
 const biologyData = {
     name: "Biology",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/biology-dept.jpg",
     description: "Explore the science of life, from molecular biology to ecology.",
     overview: "The curriculum for the Biology major is rigorously designed to provide a comprehensive scientific foundation. Building on the core coursework of the first three semesters, the program transitions into specialized advanced topics and research opportunities. All students are required to complete a minimum of 131 credits to qualify for the Bachelor of Science (Research) degree.",
     tag: "Life Sciences",
@@ -69,12 +69,13 @@ const biologyData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
+                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
                 },
                 {
                     code: "-",
@@ -124,9 +125,9 @@ const biologyData = {
                     ]
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
@@ -193,9 +194,9 @@ const biologyData = {
                     description: "The vertebrate nervous system and its organization; demonstration of tissue sectioning techniques; preparation of primary neuronal cultures and imaging neurons; recording and manipulating activity live neurons; rate coding; macrostimulation; effect of temperature and stretch on conduction velocity; neuropharmacology – effects of nicotine MSG; measuring the somatosensory homunculus; measuring alpha rhythm and surprise potentials with EEG; building a blink interface by recording eye potentials."
                 },
                 {
-                    code: "UHS",
-                    name: "Humanities (Optional)",
-                    credits: "2:0",
+                    code: "UHS**",
+                    name: "Humanities",
+                    credits: "0:3",
                     instructor: "-",
                     isElective: true,
                     instructorProfile: null,
