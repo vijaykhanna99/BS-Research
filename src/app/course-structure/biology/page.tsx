@@ -69,17 +69,15 @@ const biologyData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
                     credits: "11:15",
                     instructor: "-",
                     isElective: true,
@@ -89,6 +87,7 @@ const biologyData = {
             ],
             totalCredits: "15-21",
             ReducedLoad: "15-17",
+            EnhancedLoad: "15-21",
         },
         {
             title: "Semester 5",
@@ -111,40 +110,26 @@ const biologyData = {
                     instructorProfile: "http://www.ces.iisc.ernet.in/kartik/",
                     description: "Students will explore key concepts in Ecology, Evolution and Behaviour using field methods, laboratory manipulations and computer simulations. Students will design many of their own experiments and will utilize different modes of scientific communication, including oral presentations and documentaries. Topics include niche and population dynamics, competition and predation, trophic interactions, evolution and adaptation, natural and sexual selection, and conservation. This module also includes a mandatory field trip where students develop an independent research project."
                 },
-                {
-                    code: "UB 309",
-                    name: "Genetics",
-                    credits: "2:0",
-                    instructor: "Kavita Babu",
-                    isElective: false,
-                    instructorProfile: "https://cns.iisc.ac.in/people/kavita-babu/",
-                    description: "Genes to genomics with an emphasis on model systems, Mendel’s Principals, Extension of Mendel’s laws, Inheritance with respect to chromosomes, Gene mapping, DNA structure and replication, Gene mutation analysis, Gene expression, Gene and genome analysis, Gene regulation in prokaryotes, Epigenetics, Gene regulation in Eukaryotes, Genetics of Development, Genetics of Cancer, Population Genetics",
-                    books: [
-                        "Genetics: From Genes to Genomes",
-                        "Leland Hartwell, Michael Goldberg, Janice Fisher and Leroy Hood 6th Edition, Copyright@2018"
-                    ]
-                },
-                {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
+
                 {
                     code: "-",
-                    name: "Elective",
-                    credits: "14:16",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "11:16",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
                     instructorProfile: null,
                 },
             ],
-            totalCredits: "16-21",
             ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 6",
@@ -180,31 +165,17 @@ const biologyData = {
                     instructorProfile: "https://mbu.iisc.ac.in/people/vidya/index.html",
                     description: "UV spectroscopy of proteins (quantitation and determination of extinction coefficient), Estimation of free sulfhydryl groups in proteins by Ellman’s assay, Fluorescence spectroscopy of proteins, determination of tryptophan accessibility by acrylamide quenching, CD spectroscopy of proteins and calculation of helical contents, CD spectroscopy of DNA (monitoring the role of salt and oligonucleotide sequence in the formation of G-quadruplexes), UV spectroscopy of DNA (determination of melting temperature and influence of buffer composition), computational biophysics: molecular visualization and graphics."
                 },
-                {
-                    code: "UB 304",
-                    name: "Experiments in Neurobiology",
-                    credits: "0:1",
-                    instructor: "Arnab Barik and Ashesh Dhawale",
-                    isElective: false,
-                    instructorProfile: "https://cns.iisc.ac.in/people/arnab-barik/",
-                    instructors: [
-                        { name: "Arnab Barik", profile: "https://cns.iisc.ac.in/people/arnab-barik/" },
-                        { name: "Ashesh Dhawale", profile: "https://cns.iisc.ac.in/people/ashesh-dhawale/" }
-                    ],
-                    description: "The vertebrate nervous system and its organization; demonstration of tissue sectioning techniques; preparation of primary neuronal cultures and imaging neurons; recording and manipulating activity live neurons; rate coding; macrostimulation; effect of temperature and stretch on conduction velocity; neuropharmacology – effects of nicotine MSG; measuring the somatosensory homunculus; measuring alpha rhythm and surprise potentials with EEG; building a blink interface by recording eye potentials."
-                },
-                {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
+
                 {
                     code: "-",
-                    name: "Elective",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
                     credits: "14:17",
                     instructor: "-",
                     isElective: true,
@@ -214,6 +185,7 @@ const biologyData = {
             ],
             totalCredits: "16-21",
             ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 7",
@@ -222,7 +194,7 @@ const biologyData = {
                 {
                     code: "-",
                     name: "Elective",
-                    credits: "08:13",
+                    credits: "08:16",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -232,7 +204,7 @@ const biologyData = {
             ],
             totalCredits: "16-21",
             ReducedLoad: "16-18",
-
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 8",
@@ -247,7 +219,9 @@ const biologyData = {
                     instructorProfile: "http://www.physics.iisc.ernet.in/~bm/",
                 },
             ],
-            totalCredits: "16",
+            totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
     ],
     customMastersContent: (

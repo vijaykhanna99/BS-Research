@@ -1,18 +1,21 @@
-import PlaceholderList from "@/components/people/lists/PlaceholderList";
+
+import { GraduationCap, Clock } from "lucide-react";
 
 export default function StandaloneInstructorsPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-16 px-4">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-12 text-center">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4 tracking-tight">
-                        UG Instructors
-                    </h1>
-                    <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                        Faculty members teaching in the undergraduate program.
-                    </p>
-                </div>
-                <PlaceholderList name="UG Instructors" />
+        <div className="min-h-screen bg-white py-20 px-4 flex flex-col items-center justify-start">
+            <div className="max-w-4xl mx-auto text-center">
+                <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                    UG Instructors
+                </h1>
+                <div className="h-px w-20 bg-gray-200 mx-auto mb-10"></div>
+
+                <h2 className="text-2xl font-medium text-gray-500">
+                    Coming Soon
+                </h2>
+                <p className="text-gray-400 mt-2">
+                    Will be available soon.
+                </p>
             </div>
         </div>
     );

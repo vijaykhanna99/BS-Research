@@ -193,6 +193,92 @@ const DepartmentTemplate = ({
                                                     </tr>
                                                 );
                                             }
+
+                                            // Sub-courses logic (e.g., OR conditions)
+                                            if (course.subCourses && course.subCourses.length > 0) {
+                                                return (
+                                                    <tr key={index} className="hover:bg-gray-50 transition-colors">
+                                                        {/* Code Column */}
+                                                        <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200 whitespace-nowrap align-top">
+                                                            <div className="flex flex-col items-start gap-0.5">
+                                                                {course.subCourses.map((sub: any, subIndex: number) => (
+                                                                    <React.Fragment key={subIndex}>
+                                                                        <button
+                                                                            onClick={() => {
+                                                                                if (!sub.disableDetails) setSelectedCourse(sub);
+                                                                            }}
+                                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${sub.disableDetails ? 'cursor-default hover:no-underline' : ''}`}
+                                                                        >
+                                                                            {sub.code}
+                                                                        </button>
+                                                                        {subIndex < course.subCourses.length - 1 && (
+                                                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">OR</span>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+
+                                                        {/* Name Column */}
+                                                        <td className="px-4 py-3 text-gray-900 border-r border-gray-200 align-top">
+                                                            <div className="flex flex-col items-start gap-0.5">
+                                                                {course.subCourses.map((sub: any, subIndex: number) => (
+                                                                    <React.Fragment key={subIndex}>
+                                                                        <button
+                                                                            onClick={() => {
+                                                                                if (!sub.disableDetails) setSelectedCourse(sub);
+                                                                            }}
+                                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${sub.disableDetails ? 'cursor-default hover:no-underline' : ''}`}
+                                                                        >
+                                                                            {sub.name}
+                                                                        </button>
+                                                                        {subIndex < course.subCourses.length - 1 && (
+                                                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">OR</span>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+
+                                                        {/* Instructor Column */}
+                                                        <td className="px-4 py-3 text-blue-600 border-r border-gray-200 align-top">
+                                                            <div className="flex flex-col items-start gap-0.5">
+                                                                {course.subCourses.map((sub: any, subIndex: number) => (
+                                                                    <React.Fragment key={subIndex}>
+                                                                        <div>
+                                                                            {sub.instructorProfile ? (
+                                                                                <a href={sub.instructorProfile} target="_blank" rel="noopener noreferrer" className="hover:underline" onClick={(e) => e.stopPropagation()}>
+                                                                                    {sub.instructor}
+                                                                                </a>
+                                                                            ) : (
+                                                                                sub.instructor
+                                                                            )}
+                                                                        </div>
+                                                                        {subIndex < course.subCourses.length - 1 && (
+                                                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">OR</span>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+
+                                                        {/* Credits Column */}
+                                                        <td className="px-4 py-3 text-center text-gray-900 font-medium border-r border-gray-200 align-top">
+                                                            <div className="flex flex-col items-center gap-0.5">
+                                                                {course.subCourses.map((sub: any, subIndex: number) => (
+                                                                    <React.Fragment key={subIndex}>
+                                                                        <span>{sub.credits}</span>
+                                                                        {subIndex < course.subCourses.length - 1 && (
+                                                                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">OR</span>
+                                                                        )}
+                                                                    </React.Fragment>
+                                                                ))}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            }
+
                                             return (
                                                 <tr key={index} className="hover:bg-gray-50 transition-colors">
                                                     <td className="px-4 py-3 font-medium text-gray-900 border-r border-gray-200 whitespace-nowrap">
@@ -201,7 +287,7 @@ const DepartmentTemplate = ({
                                                                 if (course.name.includes("Elective")) {
                                                                     document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' });
                                                                 } else if (course.detailsLink) {
-                                                                    window.open(course.detailsLink, '_blank');
+                                                                    window.open(course.detailsLink, '_blank', 'noopener,noreferrer');
                                                                 } else if (!course.disableDetails) {
                                                                     setSelectedCourse(course);
                                                                 }
@@ -212,20 +298,24 @@ const DepartmentTemplate = ({
                                                         </button>
                                                     </td>
                                                     <td className="px-4 py-3 text-gray-900 border-r border-gray-200">
-                                                        <button
-                                                            onClick={() => {
-                                                                if (course.name.includes("Elective")) {
-                                                                    document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' });
-                                                                } else if (course.detailsLink) {
-                                                                    window.open(course.detailsLink, '_blank');
-                                                                } else if (!course.disableDetails) {
-                                                                    setSelectedCourse(course);
-                                                                }
-                                                            }}
-                                                            className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink && !course.name.includes("Elective") ? 'cursor-default hover:no-underline' : ''}`}
-                                                        >
-                                                            {course.name}
-                                                        </button>
+                                                        {course.customNameRender && !course.useDefaultNameClick ? (
+                                                            course.customNameRender
+                                                        ) : (
+                                                            <button
+                                                                onClick={() => {
+                                                                    if (course.name.includes("Elective")) {
+                                                                        document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' });
+                                                                    } else if (course.detailsLink) {
+                                                                        window.open(course.detailsLink, '_blank', 'noopener,noreferrer');
+                                                                    } else if (!course.disableDetails) {
+                                                                        setSelectedCourse(course);
+                                                                    }
+                                                                }}
+                                                                className={`text-left hover:text-blue-600 hover:underline transition-colors ${course.disableDetails && !course.detailsLink && !course.name.includes("Elective") ? 'cursor-default hover:no-underline' : ''}`}
+                                                            >
+                                                                {course.customNameRender || course.name}
+                                                            </button>
+                                                        )}
                                                     </td>
                                                     <td className="px-4 py-3 text-blue-600 border-r border-gray-200">
                                                         {(course.name.toLowerCase().includes("project") || course.name.includes("Elective")) ? (
@@ -237,7 +327,7 @@ const DepartmentTemplate = ({
                                                                         <React.Fragment key={i}>
                                                                             {i > 0 && ", "}
                                                                             {inst.profile ? (
-                                                                                <a href={inst.profile} target="_blank" className="hover:underline">
+                                                                                <a href={inst.profile} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                                                                     {inst.name}
                                                                                 </a>
                                                                             ) : (
@@ -248,7 +338,7 @@ const DepartmentTemplate = ({
                                                                 </>
                                                             ) : (
                                                                 course.instructorProfile ? (
-                                                                    <a href={course.instructorProfile} target="_blank" className="hover:underline">
+                                                                    <a href={course.instructorProfile} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                                                         {course.instructor}
                                                                     </a>
                                                                 ) : course.instructor
@@ -262,15 +352,24 @@ const DepartmentTemplate = ({
 
                                         {/* Footer Rows */}
                                         {(currentSemester as any).ReducedLoad && (
-                                            <tr className="bg-gray-50 font-bold">
+                                            <tr className="bg-gray-50 font-bold border-t border-gray-200">
                                                 <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-600">Reduced Load</td>
                                                 <td className="px-4 py-3 text-center text-gray-900">{(currentSemester as any).ReducedLoad}</td>
                                             </tr>
                                         )}
-                                        <tr className="bg-gray-50 font-bold border-t-2 border-gray-300">
-                                            <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-900">Total Credits</td>
-                                            <td className="px-4 py-3 text-center text-gray-900">{currentSemester.totalCredits}</td>
-                                        </tr>
+                                        {(currentSemester as any).EnhancedLoad && (
+                                            <tr className="bg-gray-50 font-bold">
+                                                <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-600">Enhanced Load</td>
+                                                <td className="px-4 py-3 text-center text-gray-900">{(currentSemester as any).EnhancedLoad}</td>
+                                            </tr>
+                                        )}
+                                        {(currentSemester as any).ElectiveCount && (
+                                            <tr className="bg-gray-50 font-bold">
+                                                <td colSpan={3} className="px-4 py-3 text-right border-r border-gray-200 text-gray-600">Elective/Humanities Count</td>
+                                                <td className="px-4 py-3 text-center text-gray-900">{(currentSemester as any).ElectiveCount}</td>
+                                            </tr>
+                                        )}
+
                                     </tbody>
                                 </table>
                             </div>

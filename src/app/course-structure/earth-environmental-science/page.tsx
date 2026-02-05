@@ -57,18 +57,16 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "3:0",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "8:11",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -77,12 +75,14 @@ const earthScienceData = {
 
             ],
             totalCredits: "15-21",
+            ReducedLoad: "15-17",
+            EnhancedLoad: "15-21",
         },
         {
             title: "Semester 5",
             courses: [
                 {
-                    code: "UEES 301T",
+                    code: "UEES 301",
                     name: "Introduction to Earth Systems",
                     credits: "2:1",
                     instructor: "Sambuddha Misra",
@@ -123,18 +123,16 @@ const earthScienceData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "3:0",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "9:12",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -142,6 +140,8 @@ const earthScienceData = {
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 6",
@@ -165,18 +165,16 @@ const earthScienceData = {
                     instructorProfile: null,
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities Courses. .pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "3:0",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "12:15",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -184,6 +182,8 @@ const earthScienceData = {
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 7",
@@ -200,14 +200,16 @@ const earthScienceData = {
 
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
 
         },
         {
             title: "Semester 8",
             courses: [
                 {
-                    code: "UES 402",
-                    name: "Project II",
+                    code: "UES 400",
+                    name: "PROJECT: Earth and Environmental Sciences",
                     credits: "0:15",
                     instructor: "Faculty",
                     isElective: false,
@@ -216,7 +218,7 @@ const earthScienceData = {
                 {
                     code: "-",
                     name: "Elective",
-                    credits: "6:0",
+                    credits: "3:6",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -224,6 +226,8 @@ const earthScienceData = {
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
     ],
     customMastersContent: (

@@ -146,7 +146,7 @@ const SharedCurriculum = () => {
                                                         <button
                                                             onClick={() => {
                                                                 if (course.detailsLink) {
-                                                                    window.open(course.detailsLink, '_blank');
+                                                                    window.open(course.detailsLink, '_blank', 'noopener,noreferrer');
                                                                 } else if (!course.disableDetails) {
                                                                     setSelectedCourse(course);
                                                                 }
@@ -167,7 +167,7 @@ const SharedCurriculum = () => {
                                                         <button
                                                             onClick={() => {
                                                                 if (course.detailsLink) {
-                                                                    window.open(course.detailsLink, '_blank');
+                                                                    window.open(course.detailsLink, '_blank', 'noopener,noreferrer');
                                                                 } else if (!course.disableDetails) {
                                                                     setSelectedCourse(course);
                                                                 }
@@ -187,7 +187,7 @@ const SharedCurriculum = () => {
                                                                         <React.Fragment key={i}>
                                                                             {i > 0 && ", "}
                                                                             {inst.profile ? (
-                                                                                <a href={inst.profile} target="_blank" className="hover:underline">
+                                                                                <a href={inst.profile} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                                                                     {inst.name}
                                                                                 </a>
                                                                             ) : (
@@ -198,7 +198,7 @@ const SharedCurriculum = () => {
                                                                 </>
                                                             ) : (
                                                                 course.instructorProfile ? (
-                                                                    <a href={course.instructorProfile} target="_blank" className="hover:underline">
+                                                                    <a href={course.instructorProfile} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                                                         {course.instructor}
                                                                     </a>
                                                                 ) : course.instructor

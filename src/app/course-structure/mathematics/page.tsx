@@ -47,24 +47,25 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "8:0",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "9:12",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
                     instructorProfile: null,
                 },
             ],
             totalCredits: "15-21",
+            ReducedLoad: "15-17",
+            EnhancedLoad: "15-21",
         },
         {
             title: "Semester 5",
@@ -130,59 +131,64 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "3:6",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
                     instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 6",
             courses: [
                 {
-                    code: "MA 213",
-                    name: "Algebra II",
-                    credits: "3:1",
-                    instructor: "R Venkatesh",
-                    isElective: false,
-                    description: "Prerequisite: MA 212. Part A: Field theory - Theory of symmetric polynomials – Newton’s theorem, Basic theory of field extensions, Algebraic and transcendental extensions (and transcendence degree), Construction with straight edge and compass; Gauss-Wantzel theorem, Algebraic closure – Steinitz’s theorem, Splitting fields, normal extensions, Separable extensions, Finite fields: construction, subfields, Frobenius, Primitive element theorem, Dedekind-Artin linear independence of (semi)group characters. Part B: Galois theory - Fundamental theorem of Galois theory (including Normal Basis Theorem), Composite extensions and Galois group, Galois group of cyclotomic extensions, finite fields, Galois groups of polynomials, Fundamental theorem of Algebra, Solvable and radical extensions, insolvability of a quintic.",
-                    instructorProfile: "https://math.iisc.ac.in/~library/r-venkatesh.html",
-                    books: [
-                        "Artin, M., Algebra, Prentice Hall of India, 1994",
-                        "Dummit, D. S. and Foote, R. M., Abstract Algebra, McGraw-Hill, 1986",
-                        "Lang, S., Algebra (3rd Ed.), Springer, 2002",
-                        "Jonathan Alperin and Rowen Bell, Groups and Representations, Graduate Texts in Mathematics 162, Springer Verlag, 1995",
-                        "Hungerford, Algebra, Graduate Texts in Mathematics 73, Springer Verlag, 1974",
-                        "Galois Theory, Artin, E., University of Notre Dame Press, 1944",
-                        "Nathan Jacobson, Basic Algebra I & II, Dover, 2009",
-                        "Nathan Jacobson, Lectures in Abstract Algebra I, II & III, Graduate Text in Mathematics, Springer Verlag, 1951"
-                    ]
-                },
-                {
-                    code: "MA 222",
-                    name: "Measure & Integration",
-                    credits: "3:1",
-                    instructor: "Harish Seshadri",
-                    isElective: false,
-                    description: "Prerequisite: UM 204. Construction of Lebesgue measure, Measurable functions, Lebesgue integration, Abstract measure and abstract integration, Monotone convergence theorem, Dominated convergence theorem, Fatou’s lemma, Comparison of Riemann integration and Lebesgue integration, Product sigma algebras, Product measures, Sections of measurable functions, Fubini’s theorem, Signed measures and Radon-Nikodym theorem, Lp-spaces, Characterization of continuous linear functionals on Lp - spaces, Change of variables, Complex measures, Riesz representation theorem.",
-                    instructorProfile: "https://math.iisc.ac.in/~harish/",
-                    books: [
-                        "Royden, H. L., Real Analysis, Macmillan, 1988",
-                        "Folland, G.B., Real Analysis: Modern Techniques and their Applications (2nd Ed.), Wiley",
-                        "Hewitt, E. and Stromberg, K., Real and Abstract Analysis, Springer, 1969"
+                    subCourses: [
+                        {
+                            code: "MA 213",
+                            name: "Algebra II",
+                            credits: "3:1",
+                            instructor: "R Venkatesh",
+                            isElective: false,
+                            description: "Prerequisite: MA 212. Part A: Field theory - Theory of symmetric polynomials – Newton’s theorem, Basic theory of field extensions, Algebraic and transcendental extensions (and transcendence degree), Construction with straight edge and compass; Gauss-Wantzel theorem, Algebraic closure – Steinitz’s theorem, Splitting fields, normal extensions, Separable extensions, Finite fields: construction, subfields, Frobenius, Primitive element theorem, Dedekind-Artin linear independence of (semi)group characters. Part B: Galois theory - Fundamental theorem of Galois theory (including Normal Basis Theorem), Composite extensions and Galois group, Galois group of cyclotomic extensions, finite fields, Galois groups of polynomials, Fundamental theorem of Algebra, Solvable and radical extensions, insolvability of a quintic.",
+                            instructorProfile: "https://math.iisc.ac.in/~library/r-venkatesh.html",
+                            books: [
+                                "Artin, M., Algebra, Prentice Hall of India, 1994",
+                                "Dummit, D. S. and Foote, R. M., Abstract Algebra, McGraw-Hill, 1986",
+                                "Lang, S., Algebra (3rd Ed.), Springer, 2002",
+                                "Jonathan Alperin and Rowen Bell, Groups and Representations, Graduate Texts in Mathematics 162, Springer Verlag, 1995",
+                                "Hungerford, Algebra, Graduate Texts in Mathematics 73, Springer Verlag, 1974",
+                                "Galois Theory, Artin, E., University of Notre Dame Press, 1944",
+                                "Nathan Jacobson, Basic Algebra I & II, Dover, 2009",
+                                "Nathan Jacobson, Lectures in Abstract Algebra I, II & III, Graduate Text in Mathematics, Springer Verlag, 1951"
+                            ]
+                        },
+                        {
+                            code: "MA 222",
+                            name: "Measure & Integration",
+                            credits: "3:1",
+                            instructor: "Harish Seshadri",
+                            isElective: false,
+                            description: "Prerequisite: UM 204. Construction of Lebesgue measure, Measurable functions, Lebesgue integration, Abstract measure and abstract integration, Monotone convergence theorem, Dominated convergence theorem, Fatou’s lemma, Comparison of Riemann integration and Lebesgue integration, Product sigma algebras, Product measures, Sections of measurable functions, Fubini’s theorem, Signed measures and Radon-Nikodym theorem, Lp-spaces, Characterization of continuous linear functionals on Lp - spaces, Change of variables, Complex measures, Riesz representation theorem.",
+                            instructorProfile: "https://math.iisc.ac.in/~harish/",
+                            books: [
+                                "Royden, H. L., Real Analysis, Macmillan, 1988",
+                                "Folland, G.B., Real Analysis: Modern Techniques and their Applications (2nd Ed.), Wiley",
+                                "Hewitt, E. and Stromberg, K., Real and Abstract Analysis, Springer, 1969"
+                            ]
+                        }
                     ]
                 },
                 {
@@ -214,24 +220,25 @@ const mathData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities Courses. .pdf",
-                },
-                {
                     code: "-",
-                    name: "Elective",
-                    credits: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "6:9",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
                     instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 7",
@@ -248,7 +255,8 @@ const mathData = {
 
             ],
             totalCredits: "16-21",
-
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 8",
@@ -263,6 +271,8 @@ const mathData = {
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
     ],
     customMastersContent: (

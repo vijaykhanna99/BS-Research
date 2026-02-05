@@ -81,23 +81,25 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "2:0",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Electives",
-                    credits: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "8:11",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
+                    instructorProfile: null,
                 },
             ],
             totalCredits: "15-21",
+            ReducedLoad: "15-17",
+            EnhancedLoad: "15-21",
         },
         {
             title: "Semester 5",
@@ -162,23 +164,25 @@ const physicsData = {
                     description: "Identification of NaCl monocrystals (with X-ray unit). Gamma ray absorption with Multi Channel Analyzer (calibration & attenuation coefficient). NMR: Nuclear Magnetic Resonance (find the magnetogyric ratio of Hydrogen and Fluorine). Velocity of sound in liquids (Raman-Nath experiment). Normal modes in (3D) acoustic chamber. Solar cell (IV Characteristics). UV-VIS spectroscopy (Band gap of semiconductor, thickness measurement). X-ray fluorescence with Multi Channel Analyzer. Rutherford Scattering. Elastic Plastic Deformation."
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "2:0",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
                     code: "-",
-                    name: "Electives",
-                    credits: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "6:9",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
+                    instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 6",
@@ -218,23 +222,25 @@ const physicsData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "2:0",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities Courses. .pdf",
-                },
-                {
                     code: "-",
-                    name: "Electives",
-                    credits: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "12:15",
                     instructor: "-",
                     isElective: true,
+                    isStarred: true,
+                    instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 7",
@@ -251,7 +257,8 @@ const physicsData = {
 
             ],
             totalCredits: "16-21",
-
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 8",
@@ -266,9 +273,9 @@ const physicsData = {
                     description: "Continuation of research project.",
                 },
                 {
-                    code: "EL",
+                    code: "",
                     name: "Electives",
-                    credits: "6:0",
+                    credits: "3:6",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
@@ -276,6 +283,8 @@ const physicsData = {
                 }
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
     ],
     staff: {

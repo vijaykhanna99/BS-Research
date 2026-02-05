@@ -1,5 +1,5 @@
 import React from "react";
-import { Quote } from "lucide-react";
+
 
 const AboutProgramme = () => {
     return (
@@ -10,16 +10,10 @@ const AboutProgramme = () => {
 
             <div className="relative z-10">
                 {/* Title Section */}
-                <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-blue-100 p-3 rounded-xl text-blue-600">
-                        <Quote className="w-8 h-8 rotate-180" />
-                    </div>
-                    <div>
-                        <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
-                            About the Programme
-                        </h2>
-                        <div className="h-1 w-20 bg-blue-600 rounded-full mt-2"></div>
-                    </div>
+                <div className="mb-6">
+                    <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
+                        About the Programme
+                    </h2>
                 </div>
 
                 {/* Content Section */}

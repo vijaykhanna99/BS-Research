@@ -172,6 +172,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                                             <a
                                                 href={item.link}
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 key={index}
                                                 className="flex items-center gap-3 p-2.5 hover:bg-slate-50 rounded-md transition-colors group/item"
                                             >

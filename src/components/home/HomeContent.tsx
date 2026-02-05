@@ -108,7 +108,6 @@ const HomeContent = () => {
                                 alt="IISc Campus"
                                 fill
                                 className="object-cover"
-                                priority
                             />
                         </div>
                         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
@@ -167,6 +166,10 @@ const HomeContent = () => {
                 <div>
                     <AboutProgramme />
                 </div>
+            </div>
+
+            <div>
+                <AskIISc />
             </div>
 
             {/* Unified News & Announcements Section - Moved Here */}
@@ -248,7 +251,7 @@ const HomeContent = () => {
                                     { text: "Detailed timetable for 4th Sem Jan-April 2026 released", icon: "📝", date: "JANUARY 01, 2026", link: "/assets/4th%20Semester%20Class%20schedule%20of%20Jan-Apr%202026%20Term%20B%20Sc(Res)%20%26%20B.Tech%20(M%26C)%2009.01.2026%C2%A0(1).pdf" },
                                     { text: "Detailed timetable for 6th Sem Jan-April 2026 released", icon: "📝", date: "JANUARY 01, 2026", link: "/assets/6th%20Semester%20Class%20Schedule%20Jan-Apr%202026%20Term%20B.Sc%20%26%20B.Tech%2009.01.2026.pdf" }
                                 ].map((item, i) => (
-                                    <a key={i} href={item.link} className="block group bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all duration-200 p-5 rounded-lg cursor-pointer">
+                                    <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="block group bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all duration-200 p-5 rounded-lg cursor-pointer">
                                         <div className="flex justify-between items-start mb-2">
                                             <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">{item.date}</span>
                                             <div className="text-slate-300 group-hover:text-blue-500 transition-colors transform group-hover:translate-x-0.5">
@@ -272,9 +275,7 @@ const HomeContent = () => {
                 </div>
             </div>
 
-            <div>
-                <AskIISc />
-            </div>
+
         </div>
     );
 };

@@ -33,11 +33,34 @@ const nextConfig = {
         ],
     },
 
+    poweredByHeader: false,
+
     async headers() {
+        // Content Security Policy
+        const cspHeader = `
+            default-src 'self';
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com;
+            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+            img-src 'self' blob: data: https:;
+            font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
+            frame-src 'self' https://www.youtube.com;
+            connect-src 'self' https://www.google-analytics.com;
+            object-src 'none';
+            base-uri 'self';
+            form-action 'self';
+            frame-ancestors 'none';
+            block-all-mixed-content;
+            upgrade-insecure-requests;
+        `.replace(/\s{2,}/g, ' ').trim()
+
         return [
             {
                 source: '/:path*',
                 headers: [
+                    {
+                        key: 'Content-Security-Policy',
+                        value: cspHeader
+                    },
                     {
                         key: 'X-DNS-Prefetch-Control',
                         value: 'on'

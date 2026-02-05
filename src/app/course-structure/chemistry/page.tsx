@@ -86,26 +86,25 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
-                    code: "EL",
-                    name: "Elective",
-                    credits: "3:0",
+                    code: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "5:9",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
-                    description: "Choose from Department Electives.",
                     instructorProfile: null,
                 },
             ],
             totalCredits: "15-21",
+            ReducedLoad: "15-17",
+            EnhancedLoad: "15-21",
         },
         {
             title: "Semester 5",
@@ -179,26 +178,25 @@ const chemistryData = {
                     description: "Synthesis of Fe-acac complex, Acetylferrocene, Tris-(8-hydroxyquinoline) aluminium, VO(acac)2, Suzuki-Miyaura cross-coupling, Synthesis of Pd2(dba)3, Mn (III) salen complex, polyoxometallate complexes, Ni (II) Schiff base complexes, Europium (III) and Terbium (III) complexes, Cu(I) catalyzed fast and organic solvent-free tandem click chemistry, Cr-coordination complexes, Wittig reaction, Grignard Reaction, Diels Alder reaction, Oxidation of Isoborneol to Camphor, Reduction and other synthesis.",
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
-                    code: "EL",
-                    name: "Elective",
-                    credits: "3:0",
+                    code: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "6:9",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
-                    description: "Choose from Department Electives.",
                     instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 6",
@@ -238,7 +236,7 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UCY 303",
+                    code: "CY 303",
                     name: "Basic Organometallic Chemistry",
                     credits: "3:0",
                     instructor: "P Thilagar",
@@ -263,26 +261,25 @@ const chemistryData = {
                     ]
                 },
                 {
-                    code: "UHS**",
-                    name: "Humanities",
-                    credits: "0:3",
-                    instructor: "-",
-                    isElective: true,
-                    instructorProfile: null,
-                    detailsLink: "/assets/Humanities%20Courses.%20.pdf",
-                },
-                {
-                    code: "EL",
-                    name: "Elective",
-                    credits: "3:0",
+                    code: "-",
+                    name: "Humanities ** / Elective",
+                    customNameRender: (
+                        <div className="flex flex-wrap items-center gap-1 font-medium text-gray-900">
+                            <a href="/assets/Humanities%20Courses.%20.pdf" target="_blank" className="text-gray-900 hover:text-blue-600 hover:underline transition-colors" onClick={(e) => e.stopPropagation()}>Humanities **</a>
+                            <span className="text-gray-400">/</span>
+                            <button onClick={() => document.getElementById('core-electives')?.scrollIntoView({ behavior: 'smooth' })} className="text-gray-900 hover:text-blue-600 hover:underline transition-colors">Elective</button>
+                        </div>
+                    ),
+                    credits: "6:9",
                     instructor: "-",
                     isElective: true,
                     isStarred: true,
-                    description: "Choose from Department Electives.",
                     instructorProfile: null,
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 7",
@@ -315,7 +312,8 @@ const chemistryData = {
 
             ],
             totalCredits: "16-21",
-
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
         {
             title: "Semester 8",
@@ -341,6 +339,8 @@ const chemistryData = {
                 },
             ],
             totalCredits: "16-21",
+            ReducedLoad: "16-18",
+            EnhancedLoad: "16-21",
         },
 
     ],

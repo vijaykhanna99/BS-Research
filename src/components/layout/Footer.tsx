@@ -58,6 +58,7 @@ const Footer = () => {
                                 <a
                                     href="https://scouncil.iisc.ac.in/"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="hover:text-gray-300"
                                 >
                                     Student Council
@@ -67,6 +68,7 @@ const Footer = () => {
                                 <a
                                     href="https://www.iisc.ac.in/health-centre/"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="hover:text-gray-300"
                                 >
                                     {" "}
@@ -77,6 +79,7 @@ const Footer = () => {
                                 <a
                                     href="https://iisc.ac.in/complaints/"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="hover:text-gray-300"
                                 >
                                     Internal Complaint Committee
