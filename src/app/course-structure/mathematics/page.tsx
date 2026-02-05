@@ -6,7 +6,7 @@ const mathData = {
     name: "Mathematics",
     image: "/assets/mathematics-dept.jpg",
     description: "Dive into the language of the universe through numbers and logic.",
-    overview: "The Mathematics major focuses on the core areas of modern mathematics, including algebra, analysis, topology, and geometry. The program is designed to develop rigorous mathematical thinking and problem-solving skills, preparing students for research in pure and applied mathematics.",
+    overview: "The Mathematics major focuses on the core areas of modern mathematics, including algebra, analysis, topology, and geometry. The program is designed to develop rigorous mathematical thinking and problem-solving skills, preparing students for research in pure and applied mathematics.  All students are required to complete a minimum of 131 credits to qualify for the Bachelor of Science (Research) degree.",
     tag: "Formal Sciences",
     colorClass: "text-red-600",
     bgClass: "bg-red-50",

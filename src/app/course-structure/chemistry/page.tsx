@@ -6,7 +6,7 @@ const chemistryData = {
     name: "Chemistry",
     image: "/assets/chemistry-dept.jpg",
     description: "Study matter, its properties, composition, and reactivity.",
-    overview: "The Chemistry major offers a rigorous journey through the fundamental principles of chemical sciences. From understanding atomic structures to complex organic synthesis and physical chemistry, students are equipped with both theoretical knowledge and practical laboratory skills. The curriculum includes specialized electives and a significant research component.",
+    overview: "The Chemistry major offers a rigorous journey through the fundamental principles of chemical sciences. From understanding atomic structures to complex organic synthesis and physical chemistry, students are equipped with both theoretical knowledge and practical laboratory skills. The curriculum includes specialized electives and a significant research component. All students are required to complete a minimum of 131 credits to qualify for the Bachelor of Science (Research) degree.",
     tag: "Chemical Sciences",
     colorClass: "text-purple-600",
     bgClass: "bg-purple-50",

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MoveLeft, ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { electiveMonth, semesters } from "./sharedCurriculumData";
+import { electiveMonth, semesters } from "@/data/sharedCurriculumData";
 
 export interface DepartmentTemplateProps {
     name: string;

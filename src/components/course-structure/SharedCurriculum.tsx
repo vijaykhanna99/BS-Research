@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MoveLeft, Info, AlignLeft, BookOpen, X, AlertCircle, Star } from "lucide-react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { semesters } from "./sharedCurriculumData";
+import { semesters } from "@/data/sharedCurriculumData";
 
 const SharedCurriculum = () => {
     const [activeTab, setActiveTab] = useState(0);

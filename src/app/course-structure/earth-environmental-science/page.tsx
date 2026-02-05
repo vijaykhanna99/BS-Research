@@ -6,7 +6,7 @@ const earthScienceData = {
     name: "Earth & Environmental Science",
     image: "/assets/earth-science-dept.jpg",
     description: "Investigate the Earth's systems and environmental challenges.",
-    overview: "The Earth & Environmental Science major offers an interdisciplinary approach to understanding the Earth's systems. The curriculum covers topics ranging from climate science and environmental chemistry to geochemistry and ecological systems, preparing students to address critical environmental challenges.",
+    overview: "The Earth & Environmental Science major offers an interdisciplinary approach to understanding the Earth's systems. The curriculum covers topics ranging from climate science and environmental chemistry to geochemistry and ecological systems, preparing students to address critical environmental challenges.  All students are required to complete a minimum of 131 credits to qualify for the Bachelor of Science (Research) degree.",
     tag: "Planetary Sciences",
     colorClass: "text-teal-600",
     bgClass: "bg-teal-50",

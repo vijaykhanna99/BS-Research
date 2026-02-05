@@ -6,7 +6,7 @@ const physicsData = {
     name: "Physics",
     image: "/assets/physics-dept.jpg",
     description: "Understand the fundamental forces and laws of the universe.",
-    overview: "The Physics major provides a strong grounding in both theoretical and experimental physics. The program covers the entire spectrum from classical mechanics and electromagnetism to quantum mechanics and statistical physics. Students have the opportunity to engage in cutting-edge research in various frontier areas of physics.",
+    overview: "The Physics major provides a strong grounding in both theoretical and experimental physics. The program covers the entire spectrum from classical mechanics and electromagnetism to quantum mechanics and statistical physics. Students have the opportunity to engage in cutting-edge research in various frontier areas of physics.  All students are required to complete a minimum of 131 credits to qualify for the Bachelor of Science (Research) degree.",
     tag: "Physical Sciences",
     colorClass: "text-blue-600",
     bgClass: "bg-blue-50",
