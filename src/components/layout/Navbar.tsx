@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X, ChevronRight, Info, BookOpen, GraduationCap } from "lucide-react";
+import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X, ChevronRight, Info, BookOpen, GraduationCap, Briefcase, Heart, Shield } from "lucide-react";
 
 interface NavbarProps {
     // Props are no longer needed for page navigation but kept for compatibility if needed
@@ -47,6 +47,45 @@ const Navbar: React.FC<NavbarProps> = () => {
             name: "FAQ",
             link: "/admissions/faq",
             icon: <HelpCircle className="w-4 h-4 text-purple-500" />
+        },
+    ];
+
+    // Student Corner Menu Items
+    const studentCornerItems = [
+        {
+            name: "Student Handbook",
+            link: "/student-handbook",
+            icon: <BookOpen className="w-4 h-4 text-blue-500" />
+        },
+        {
+            name: "Placements",
+            link: "https://occap.iisc.ac.in/", // Keeping the external link from the original Placements button
+            external: true,
+            icon: <Briefcase className="w-4 h-4 text-orange-500" />
+        },
+        {
+            name: "Academic Calendar",
+            link: "/assets/UG Academic Calendar Jan-Apr 2026 (2).pdf", // Local asset link
+            external: true,
+            icon: <Calendar className="w-4 h-4 text-pink-500" />
+        },
+        {
+            name: "Student Council",
+            link: "https://scouncil.iisc.ac.in/",
+            external: true,
+            icon: <Users className="w-4 h-4 text-green-500" />
+        },
+        {
+            name: "Health Center",
+            link: "https://www.iisc.ac.in/health-centre/",
+            external: true,
+            icon: <Heart className="w-4 h-4 text-red-500" />
+        },
+        {
+            name: "Internal Complaint Committee",
+            link: "https://iisc.ac.in/complaints/",
+            external: true,
+            icon: <Shield className="w-4 h-4 text-purple-500" />
         },
     ];
 
@@ -145,14 +184,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <Link
-                                href="/student-handbook"
-                                className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 block text-sm font-semibold tracking-wide rounded-md my-1"
-                            >
-                                Student Handbook
-                            </Link>
-                        </li>
+
 
                         <li className="relative group perspective">
                             <Link
@@ -202,6 +234,54 @@ const Navbar: React.FC<NavbarProps> = () => {
                             </div>
                         </li>
 
+                        {/* Student Corner Dropdown (Desktop) */}
+                        <li className="relative group perspective">
+                            <Link
+                                href="/student-corner"
+                                className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 flex items-center text-sm font-semibold tracking-wide rounded-md my-1"
+                            >
+                                Student Corner <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
+                            </Link>
+
+                            <div
+                                className="absolute left-1/2 -translate-x-1/2 mt-0 w-72 bg-white text-gray-800 shadow-xl rounded-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-slate-100 overflow-hidden ring-1 ring-black/5"
+                            >
+                                <div className="p-1.5">
+                                    {studentCornerItems.map((item, index) =>
+                                        item.external ? (
+                                            <a
+                                                href={item.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                key={index}
+                                                className="flex items-center gap-3 p-2.5 hover:bg-slate-50 rounded-md transition-colors group/item"
+                                            >
+                                                <div className="p-1.5 bg-slate-50 group-hover/item:bg-white rounded-md border border-slate-100 shadow-sm transition-colors shrink-0">
+                                                    {item.icon}
+                                                </div>
+                                                <div className="font-bold text-slate-700 text-sm group-hover/item:text-blue-600 transition-colors">
+                                                    {item.name}
+                                                </div>
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                key={index}
+                                                href={item.link}
+                                                className="flex items-center gap-3 p-2.5 hover:bg-slate-50 rounded-md transition-colors group/item"
+                                            >
+                                                <div className="p-1.5 bg-slate-50 group-hover/item:bg-white rounded-md border border-slate-100 shadow-sm transition-colors shrink-0">
+                                                    {item.icon}
+                                                </div>
+                                                <div className="font-bold text-slate-700 text-sm group-hover/item:text-blue-600 transition-colors">
+                                                    {item.name}
+                                                </div>
+                                            </Link>
+                                        )
+                                    )}
+                                </div>
+                            </div>
+                        </li>
+
                         <li>
                             <a
                                 href="https://odaa.iisc.ac.in/fellowships/"
@@ -212,16 +292,16 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 Fellowship
                             </a>
                         </li>
+
                         <li>
-                            <a
-                                href="https://occap.iisc.ac.in/"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                href="/alumni"
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 block text-sm font-semibold tracking-wide rounded-md my-1"
                             >
-                                Placements
-                            </a>
+                                Alumni
+                            </Link>
                         </li>
+
                         <li className="relative group perspective">
                             <Link
                                 href="/people"
@@ -315,11 +395,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 </div>
                             </li>
 
-                            <li>
-                                <Link href="/student-handbook" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
-                                    Student Handbook
-                                </Link>
-                            </li>
+
 
                             {/* Mobile Admissions */}
                             <li>
@@ -341,16 +417,37 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 </div>
                             </li>
 
+                            {/* Mobile Student Corner */}
+                            <li>
+                                <button
+                                    onClick={() => toggleSubmenu('student-corner')}
+                                    className="w-full flex justify-between items-center py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold"
+                                >
+                                    Student Corner <ChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === 'student-corner' ? 'rotate-180' : ''}`} />
+                                </button>
+                                <div className={`${activeSubmenu === 'student-corner' ? 'block' : 'hidden'} pl-8 pr-4 py-2 space-y-2 bg-blue-950/50 rounded-md mt-1`}>
+                                    {studentCornerItems.map((item, index) => (
+                                        item.external ? (
+                                            <a key={index} href={item.link} target="_blank" className="block py-2 text-sm text-blue-200 hover:text-white">{item.name}</a>
+                                        ) : (
+                                            <Link key={index} href={item.link} className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>{item.name}</Link>
+                                        )
+                                    ))}
+                                </div>
+                            </li>
+
                             <li>
                                 <a href="https://odaa.iisc.ac.in/fellowships/" target="_blank" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
                                     Fellowship
                                 </a>
                             </li>
+
                             <li>
-                                <a href="https://occap.iisc.ac.in/" target="_blank" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
-                                    Placements
-                                </a>
+                                <Link href="/alumni" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
+                                    Alumni
+                                </Link>
                             </li>
+
 
                             {/* Mobile People */}
                             <li>

@@ -146,24 +146,7 @@ const earthScienceData = {
         {
             title: "Semester 6",
             courses: [
-                {
-                    code: "UES 304",
-                    name: "Introduction to Ecological Systems",
-                    credits: "3:0",
-                    instructor: "Sumanta Bagchi",
-                    isElective: false,
-                    description: "Ecosystem structure and function, biodiversity, ecological processes, population biology.",
-                    instructorProfile: "https://ces.iisc.ac.in/?q=user/85",
-                },
-                {
-                    code: "UES 306",
-                    name: "Introduction to Fluid Dynamics",
-                    credits: "3:0",
-                    instructor: "Bishnupriya Sahoo",
-                    isElective: false,
-                    description: "Fluid properties, kinematics, conservation laws, Navier-Stokes equation.",
-                    instructorProfile: null,
-                },
+
                 {
                     code: "-",
                     name: "Humanities ** / Elective",

@@ -200,6 +200,12 @@ export const semesters = [
                     { name: "Deepak D'Souza", profile: "https://eecs.iisc.ac.in/people/deepak-dsouza/" },
                     { name: "Kaushik Basu", profile: "https://eecs.iisc.ac.in/people/kaushik-basu/" },
                 ],
+                description: "Circuit analysis: KVL, KCL, dependent voltage/current sources, series and parallel equivalent, mesh and nodal analysis, Norton and Thevenin’s equivalent, network theorems (superposition, maximum power transfer, Tellegen, Millman etc.), Laplace transform, first and second order RLC circuit transient analysis, RLC circuit analysis in sinusoidal steady state using phasors, idea of complex impedance, active and reactive power, Fourier series, Bode plots and passive filters; P-Njunction theory; Ideal diode, Zener diodes,rectifier, clipper and clamper circuits, Zener- based power supply; MOSFET device theory and derivation of circuit model; MOSFET DC biasing and large signal analysis, small signal analysis CE, CG, CC amplifiers, differential amplifier and source coupled pair, a three-stage differential amplifier; Biasing with MOSFETs, current mirror, cascode, source degeneration; Amplifiers at high frequency; Two stage CMOS Operational Amplifier; Ideal Op-Amp; Op-Amp nonidealities, gain bandwidth product; Op-Amp with negative feedback and applications such as instrumentation amplifier, active filters, and analog computers; Operational Amplifier with positive feedback and applications such as Schmidt trigger, multivibrator, Wein-Bridge oscillator; Sample and Hold, ADC, DAC circuits; Combinational logic functions and its implementation using Boolean algebra (AND/OR/NOT), sum of products-product of sums, reduction with Karnaugh maps; Binary arithmetic, ripple carry adder and multiplier circuits; Multiplexer, de-multiplexer, decoder, encoders, and tri-state buffer; Logical sufficiency of NAND/NOR gates and their implementation with CMOS; Digital circuit design considerations-noise margin, propagation delay, fan- out, power loss; Sequential circuits with RS latch, D-T-JK flipflops and metastability; Asynchronous and synchronous counters; Finite state machines and its implementation; Introduction to computer organization: microprocessors and microcontrollers; Software: SPICE and Verilog/VHDL.",
+                books: [
+                    "Electrical Engineering: Principles and Applications, Allan R Hambley",
+                    "Microelectronic Circuits: Theory And Applications, Sedra, Smith and Chandorkar",
+                    "Fundamentals of digital logic with Verilog design, Stephen Brown and Jovonko Vranesic"
+                ]
             },
         ],
         totalCredits: "15-21",
@@ -313,6 +319,16 @@ export const semesters = [
                     { name: "L Sunil Chandran", profile: "https://eecs.iisc.ac.in/people/sunil-chandran-l/" },
                     { name: "Viraj Kumar", profile: "https://eecs.iisc.ac.in/people/prof-viraj-kumar/" }
                 ],
+                description: "Part 1: Introduction to Python. Implementation, testing and debugging of elementary algorithms in Python involving operators and expressions, basic data types (integers, floats, Booleans, strings, lists), variables (references vs. objects), assignments, conditionals, iteration, functions, recursion, and modules. Part 2: Basic Algorithms and Data Structures. Implementation of iterative algorithms (linear and binary search, string matching, iterative sorting algorithms, etc.) and recursive algorithms (exponentiation, recursive sorting, etc.); Introduction to asymptotic analysis; Big O notation; Recursive relations; Arrays versus Linked lists; Improving running times of algorithms using appropriate data structures such as hash tables, binary search trees, heaps, etc.; Simple graph algorithms (shortest path, minimal spanning tree). Part 3: Introduction to C. Differences between C and Python with respect to syntax and semantics (basic data types: integers, C arrays vs. Python lists, and strings; passing arguments to functions). Pointers and managing dynamic memory in C. Comparing the runtime performance of Python and C implementations of algorithms.",
+                books: [
+                    "How to Think Like a Computer Scientist: Interactive Edition, based on the book by Allan Downy and Jeff Elkner",
+                    "How to Solve it by Computer by R. G. Dromey, Pearson Education, 2007",
+                    "Brian W. Kernighan and Dennis M. Ritchie, The C Programming Language. Prentice Hall of India, 2009",
+                    "Introduction to Programming in Python by Robert Sedgewick, Kevin Wayne, and Robert Dondero, 1st edition, 2015",
+                    "A Byte of Python by Swaroop C H",
+                    "CPython implementation of binary heaps",
+                    "Graphs and Graph Algorithms"
+                ]
             },
         ],
         totalCredits: "15-21",

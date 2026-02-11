@@ -15,7 +15,7 @@ const AskIISc = () => {
                         <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
                             For IISc Aspirants
                         </h2>
-                        <div className="text-lg text-slate-700 leading-relaxed text-justify space-y-4">
+                        <div className="text-base text-slate-700 leading-relaxed space-y-4">
                             <p>
                                 Studying at IISc has been an incredible journey of growth and
                                 discovery. The institute’s rigorous academic environment, world-class

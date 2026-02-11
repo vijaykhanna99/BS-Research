@@ -3,12 +3,12 @@ import React from "react";
 
 const AboutProgramme = () => {
     return (
-        <div className="bg-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <div className="relative overflow-hidden py-12">
             {/* Decorative Background Element */}
             <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-blue-50/50 mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
             <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-purple-50/50 mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
 
-            <div className="relative z-10">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
                 {/* Title Section */}
                 <div className="mb-6">
                     <h2 className="text-3xl font-bold text-slate-900 tracking-tight">
@@ -17,7 +17,7 @@ const AboutProgramme = () => {
                 </div>
 
                 {/* Content Section */}
-                <div className="text-lg text-slate-700 leading-relaxed space-y-6 text-justify">
+                <div className="text-base text-slate-700 leading-relaxed space-y-6">
                     <p>
                         The Bachelor of Science (Research) programme at the Indian Institute of Science (IISc) is a unique four-year undergraduate programme designed for students with a strong curiosity for science and discovery. It combines rigorous training in fundamental sciences with early and sustained exposure to research in a world-class academic environment.
                     </p>
