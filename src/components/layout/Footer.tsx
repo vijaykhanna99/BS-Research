@@ -11,12 +11,12 @@ const Footer = () => {
                 </div>
 
                 <a
-                    href="https://ug.iisc.ac.in/"
+                    href="https://testug.iisc.ac.in"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-blue-400 rounded-full transition-all text-sm font-medium border border-slate-700 hover:border-blue-500/50"
                 >
-                    Main UG Website
+                    UG Website
                     <i className="fas fa-arrow-right text-xs"></i>
                 </a>
             </div>
