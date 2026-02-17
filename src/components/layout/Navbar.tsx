@@ -283,14 +283,12 @@ const Navbar: React.FC<NavbarProps> = () => {
                         </li>
 
                         <li>
-                            <a
-                                href="https://odaa.iisc.ac.in/fellowships/"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                href="/fellowships"
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 block text-sm font-semibold tracking-wide rounded-md my-1"
                             >
-                                Fellowship
-                            </a>
+                                Fellowships
+                            </Link>
                         </li>
 
                         <li>
@@ -437,9 +435,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                             </li>
 
                             <li>
-                                <a href="https://odaa.iisc.ac.in/fellowships/" target="_blank" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
-                                    Fellowship
-                                </a>
+                                <Link href="/fellowships" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
+                                    Fellowships
+                                </Link>
                             </li>
 
                             <li>
