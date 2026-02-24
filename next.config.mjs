@@ -88,6 +88,12 @@ const nextConfig = {
                     {
                         key: 'Permissions-Policy',
                         value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
+                    },
+                    // Mitigate Client Desync (HTTP/1.1 Request Smuggling) Attack Surface
+                    // by explicitly closing persistent connections after each request
+                    {
+                        key: 'Connection',
+                        value: 'close'
                     }
                 ]
             }
@@ -96,3 +102,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+

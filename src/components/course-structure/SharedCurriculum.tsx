@@ -8,22 +8,30 @@ import { semesters } from "@/data/sharedCurriculumData";
 const SharedCurriculum = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [selectedCourse, setSelectedCourse] = useState<any>(null);
+    const [showBack, setShowBack] = useState(false);
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('from') === 'home') {
+                setShowBack(true);
+            }
+        }
+    }, []);
 
     const currentSemester = semesters[activeTab];
 
     return (
         <div className="bg-white pb-8 font-sans text-gray-900">
-            {/* Nav / Back Button */}
-            <div className="bg-white sticky top-0 z-40 border-b border-gray-100 px-6 h-16 flex items-center justify-between shadow-sm">
-                <Link
-                    href="/course-structure"
-                    className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors"
-                >
-                    <MoveLeft className="w-5 h-5 mr-2" /> Back
-                </Link>
-                <span className="text-lg font-bold text-gray-800 hidden md:block">
-                    Shared Curriculum
-                </span>
+            <div className={`bg-white sticky top-0 z-40 px-6 h-16 shadow-sm relative ${showBack ? "border-b border-gray-100 flex items-center" : "hidden"}`}>
+                {showBack && (
+                    <Link
+                        href="/"
+                        className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors absolute left-6"
+                    >
+                        <MoveLeft className="w-5 h-5 mr-2" /> Back
+                    </Link>
+                )}
             </div>
 
             {/* 1. Background Image / Hero */}

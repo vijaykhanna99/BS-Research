@@ -14,9 +14,6 @@ import ScienceDisciplines from "./ScienceDisciplines";
 
 const HomeContent = () => {
     // Assets paths
-    const labImage = "/assets/robot_vehicle.jpg";
-    const highlightImage = "/assets/engineer_pointing.jpg";
-    const championsImg1 = "/assets/champions.png";
 
     // Standard Typography Classes
     const headingClass = "text-2xl font-bold text-slate-900 tracking-tight";
@@ -62,7 +59,7 @@ const HomeContent = () => {
         <div className="bg-white">
 
             {/* Hero Carousel */}
-            <div className="relative h-[480px]">
+            <div className="relative w-full h-[400px] md:h-[480px] lg:h-[520px]">
                 <style>{`
                     .swiper-pagination-bullet {
                         width: 12px;
@@ -100,55 +97,55 @@ const HomeContent = () => {
                     <SwiperSlide>
                         <ScienceDisciplines />
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <div className="relative w-full h-[480px]">
+                        <div className="relative w-full h-full">
                             <Image
-                                src={championsImg1}
-                                alt="IISc Campus"
+                                src="/assets/IMG_9389.JPG"
+                                alt="Catalyzing Careers"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-center"
                             />
-                        </div>
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <div className="text-center text-white">
-                                <h1 className="text-5xl font-bold mb-4 uppercase">
-                                    Champions in research
-                                </h1>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="relative w-full h-[480px]">
+                        <div className="relative w-full h-full">
                             <Image
-                                src={labImage}
-                                alt="Lab Image"
+                                src="/assets/IMG_9485.JPG"
+                                alt="Campus Life"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_35%]"
                             />
-                        </div>
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <div className="text-center text-white">
-                                <h1 className="text-5xl font-bold mb-4 uppercase">
-                                    The Best of the Best
-                                </h1>
-                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="relative w-full h-[480px]">
+                        <div className="relative w-full h-full">
                             <Image
-                                src={highlightImage}
-                                alt="Highlights"
+                                src="/assets/IMG_9424.JPG"
+                                alt="IISc Experience"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-[center_30%]"
                             />
                         </div>
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                            <div className="text-center text-white">
-                                <h1 className="text-5xl font-bold mb-4 uppercase">
-                                    Catalyzing Careers
-                                </h1>
-                            </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/assets/DSC05744.jpg"
+                                alt="Another Perspective"
+                                fill
+                                className="object-cover object-[center_25%]"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="relative w-full h-full">
+                            <Image
+                                src="/assets/image7.jpg"
+                                alt="Lab View"
+                                fill
+                                className="object-cover object-center"
+                            />
                         </div>
                     </SwiperSlide>
                 </Swiper>

@@ -114,12 +114,11 @@ const Navbar: React.FC<NavbarProps> = () => {
                             </Link>
                         </li>
                         <li className="relative group perspective">
-                            <Link
-                                href="/course-structure"
+                            <button
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 flex items-center text-sm font-semibold tracking-wide rounded-md my-1"
                             >
                                 Course Structure <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
-                            </Link>
+                            </button>
 
                             {/* Course Structure Dropdown - Nested Menu Style */}
                             <div
@@ -236,12 +235,11 @@ const Navbar: React.FC<NavbarProps> = () => {
 
                         {/* Student Corner Dropdown (Desktop) */}
                         <li className="relative group perspective">
-                            <Link
-                                href="/student-corner"
+                            <button
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 flex items-center text-sm font-semibold tracking-wide rounded-md my-1"
                             >
                                 Student Corner <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
-                            </Link>
+                            </button>
 
                             <div
                                 className="absolute left-1/2 -translate-x-1/2 mt-0 w-72 bg-white text-gray-800 shadow-xl rounded-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-slate-100 overflow-hidden ring-1 ring-black/5"
@@ -293,10 +291,10 @@ const Navbar: React.FC<NavbarProps> = () => {
 
                         <li>
                             <Link
-                                href="/alumni"
+                                href="/campus-life"
                                 className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 block text-sm font-semibold tracking-wide rounded-md my-1"
                             >
-                                Alumni
+                                Campus Life
                             </Link>
                         </li>
 
@@ -342,6 +340,12 @@ const Navbar: React.FC<NavbarProps> = () => {
                                         className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
                                     >
                                         Office Staff
+                                    </Link>
+                                    <Link
+                                        href="/alumni"
+                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                                    >
+                                        Alumni
                                     </Link>
                                 </div>
                             </div>
@@ -441,8 +445,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                             </li>
 
                             <li>
-                                <Link href="/alumni" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
-                                    Alumni
+                                <Link href="/campus-life" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
+                                    Campus Life
                                 </Link>
                             </li>
 
@@ -461,6 +465,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                                     <Link href="/people/instructors" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>UG Instructors</Link>
                                     <Link href="/people/teaching-assistants" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Teaching Assistants</Link>
                                     <Link href="/people/office-staff" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Office Staff</Link>
+                                    <Link href="/alumni" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Alumni</Link>
                                 </div>
                             </li>
 

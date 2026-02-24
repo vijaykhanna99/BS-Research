@@ -1,5 +1,5 @@
-import CourseStructureGrid from "@/components/course-structure/CourseStructure";
+import { redirect } from 'next/navigation';
 
 export default function CourseStructurePage() {
-    return <CourseStructureGrid />;
+    redirect('/');
 }

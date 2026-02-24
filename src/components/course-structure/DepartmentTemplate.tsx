@@ -41,6 +41,16 @@ const DepartmentTemplate = ({
     const [activeTab, setActiveTab] = useState(0);
     const [electiveTab, setElectiveTab] = useState(0);
     const [selectedCourse, setSelectedCourse] = useState<any>(null);
+    const [showBack, setShowBack] = useState(false);
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('from') === 'home') {
+                setShowBack(true);
+            }
+        }
+    }, []);
 
     // Use major semesters directly
     const currentSemester = majorSemesters[activeTab];
@@ -48,16 +58,15 @@ const DepartmentTemplate = ({
     return (
         <div className="bg-white pb-8 font-sans text-gray-900">
             {/* Nav / Back Button */}
-            <div className="bg-white sticky top-0 z-40 border-b border-gray-100 px-6 h-16 flex items-center justify-between shadow-sm">
-                <Link
-                    href="/course-structure"
-                    className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors"
-                >
-                    <MoveLeft className="w-5 h-5 mr-2" /> Back
-                </Link>
-                <span className="text-lg font-bold text-gray-800 hidden md:block">
-                    {name} Major
-                </span>
+            <div className={`bg-white sticky top-0 z-40 px-6 h-16 shadow-sm relative ${showBack ? "border-b border-gray-100 flex items-center" : "hidden"}`}>
+                {showBack && (
+                    <Link
+                        href="/"
+                        className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors absolute left-6"
+                    >
+                        <MoveLeft className="w-5 h-5 mr-2" /> Back
+                    </Link>
+                )}
             </div>
 
             {/* 1. Background Image / Hero */}
@@ -72,7 +81,7 @@ const DepartmentTemplate = ({
                 <div className="absolute inset-0 bg-black/60"></div>
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
                     <span className="inline-block py-1 px-3 rounded bg-blue-600 text-white text-xs font-bold tracking-widest uppercase mb-4">
-                        Bachelor of Science (Research)
+                        Bachelor of Science (Research) <span className="text-blue-200 mx-1">•</span> Major
                     </span>
                     <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
                         {name}
