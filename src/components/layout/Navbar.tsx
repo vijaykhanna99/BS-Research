@@ -23,6 +23,12 @@ const Navbar: React.FC<NavbarProps> = () => {
     // Admissions Menu Items - Compact
     const admissionItems = [
         {
+            name: "News and Updates",
+            link: "/admissions/news-and-updates",
+            external: false,
+            icon: <Info className="w-4 h-4 text-red-500" />
+        },
+        {
             name: "Apply Online",
             link: "https://admissions-august.iisc.ac.in/index.html",
             external: true,

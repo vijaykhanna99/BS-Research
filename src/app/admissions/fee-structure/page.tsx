@@ -96,9 +96,19 @@ export default function FeeStructurePage() {
                                     </tbody>
                                 </table>
                             </div>
-                            <div className="mt-3 flex items-start gap-2 text-sm text-slate-500 italic">
-                                <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
-                                <p>* to be paid in the first year only</p>
+                            <div className="mt-4 space-y-3">
+                                <div className="flex items-start gap-2 text-sm text-slate-500 italic px-2">
+                                    <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                                    <p>* to be paid in the first year only</p>
+                                </div>
+                                <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                                    <div className="flex gap-3">
+                                        <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+                                        <p className="text-slate-700 text-sm leading-relaxed">
+                                            <strong className="text-amber-800">Note:</strong> Tuition fees and other charges (excluding refundable deposits) mentioned in the ensuing tables will increase uniformly at a rate of <strong>5% annually</strong>.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 

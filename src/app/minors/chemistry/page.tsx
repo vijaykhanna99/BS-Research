@@ -95,7 +95,7 @@ export default function ChemistryMinorPage() {
                                 <tbody className="divide-y divide-gray-200 bg-white">
                                     <tr className="hover:bg-gray-50 transition-colors">
                                         <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UC 207 (2:1)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Instrumental Methods of Chemical Analysis (+ Lab)</td>
+                                        <td className="px-6 py-4 text-gray-900 font-medium">Instrumental Methods of Chemical Analysis</td>
                                         <td className="px-6 py-4 text-gray-600">IV</td>
                                     </tr>
                                 </tbody>
@@ -125,15 +125,15 @@ export default function ChemistryMinorPage() {
                                 </thead>
                                 <tbody className="divide-y divide-gray-200 bg-white">
                                     {[
-                                        { code: "UC 202 (2:0)", name: "Thermodynamics And Electrochemistry", semester: "IV" },
-                                        { code: "UC 204 (2:0)", name: "Inorganic Chemistry: Chemistry Of Elements", semester: "IV" },
-                                        { code: "UC 205 (2:0)", name: "Basic Organic Reactions", semester: "IV" },
-                                        { code: "UC 301 (0:1)", name: "Organic And Inorganic Chemistry (Lab)", semester: "V" },
+                                        { code: "UCY 204 (2:0)", name: "Thermodynamics And Electrochemistry", semester: "IV" },
+                                        { code: "UCY 205 (2:0)", name: "Inorganic Chemistry: Chemistry Of Elements", semester: "IV" },
+                                        { code: "UCY 206 (2:0)", name: "Basic Organic Reactions", semester: "IV" },
+                                        { code: "UCY 301 (0:1)", name: "Organic And Inorganic Chemistry (Lab)", semester: "V" },
                                         { code: "CD 211 (3:0)", name: "Physical Chemistry I - Quantum Chemistry and Group Theory", semester: "V" },
                                         { code: "CD 212 (3:0)", name: "Inorganic Chemistry-Main Group and Coordination Chemistry", semester: "V" },
                                         { code: "CD 213 (3:0)", name: "Organic Chemistry – Structure & Reactivity", semester: "V" },
-                                        { code: "UC 302 (0:1)", name: "Physical And Analytical Chemistry (Lab)", semester: "VI" },
-                                        { code: "UC 303 (3:0)", name: "Basic Organometallic Chemistry", semester: "VI" },
+                                        { code: "UCY 302 (0:1)", name: "Physical And Analytical Chemistry (Lab)", semester: "VI" },
+                                        { code: "CY 303 (3:0)", name: "Basic Organometallic Chemistry", semester: "VI" },
                                         { code: "CD 221 (3:0)", name: "Physical Chemistry II- Statistical Mechanics", semester: "VI" },
                                         { code: "CD 222 (3:0)", name: "Materials Chemistry", semester: "VI" },
                                         { code: "CD 223 (3:0)", name: "Organic Synthesis", semester: "VI" },

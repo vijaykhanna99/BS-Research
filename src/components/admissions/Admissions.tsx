@@ -9,6 +9,14 @@ const Admissions = () => {
     // Links Data
     const links = [
         {
+            title: "News and Updates",
+            description: "Admission Notice for the Academic Year 2026-27.",
+            icon: <MdDescription className="w-6 h-6" />,
+            url: "/admissions/news-and-updates",
+            external: false,
+            theme: "orange"
+        },
+        {
             title: "Apply Online",
             description: "Apply online for the upcoming admissions cycle.",
             icon: <ExternalLink className="w-6 h-6" />,

@@ -54,7 +54,7 @@ export default function EarthEnvironmentalScienceMinorPage() {
 
                     <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
                         <p className="leading-relaxed">
-                            The Minor in Earth and Environmental Science (EES) provides students with a fundamental understanding of earth systems, geophysical processes, and environmental engineering principles. The curriculum is flexible, blending core geology and environmental chemistry courses with a wide range of interdisciplinary electives from participating departments.
+                            The Minor in Earth and Environmental Science (EES) provides students with a fundamental understanding of earth systems, geophysical processes, and environmental engineering principles. The curriculum is highly flexible, allowing students to choose from a variety of geology, environmental chemistry, and interdisciplinary elective courses offered by participating departments.
                         </p>
                     </div>
                 </div>
@@ -65,86 +65,57 @@ export default function EarthEnvironmentalScienceMinorPage() {
                         Curriculum Structure
                     </h2>
 
-                    <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8 shadow-sm">
-                        <h3 className="text-lg font-bold text-blue-900 mb-2 flex items-center gap-2">
-                            <BookOpen className="w-5 h-5 flex-shrink-0" />
-                            Credit Requirement for Minor: 15 Credits Total
-                        </h3>
-                        <p className="text-blue-800 text-[15px] font-semibold tracking-wide">
-                            STUDENTS MUST TAKE A MINIMUM OF 3 COURSES OUT OF THE CORE COURSES LISTED BELOW. REMAINING COURSES CAN BE SELECTED FROM PARTICIPATING EES DEPARTMENTS.
-                        </p>
-                    </div>
 
-                    {/* Core Courses Pool */}
-                    <div className="mb-12 border border-gray-300 rounded-lg overflow-hidden shadow-sm">
-                        <div className="bg-gray-50 px-6 py-4 border-b border-gray-300 flex justify-between items-center">
-                            <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                                <Globe2 className="w-5 h-5 text-blue-600" /> Core Courses Pool
-                            </h3>
-                            <span className="px-3 py-1 bg-white border border-gray-300 rounded-full text-sm font-bold text-gray-700">Select Minimum 3 Courses</span>
+                    {/* Elective Courses */}
+                    <div className="mb-10 border border-gray-300 rounded-xl overflow-hidden shadow-sm">
+                        <div className="bg-gray-50 px-6 py-5 border-b border-gray-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                            <div>
+                                <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-1">
+                                    <Globe2 className="w-5 h-5 text-blue-600" /> Elective Courses List
+                                </h3>
+                            </div>
+                            <span className="px-4 py-1.5 bg-white border border-gray-300 rounded-full text-sm font-bold text-gray-700 shadow-sm whitespace-nowrap">15 Credits Required</span>
                         </div>
                         <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse min-w-[500px]">
+                            <table className="w-full text-left border-collapse min-w-[600px]">
                                 <thead className="bg-white">
                                     <tr className="border-b border-gray-200">
-                                        <th className="px-6 py-3 font-bold text-gray-900 w-[150px]">Course Code</th>
-                                        <th className="px-6 py-3 font-bold text-gray-900">Course Name</th>
-                                        <th className="px-6 py-3 font-bold text-gray-900 w-[100px]">Semester</th>
+                                        <th className="px-6 py-4 font-bold text-gray-900 w-[150px] uppercase tracking-wider text-xs">Course Code</th>
+                                        <th className="px-6 py-4 font-bold text-gray-900 uppercase tracking-wider text-xs">Course Name</th>
+                                        <th className="px-6 py-4 font-bold text-gray-900 w-[120px] uppercase tracking-wider text-xs">Semester</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-gray-200 bg-white">
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UEES 206 (2:1)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Experimental Methods in Environmental Chemistry</td>
-                                        <td className="px-6 py-4 text-gray-600">IV</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UEES 207 (3:0)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Geophysical Processes</td>
-                                        <td className="px-6 py-4 text-gray-600">IV</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UEES 208 (2:1)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Introduction To Mineralogy and Petrology</td>
-                                        <td className="px-6 py-4 text-gray-600">IV</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UEES 301 (2:1)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Introduction To Earth Systems</td>
-                                        <td className="px-6 py-4 text-gray-600">V</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UES 314 (3:0)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Design Principles in Environmental Engineering</td>
-                                        <td className="px-6 py-4 text-gray-600">V</td>
-                                    </tr>
-                                    <tr className="hover:bg-gray-50 transition-colors">
-                                        <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">UEES 313 (2:1)</td>
-                                        <td className="px-6 py-4 text-gray-900 font-medium">Experimental Methods in Environmental Engineering</td>
-                                        <td className="px-6 py-4 text-gray-600">V</td>
-                                    </tr>
+                                <tbody className="divide-y divide-gray-100 bg-white">
+                                    {[
+                                        { code: "UEES 206 (2:1)", name: "Experimental Methods in Environmental Chemistry", sem: "IV" },
+                                        { code: "UEES 207 (3:0)", name: "Geophysical Processes", sem: "IV" },
+                                        { code: "UEES 208 (2:1)", name: "Introduction To Mineralogy and Petrology", sem: "IV" },
+                                        { code: "UEES 301 (2:1)", name: "Introduction To Earth Systems", sem: "V" },
+                                        { code: "UES 314 (3:0)", name: "Design Principles in Environmental Engineering", sem: "V" },
+                                        { code: "UEES 313 (2:1)", name: "Experimental Methods in Environmental Engineering", sem: "V" }
+                                    ].map((course, idx) => (
+                                        <tr key={idx} className="hover:bg-blue-50/50 transition-colors">
+                                            <td className="px-6 py-4 font-bold text-blue-600 whitespace-nowrap">{course.code}</td>
+                                            <td className="px-6 py-4 text-gray-800 font-medium">{course.name}</td>
+                                            <td className="px-6 py-4 text-gray-500 font-medium whitespace-nowrap">
+                                                <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">{course.sem} Semester</span>
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    {/* Electives Note */}
-                    <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                            <BookOpen className="w-5 h-5 text-gray-600" /> Elective Courses
-                        </h3>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                            After completing the minimum core course requirements (at least 3 courses from the pool above), the remaining credits required to complete the 15-credit Minor can be obtained by taking elective courses.
-                        </p>
-                        <p className="text-gray-700 leading-relaxed mb-4">
-                            These electives can be chosen from any courses offered by the departments participating in the Earth and Environmental Science programme:
-                        </p>
-                        <ul className="list-disc leading-relaxed text-gray-700 pl-6 space-y-2 font-medium">
-                            <li>Centre for Earth Sciences (CEaS)</li>
-                            <li>Centre for Sustainable Technologies (CST)</li>
-                            <li>Civil Engineering (CiE)</li>
-                            <li>Centre for Atmospheric and Oceanic Sciences (CAOS)</li>
-                        </ul>
+                    <div className="bg-blue-50/50 px-6 py-5 border-t border-gray-200 mt-0">
+                        <div className="text-gray-800 text-[14px] font-medium leading-relaxed m-0">
+                            <p className="mb-2">
+                                <strong>* Note:</strong> Students taking a minor in EES must take a minimum 3 out of the 6 courses which are listed above.
+                            </p>
+                            <p>
+                                Remaining 2 courses can be taken for courses offered in departments participating in the EES programme i.e; Centre for Earth Sciences (CEaS), Centre for Sustainable Technologies (CST), Civil Engineering (CiE), Centre for Atmospheric and Oceanic Sciences (CAOS).
+                            </p>
+                        </div>
                     </div>
 
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ArrowLeft, CheckCircle2, GraduationCap, FileText, ExternalLink } from "lucide-react";
+import { ArrowLeft, CheckCircle2, GraduationCap, FileText } from "lucide-react";
 import Link from "next/link";
 import {
     ADMISSION_YEAR,
@@ -169,18 +169,7 @@ export default function SelectionProcessPage() {
                         </section>
                     </div>
 
-                    {/* Footer for B.Tech Link */}
-                    <div className="bg-slate-50 p-6 border-t border-slate-200">
-                        <div className="flex items-center justify-center gap-2 text-slate-600 text-sm">
-                            <a
-                                href={EXTERNAL_LINKS.detailedNoticePdf}
-                                target="_blank"
-                                className="text-blue-600 hover:text-blue-800 font-semibold flex items-center gap-1 hover:underline"
-                            >
-                                View Detailed Notice <ExternalLink className="w-3 h-3" />
-                            </a>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>

@@ -121,6 +121,11 @@ export default function MathematicsMinorPage() {
                                 </tbody>
                             </table>
                         </div>
+                        <div className="bg-amber-50 px-6 py-4 border-t border-gray-300">
+                            <p className="text-amber-800 text-[14px] font-bold leading-relaxed m-0 text-center">
+                                * Note: Either MA 200 or MA 219 can be taken.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Elective Courses - August Semester */}

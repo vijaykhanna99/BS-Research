@@ -157,7 +157,8 @@ export default function QuantumTechnologyMinorPage() {
                                         { code: "NE 310 (3:0)", name: "Photonics Technology: Materials and Devices (AUG)" },
                                         { code: "NE 320 (3:0)", name: "Quantum Optics (JAN)" },
                                         { code: "PH 359 (3:0)", name: "Physics at the Nanoscale (JAN)" },
-                                        { code: "NE 312 (3:0)", name: "Nonlinear and Ultrafast Photonics" }
+                                        { code: "NE 312 (3:0)", name: "Nonlinear and Ultrafast Photonics (AUG)" },
+                                        { code: "IN 332 (3:0)", name: "2D Materials (JAN)" }
                                     ].map((course, idx) => (
                                         <tr key={idx} className="hover:bg-gray-50 transition-colors">
                                             <td className="px-6 py-3 font-bold text-gray-600 whitespace-nowrap">{course.code}</td>
