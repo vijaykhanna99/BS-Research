@@ -86,6 +86,7 @@ const AboutProgramme = () => {
                                 { name: "Mathematics", path: "/minors/mathematics" },
                                 { name: "Biology", path: "/minors/biology" },
                                 { name: "Earth & Environmental Science", path: "/minors/earth-environmental-science" },
+                                { name: "Materials", path: "/minors/materials" },
                                 { name: "Quantum Technology", path: "/minors/quantum-technology" },
                                 { name: "Bioengineering", path: "/minors/bioengineering" }
                             ].map((minor, idx) => (
