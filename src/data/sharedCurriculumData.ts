@@ -57,7 +57,7 @@ export const semesters = [
                 ]
             },
             {
-                code: "UPHT 101",
+                code: "UPH 101",
                 type: "Basic Courses",
                 name: "Introductory Physics I",
                 credits: "3:1",

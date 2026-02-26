@@ -32,7 +32,8 @@ const Navbar: React.FC<NavbarProps> = () => {
             name: "Apply Online",
             link: "https://admissions-august.iisc.ac.in/index.html",
             external: true,
-            icon: <ExternalLink className="w-4 h-4 text-blue-500" />
+            disabled: true,
+            icon: <ExternalLink className="w-4 h-4 text-slate-300" />
         },
         {
             name: "Important Dates",
@@ -205,7 +206,21 @@ const Navbar: React.FC<NavbarProps> = () => {
                             >
                                 <div className="p-1.5">
                                     {admissionItems.map((item, index) =>
-                                        item.external ? (
+                                        item.disabled ? (
+                                            <div
+                                                key={index}
+                                                className="flex items-center gap-3 p-2.5 rounded-md cursor-not-allowed opacity-50"
+                                                title="Opening Soon"
+                                            >
+                                                <div className="p-1.5 bg-slate-50 rounded-md border border-slate-100 shadow-sm shrink-0">
+                                                    {item.icon}
+                                                </div>
+                                                <div className="flex items-center gap-2">
+                                                    <span className="font-bold text-slate-400 text-sm">{item.name}</span>
+                                                    <span className="text-[10px] font-semibold text-amber-600 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded-full">Soon</span>
+                                                </div>
+                                            </div>
+                                        ) : item.external ? (
                                             <a
                                                 href={item.link}
                                                 target="_blank"
@@ -416,7 +431,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 <div className={`${activeSubmenu === 'admissions' ? 'block' : 'hidden'} pl-8 pr-4 py-2 space-y-2 bg-blue-950/50 rounded-md mt-1`}>
                                     <Link href="/admissions" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Overview</Link>
                                     {admissionItems.map((item, index) => (
-                                        item.external ? (
+                                        item.disabled ? (
+                                            <span key={index} className="block py-2 text-sm text-blue-400/50 cursor-not-allowed">{item.name} <span className="text-[10px] text-amber-400">(Opening Soon)</span></span>
+                                        ) : item.external ? (
                                             <a key={index} href={item.link} target="_blank" className="block py-2 text-sm text-blue-200 hover:text-white">{item.name}</a>
                                         ) : (
                                             <Link key={index} href={item.link} className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>{item.name}</Link>

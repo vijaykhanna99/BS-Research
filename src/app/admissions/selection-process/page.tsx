@@ -60,7 +60,7 @@ export default function SelectionProcessPage() {
 
                 {/* ACCORDIONS */}
                 <div className="space-y-4">
-                    <AccordionItem title="1. Program Intake" icon={Users} defaultOpen={true}>
+                    <AccordionItem title="1. Program Intake" icon={Users}>
                         <div className="space-y-4">
                             <div>
                                 <h3 className="font-bold text-slate-800 mb-2">(a) Indian National / OCI(I)</h3>

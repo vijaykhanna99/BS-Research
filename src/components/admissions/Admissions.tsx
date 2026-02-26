@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from 'next/image';
-import { ExternalLink, Calendar, Users, HelpCircle, ArrowRight } from "lucide-react";
+import { ExternalLink, Calendar, Users, HelpCircle, ArrowRight, Lock } from "lucide-react";
 import { MdDescription } from "react-icons/md";
 
 const Admissions = () => {
@@ -14,6 +14,7 @@ const Admissions = () => {
             icon: <MdDescription className="w-6 h-6" />,
             url: "/admissions/news-and-updates",
             external: false,
+            disabled: false,
             theme: "orange"
         },
         {
@@ -22,6 +23,7 @@ const Admissions = () => {
             icon: <ExternalLink className="w-6 h-6" />,
             url: "https://admissions-august.iisc.ac.in/index.html",
             external: true,
+            disabled: true,
             theme: "blue"
         },
         {
@@ -30,6 +32,7 @@ const Admissions = () => {
             icon: <Calendar className="w-6 h-6" />,
             url: "/admissions/important-dates",
             external: false,
+            disabled: false,
             theme: "orange"
         },
         {
@@ -38,6 +41,7 @@ const Admissions = () => {
             icon: <Users className="w-6 h-6" />,
             url: "/admissions/selection-process",
             external: false,
+            disabled: false,
             theme: "green"
         },
         {
@@ -46,6 +50,7 @@ const Admissions = () => {
             icon: <Calendar className="w-6 h-6" />,
             url: "/admissions/fee-structure",
             external: false,
+            disabled: false,
             theme: "pink"
         },
         {
@@ -54,6 +59,7 @@ const Admissions = () => {
             icon: <HelpCircle className="w-6 h-6" />,
             url: "/admissions/faq",
             external: false,
+            disabled: false,
             theme: "purple"
         }
     ];
@@ -91,11 +97,48 @@ const Admissions = () => {
                 </div>
             </div>
 
-            {/* Content Area - Card Grid UI (Restored Old UI) */}
+            {/* Content Area - Card Grid UI */}
             <div className="container mx-auto px-4 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
                     {links.map((link, index) => {
                         const theme = getThemeClasses(link.theme);
+
+                        /* ── DISABLED CARD (Apply Online) ── */
+                        if (link.disabled) {
+                            return (
+                                <div
+                                    key={index}
+                                    className="group relative flex items-start gap-6 p-8 bg-white border border-slate-200 rounded-xl shadow-sm cursor-not-allowed select-none opacity-60"
+                                >
+                                    {/* Opening Soon badge – appears on hover */}
+                                    <div className="pointer-events-none absolute top-3 right-3 px-2.5 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full border border-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                        Opening Soon
+                                    </div>
+
+                                    {/* Icon Box */}
+                                    <div className="w-14 h-14 rounded-xl bg-slate-100 text-slate-400 flex items-center justify-center shrink-0 shadow-sm">
+                                        <Lock className="w-6 h-6" />
+                                    </div>
+
+                                    {/* Text Content */}
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-4 mb-2">
+                                            <h3 className="text-xl font-bold text-slate-400 truncate">
+                                                {link.title}
+                                            </h3>
+                                        </div>
+                                        <p className="text-slate-400 text-base leading-relaxed">
+                                            {link.description}
+                                        </p>
+                                        <div className="mt-4 flex items-center text-sm font-semibold text-slate-300">
+                                            <span>Not available yet</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        }
+
+                        /* ── ACTIVE CARD ── */
                         return (
                             <a
                                 key={index}
