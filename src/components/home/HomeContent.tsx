@@ -155,6 +155,28 @@ const HomeContent = () => {
                 <button className="custom-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-white/30 bg-black/20 hover:bg-black/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-200 active:scale-90 shadow-lg hover:shadow-xl group" aria-label="Next Slide">
                     <ChevronRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
                 </button>
+
+                {/* Open Day Marquee */}
+                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-r from-[#8E1C24]/95 via-red-900/95 to-[#8E1C24]/95 backdrop-blur-md border-t border-red-500/30 overflow-hidden z-20 py-1.5 shadow-xl">
+                    <div className="flex w-[200%] animate-marquee" style={{ animationDuration: '30s' }}>
+                        {[1, 2].map((i) => (
+                            <div key={i} className="flex items-center justify-around w-1/2 text-white/90 font-medium text-[11px] md:text-xs tracking-wide whitespace-nowrap px-4 hover:pause">
+                                <span>
+                                    🚀 OPEN DAY AT IISC 2026 IS ON <strong className="text-white uppercase font-bold text-[#FFD700]">SATURDAY, MARCH 7 (9 AM - 5 PM) !</strong> ✨ LIVE EXPERIMENTS ✨ SCIENTIFIC DEMOS ✨ POPULAR SCIENCE LECTURES ✨ EXHIBITIONS
+                                </span>
+                                <a
+                                    href="https://openday.iisc.ac.in/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-white text-red-900 hover:bg-slate-100 transition-all rounded border border-white/20 px-3 py-1 font-bold text-[10px] md:text-[11px] shadow-sm ml-6 tracking-wide uppercase shrink-0"
+                                    style={{ transform: "translateZ(0)" }}
+                                >
+                                    VISIT WEBSITE
+                                </a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             {/* Components Section */}
