@@ -104,6 +104,7 @@ const HomeContent = () => {
                                 src="/assets/IMG_9389.JPG"
                                 alt="Catalyzing Careers"
                                 fill
+                                priority
                                 className="object-cover object-center"
                             />
                         </div>

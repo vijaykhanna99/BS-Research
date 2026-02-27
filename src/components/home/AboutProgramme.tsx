@@ -60,6 +60,7 @@ const AboutProgramme = () => {
                                             src={major.img}
                                             alt={major.name}
                                             fill
+                                            sizes="24px"
                                             className="object-cover"
                                         />
                                     </div>
