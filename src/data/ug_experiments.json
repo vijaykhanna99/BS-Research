@@ -1,0 +1,380 @@
+{
+    "QUARKS": [
+        {
+            "name": "Demystifying lab",
+            "description": "A game where people will have to figure out what the researcher is trying to achieve in the lab by looking at a phone"
+        },
+        {
+            "name": "Find out the real name of",
+            "description": "A game where people will have to find the real name of the writer by checking our blog"
+        },
+        {
+            "name": "UG's artistic display",
+            "description": "Various Poetry, Photographs, Artworks, Writing Pieces"
+        },
+        {
+            "name": "Posters",
+            "description": "Showcasing UG life at IISc"
+        },
+        {
+            "name": "A Day",
+            "description": "Reels of a day in the life of UG"
+        },
+        {
+            "name": "Pseudoscience vs Science",
+            "description": "Live Dialogues with crowd engagement"
+        },
+        {
+            "name": "Scientific methods using examples",
+            "description": "Live Dialogues with crowd engagement"
+        },
+        {
+            "name": "Rememberall",
+            "description": "Showcase the previous year's magazine"
+        }
+    ],
+    "GEOLITES": [
+        {
+            "name": "The Rock cycle and identification of rocks and minerals",
+            "description": "explaining the stages of the rock cycle using real samples of igneous, sedimentary, and metamorphic rocks along with minerals"
+        },
+        {
+            "name": "A Hidden world beneath the microscope",
+            "description": "examining optical properties under polarizing microscope to interpret rock composition"
+        },
+        {
+            "name": "Does clear equal potable",
+            "description": "evaluating whether clear water is safe for consumption through tests of pH and electrical conductivity and other parameters"
+        },
+        {
+            "name": "Working Principle of a Seismometer",
+            "description": "understanding how seismometer detects and records ground vibrations"
+        },
+        {
+            "name": "Dynamics of ocean circulation",
+            "description": "Explains how temperature and salinity differences create density-driven currents and internal waves inside the ocean"
+        }
+    ],
+    "SAMASYA": [
+        {
+            "name": "Weak Law",
+            "description": "A demonstration of Weak Law of Large Numbers, along with a simulation"
+        },
+        {
+            "name": "Chaotic systems",
+            "description": "A simulation of chaotic systems, such as Lorenz attractors"
+        },
+        {
+            "name": "Fractals",
+            "description": "A stall on fractals"
+        },
+        {
+            "name": "Lemma",
+            "description": "A stall on Sperner's Lemma and Fair division algorithms"
+        },
+        {
+            "name": "Parity",
+            "description": "Puzzles/magic tricks based on parity"
+        },
+        {
+            "name": "Games",
+            "description": "Two interactive games"
+        },
+        {
+            "name": "Proofs",
+            "description": "A stall on False Proofs"
+        }
+    ],
+    "DATABASED": [
+        {
+            "name": "Agar-ithm",
+            "description": "It is a multi-agent spatial simulation where players allocate limited resource points to evolve bacterial colonies and compete for survival in a real-time digital arena"
+        },
+        {
+            "name": "Gesture-Based Game Control",
+            "description": "This exhibit is a gesture-controlled game where visitors drive the action just by moving their hands in front of a webcam"
+        },
+        {
+            "name": "Bezier Curve",
+            "description": "A drag control play demo of Bezier curves that reveals how smooth shapes in art, animation, and games are built from simple mathematical rules"
+        },
+        {
+            "name": "Voronoi Diagrams",
+            "description": "This interactive game challenges visitors to find the spot on a map that maximizes the distance from other markers, effectively visualizing how Voronoi diagrams partition space"
+        },
+        {
+            "name": "ASCII Art",
+            "description": "An exhibit that snaps a photo of visitors and instantly renders it as ASCII art by mapping pixel luminance values to specific characters based on their visual density"
+        },
+        {
+            "name": "AI Hallucinations",
+            "description": "A reality check on AI that shows how language models can confidently fail at basic tasks, helping visitors understand AI limitations"
+        },
+        {
+            "name": "Sorting Algorithm",
+            "description": "A visual race between inefficient and optimised algorithms (on CPU and GPU), showing the importance of the time complexity of algorithms on large datasets"
+        },
+        {
+            "name": "Live Coding",
+            "description": "Making music with code! get into the world of bizarre sounds of Synthesiser and ORCA, an esoteric programming language for making music"
+        },
+        {
+            "name": "Minecraft as a Programming Language",
+            "description": "This exhibit dives into the Turing completeness of Minecraft, using Redstone to build functional logic gates and circuits"
+        },
+        {
+            "name": "De-pixelating Images",
+            "description": "This project demonstrates that naive image obfuscation methods like pixelation are reversible under certain conditions. By exploiting deterministic averaging in box filters, we can reconstruct the hidden plaintext. It highlights a realworld security risk in digital redaction practices"
+        }
+    ],
+    "NATURALISTS": [
+        {
+            "name": "The DNA World",
+            "description": "Understand the molecule that codes our existence through X-ray diffraction of a helix, live DNA extraction, and a DNA Model"
+        },
+        {
+            "name": "2 lies, 1 truth",
+            "description": "Learn a science story through an interactive, multiple-choice game"
+        },
+        {
+            "name": "Fluorescent agar art",
+            "description": "Admire art drawn using bacteria on agar, except the bright color is revealed only under UV light"
+        },
+        {
+            "name": "Operation Outbreak",
+            "description": "A virus infection simulation based on the movement of visitors"
+        },
+        {
+            "name": "PACMAN Macrophage game (Not a stall)",
+            "description": "A QR code containing the classic PACMAN game with a twist, you are a bacteria running away from the host macrophages"
+        },
+        {
+            "name": "Build a Virus! (Game)",
+            "description": "Use the building blocks of a virus to customize your own"
+        },
+        {
+            "name": "Reaction Diffusion Model",
+            "description": "A mathematical simulation that explains pattern formation in nature through the interaction of substances that react and diffuse across a surface"
+        },
+        {
+            "name": "Ecological Interactions Model",
+            "description": "A mathematical simulation that studies the interaction of various species in an ecosystem"
+        },
+        {
+            "name": "Mega Plate model",
+            "description": "A mathematical simulation of bacterial colonies growing in an antibiotic concentration gradient accompanied by a physical mega plate"
+        },
+        {
+            "name": "Antigen-Antibody Interactions",
+            "description": "A puzzle-like game demonstrating the specificity of antigen-antibody interactions"
+        },
+        {
+            "name": "Fungi wars",
+            "description": "Studying the interactions of two fungi as they compete for resources"
+        },
+        {
+            "name": "Optical illusions",
+            "description": "Optical and auditory illusions that trick your mind"
+        },
+        {
+            "name": "Microscopy",
+            "description": "Get a glimpse into the tiny, diverse world of microbes"
+        },
+        {
+            "name": "Chemoattraction",
+            "description": "Demonstrating movement of beetles upon introduction of chemoattractant molecules"
+        },
+        {
+            "name": "Ecological specimens",
+            "description": "Preserved insect specimens and a terrarium showcasing natural diversity"
+        },
+        {
+            "name": "Evolution and Physiology",
+            "description": "Explaining evolution through the morphology of artificial bones"
+        }
+    ],
+    "ENSEMBLES": [
+        {
+            "name": "Meissner Effect",
+            "description": "Watch as we levitate a mysterious superconductor into the air. How? Just add liquid nitrogen!"
+        },
+        {
+            "name": "Rotating Turntable",
+            "description": "See a ball roll on a turntable and reveal how rotations, rhythms, and chaos unfold."
+        },
+        {
+            "name": "Curie Temperature",
+            "description": "Heat a nickel rod until it decides ferromagnetism is out and paramagnetism is in!"
+        },
+        {
+            "name": "Barberpole Effect",
+            "description": "Pass polarized light through sugar water and watch colours twist as the chiral molecules have their own psychedelic dance party."
+        },
+        {
+            "name": "Specific charge of electron",
+            "description": "Bend the electron beam by simply adjusting the magnetic field, and find out its most fundamental property - the specific charge."
+        },
+        {
+            "name": "Lenz Law",
+            "description": "When magnets seemingly start \"defying gravity\" while falling through copper tubes, is it due to withcraft at play, or eddy currents?"
+        },
+        {
+            "name": "Rolling Frustum",
+            "description": "Watch how a frustum behaves when rolled, and connect it to wheels on real train tracks!"
+        },
+        {
+            "name": "Simulations",
+            "description": "Find out what all the theory and equations in physics actually look like."
+        },
+        {
+            "name": "Particle Detection using GM tube",
+            "description": "Detect cosmic particles on the standard model using a not-so-standard particle detector!"
+        }
+    ],
+    "CATALYST": [
+        {
+            "name": "Fluorescent nylon synthesis",
+            "description": "Watch out for fibers which materialize out of water! But here's the catch, these tangled threads glow in the dark, too!"
+        },
+        {
+            "name": "Chemiluminescence",
+            "description": "Who knew mixing of potions can give us light? Witness the exciting phenomena of chemiluminescence"
+        },
+        {
+            "name": "Electrochemical deposition in a petri dish",
+            "description": "Look out for shiny metal \"crystals\" that form from a mysterious, wicked liquid!"
+        },
+        {
+            "name": "Traffic light reaction",
+            "description": "Watch the different colors of a traffic light in a beaker! Find out more about the intriguing chemistry behind it."
+        },
+        {
+            "name": "Thermally activated delayed fluorescence",
+            "description": "Observe the seemingly innocent powder change color after being dipped in liquid nitrogen!"
+        },
+        {
+            "name": "Electrolysis with universal indicator",
+            "description": "Watch out for the vibrant color gradient which ends in a satifying swirling pattern, all due to a magical liquid!"
+        },
+        {
+            "name": "Tricolor reaction with chromium pentoxide",
+            "description": "Three distinct colors in a single test tube? Marvel at the beauty of Chemistry, as it manifests as yet another beautiful reaction!"
+        },
+        {
+            "name": "Maxwell's Demon game",
+            "description": "Can you defeat the fundamental law of the universe? Are you worthy of fulfilling the demon's futile dream of overthrowing the very fabric of reality? Come find out!"
+        }
+    ],
+    "AMALGAM": [
+        {
+            "name": "Cryogenic Icecream",
+            "description": "Liquid Nitrogen: 2 demos. Ice-cream production and Glass transition of rubber following undercooling"
+        },
+        {
+            "name": "Bismuth Crystal",
+            "description": "Peculiar morphology of a Bismuth crystal and the role of grain growth mechanisms for the same"
+        },
+        {
+            "name": "Electroplating",
+            "description": "Electroplating using a copper salt solution"
+        },
+        {
+            "name": "Shape Memory Effect",
+            "description": "Activities using shape memory alloy (writing your own name or bending it into some interesting shape), submerging it in hot water finally to gain its original shape"
+        },
+        {
+            "name": "Electroetching",
+            "description": "Electro etching using a current probe"
+        }
+    ],
+    "VICHARAKA": [
+        {
+            "name": "Autonomous Tightrope - Balancing Unicycle",
+            "description": "This unique \"unicycle\" robot must navigate a rope strung between two anchor points. This project is inspired by the open-source community's work on reaction wheel systems"
+        },
+        {
+            "name": "Ball Balancing Platform",
+            "description": "Three motors are arranged in an equilateral triangle configuration below the platform. Positional data from the touchscreen is sent to a set of motors underneath the platform to execute corrective movements, preventing the ball from rolling off"
+        },
+        {
+            "name": "Smart Mirror",
+            "description": "A mirror that will reflect only when you are smiling. The mirror will be controlled by a detector and reflector with arduino for face recognition. Computer vision is harnessed to detect the smile."
+        },
+        {
+            "name": "Hammer of Thor",
+            "description": "It is an interactive exhibit designed to demonstrate the principles of electromagnetism and radio-frequency identification (RFID). \"Thor\u2019s Hammer\" remains immovably fixed to the ground for the general public but can be effortlessly lifted by an \"authorized\" (worthy) user wearing RFID ring."
+        },
+        {
+            "name": "AI Vision Based Tracking Turret System",
+            "description": "This project presents a safe and educational computer-vision based tracking turret system. The system automatically detects and follows a remote control helicopter or small flying object using a fast global-shutter camera and real-time control electronics. A low-power Class-2 LED/laser pointer is used only as a visual indicator to show where the system is aiming."
+        },
+        {
+            "name": "Musical Tesla Coil",
+            "description": "The Musical Tesla Coil, often called a Singing Tesla Coil or Zeusaphone, doesn't just create dramatic electrical arcs, but uses those arcs to play audible music. This involves modifying a standard coil to modulate its output, essentially turning the high-voltage discharge into a massive, open-air plasma speaker"
+        },
+        {
+            "name": "Van De Graph Generator",
+            "description": "The Van De Graaff Generator is an electrostatic machine designed to produce very high voltages using a moving insulating belt that transfers charge to a hollow metal dome. It demonstrates the fundamental principles of electrostatics, charge accumulation, and electric field formation through spark discharge and electric field effects. High voltage with extremely low current makes it inherently safe."
+        },
+        {
+            "name": "Rover",
+            "description": "The rover is a highly modular platform with low center of gravity. It has differential rocker-bogie suspension mounted on six-wheels enabling maneuvering rugged terrains with slopes up to 50\u00b0. Power train includes a high-torque planetary-geared DC motors which is powered by a custom STM32 with closed-loop PID motor control. Its autonomy stack is built on ROS 2 and leverages visual-inertial odometry, RGB-D SLAM, and real-time obstacle avoidance for robust navigation without reliance on satellites. A layered communication architecture combines high-bandwidth RF telemetry with hardware manual override, making the rover a complete demonstration of mechanical design, embedded systems, perception and autonomous robotics."
+        },
+        {
+            "name": "Robotic Arm",
+            "description": "The robotic arm is a high-precision, six-degree-of-freedom articulated manipulator designed for autonomous and tele-operated interface for real-world objects. Capable of lifting payloads up to 8 kg at a full extension of 1.4 m, the arm uses harmonic drives and closed-loop stepper motors to achieve high positional accuracy. All structural components are optimized through extensive finite-element analysis to balance strength and weight. STM32 runs micro-ROS, with joint-level communication over a CAN bus, while higher-level motion planning, inverse kinematics and collision avoidance are managed by a ROS 2 computer using MoveIt 2. Vision-based perception enables precise grasping and manipulation tasks either standalone or as a part of rover"
+        }
+    ],
+    "ASTRAE": [
+        {
+            "name": "Poster Presentations",
+            "description": "\u2022\tMultimessenger Astronomy \n\t\u2022\tStellar Evolution \n\t\u2022\tCosmic Microwave Background \n\t\u2022\tSolar Observation \n\t\u2022\tAstrophotography \n\t\u2022\tEclipses"
+        },
+        {
+            "name": "Models",
+            "description": "\u2022\tTelescope for Astrophotography and Solar Observation \n\t\u2022\tRadio Telescope \n\t\u2022\tEclipse/Lunar Model \n\t\u2022\tSpectrometer \n\t\u2022\tInterferometer \n\t\u2022\tEvolution of Telescope Design"
+        },
+        {
+            "name": "PPT Presentations",
+            "description": "\u2022\tUniverse Sandbox \n\t\u2022\tStellar Evolution"
+        }
+    ],
+    "KID\u2019s Zone": [
+        {
+            "name": "Bicycle Wheel Gyroscope",
+            "description": "Feel the precession of a gyroscope by becoming one with it"
+        },
+        {
+            "name": "Electric Field Breakdown",
+            "description": "Observe the sparks fly as we exceed the threshold of potential"
+        },
+        {
+            "name": "Roller Coaster",
+            "description": "Study the conservation laws with our model roller coster experiment"
+        },
+        {
+            "name": "Thermo-Chromaticity",
+            "description": "Modulating temperature to show colour changing properties of thermochromic material"
+        },
+        {
+            "name": "Comet Demo",
+            "description": "Learn about the features of a comet through our demo"
+        },
+        {
+            "name": "Trivia",
+            "description": "Quiz for kids"
+        }
+    ],
+    "QUIZ": [
+        {
+            "name": "Quiz Contest",
+            "description": "Step up, test your knowledge, and challenge your curiosity at our Quiz club! From surprising facts to brain-teasing questions, every answer unlocks something new."
+        }
+    ],
+    "BOOK": [
+        {
+            "name": "Where stories come alive",
+            "description": "A celebration of unforgettable characters, thought-provoking conversations, and the magic that happens when readers come together."
+        }
+    ]
+}

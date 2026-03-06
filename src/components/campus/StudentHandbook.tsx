@@ -48,7 +48,7 @@ const StudentHandbook = () => {
                             </div>
 
                             <a
-                                href="/assets/UG-Handbook-25-26.pdf"
+                                href="/assets/UG-HandBook-25-26.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hidden sm:flex items-center gap-2 bg-slate-50 hover:bg-[#0e5475] text-slate-700 hover:text-white border border-slate-200 hover:border-[#0e5475] px-6 py-3 rounded-lg font-bold text-sm transition-all duration-300"
@@ -59,7 +59,7 @@ const StudentHandbook = () => {
                         </div>
                         {/* Mobile Button */}
                         <a
-                            href="/assets/UG-Handbook-25-26.pdf"
+                            href="/assets/UG-HandBook-25-26.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="sm:hidden mt-6 flex items-center justify-center gap-2 bg-[#0e5475] text-white px-6 py-3 rounded-lg font-bold text-sm"
@@ -98,7 +98,7 @@ const StudentHandbook = () => {
                             </div>
 
                             <a
-                                href="https://iisc.ac.in/wp-content/uploads/2024/10/UG-Handbook-2024-25-Version-II.pdf"
+                                href="/assets/UG-HandBook-24-25.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hidden sm:flex items-center gap-2 bg-slate-50 hover:bg-slate-700 text-slate-700 hover:text-white border border-slate-200 hover:border-slate-700 px-6 py-3 rounded-lg font-bold text-sm transition-all duration-300"
@@ -109,7 +109,7 @@ const StudentHandbook = () => {
                         </div>
                         {/* Mobile Button */}
                         <a
-                            href="https://iisc.ac.in/wp-content/uploads/2024/10/UG-Handbook-2024-25-Version-II.pdf"
+                            href="/assets/UG-HandBook-24-25.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="sm:hidden mt-6 flex items-center justify-center gap-2 bg-slate-700 text-white px-6 py-3 rounded-lg font-bold text-sm"

@@ -1,13 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X, ChevronRight, Info, BookOpen, GraduationCap, Briefcase, Heart, Shield } from "lucide-react";
+import { ChevronDown, ExternalLink, Calendar, Users, HelpCircle, Menu, X, ChevronRight, Info, BookOpen, GraduationCap, Briefcase, Heart, Shield, FlaskConical, Map, Leaf } from "lucide-react";
 
-interface NavbarProps {
-    // Props are no longer needed for page navigation but kept for compatibility if needed
-}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
@@ -94,6 +90,30 @@ const Navbar: React.FC<NavbarProps> = () => {
             external: true,
             icon: <Shield className="w-4 h-4 text-purple-500" />
         },
+        {
+            name: "Campus Life",
+            link: "/campus-life",
+            icon: <Users className="w-4 h-4 text-amber-500" />
+        },
+    ];
+
+    // Open Day Menu Items
+    const openDayItems = [
+        {
+            name: "UG Experiments",
+            link: "/open-day/ug-experiments",
+            icon: <FlaskConical className="w-4 h-4 text-purple-500" />
+        },
+        {
+            name: "Open Day Map",
+            link: "/open-day/map",
+            icon: <Map className="w-4 h-4 text-blue-500" />
+        },
+        {
+            name: "Green Open Day",
+            link: "/open-day/green",
+            icon: <Leaf className="w-4 h-4 text-green-500" />
+        }
     ];
 
     return (
@@ -310,13 +330,34 @@ const Navbar: React.FC<NavbarProps> = () => {
                             </Link>
                         </li>
 
-                        <li>
-                            <Link
-                                href="/campus-life"
-                                className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 block text-sm font-semibold tracking-wide rounded-md my-1"
+                        {/* Open Day Dropdown (Desktop) */}
+                        <li className="relative group perspective">
+                            <button
+                                className="py-5 px-5 hover:bg-white/10 hover:text-white transition-all duration-200 flex items-center text-sm font-semibold tracking-wide rounded-md my-1 text-green-400 group-hover:bg-white/10"
                             >
-                                Campus Life
-                            </Link>
+                                🌿 Open Day (2026) <ChevronDown className="ml-1.5 h-3.5 w-3.5 opacity-70 group-hover:opacity-100 transition-transform group-hover:rotate-180" />
+                            </button>
+
+                            <div
+                                className="absolute left-1/2 -translate-x-1/2 mt-0 w-64 bg-white text-gray-800 shadow-xl rounded-lg z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top -translate-y-2 group-hover:translate-y-0 border border-slate-100 overflow-hidden ring-1 ring-black/5"
+                            >
+                                <div className="p-1.5">
+                                    {openDayItems.map((item, index) => (
+                                        <Link
+                                            key={index}
+                                            href={item.link}
+                                            className="flex items-center gap-3 p-2.5 hover:bg-slate-50 rounded-md transition-colors group/item"
+                                        >
+                                            <div className="p-1.5 bg-slate-50 group-hover/item:bg-white rounded-md border border-slate-100 shadow-sm transition-colors shrink-0">
+                                                {item.icon}
+                                            </div>
+                                            <div className="font-bold text-slate-700 text-sm group-hover/item:text-blue-600 transition-colors">
+                                                {item.name}
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                         </li>
 
                         <li className="relative group perspective">
@@ -467,10 +508,19 @@ const Navbar: React.FC<NavbarProps> = () => {
                                 </Link>
                             </li>
 
+                            {/* Mobile Open Day */}
                             <li>
-                                <Link href="/campus-life" className="block py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold" onClick={toggleMenu}>
-                                    Campus Life
-                                </Link>
+                                <button
+                                    onClick={() => toggleSubmenu('open-day')}
+                                    className="w-full flex justify-between items-center py-3 px-4 hover:bg-white/10 rounded-md text-sm font-bold text-green-400"
+                                >
+                                    🌿 Open Day (2026) <ChevronDown className={`w-4 h-4 transition-transform ${activeSubmenu === 'open-day' ? 'rotate-180' : ''}`} />
+                                </button>
+                                <div className={`${activeSubmenu === 'open-day' ? 'block' : 'hidden'} pl-8 pr-4 py-2 space-y-2 bg-blue-950/50 rounded-md mt-1`}>
+                                    {openDayItems.map((item, index) => (
+                                        <Link key={index} href={item.link} className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>{item.name}</Link>
+                                    ))}
+                                </div>
                             </li>
 
 
