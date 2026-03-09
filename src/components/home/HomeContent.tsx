@@ -11,7 +11,7 @@ import AboutProgramme from "./AboutProgramme";
 import AskIISc from "./AskIISc";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import ScienceDisciplines from "./ScienceDisciplines";
-import OpenDayModal from "./OpenDayModal";
+
 
 const HomeContent = () => {
     // Assets paths
@@ -58,7 +58,7 @@ const HomeContent = () => {
 
     return (
         <div className="bg-white">
-            <OpenDayModal />
+
 
             {/* Hero Carousel */}
             <div className="relative w-full h-[400px] md:h-[480px] lg:h-[520px]">
