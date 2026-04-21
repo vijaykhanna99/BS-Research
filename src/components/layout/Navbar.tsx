@@ -42,6 +42,12 @@ const Navbar = () => {
             icon: <Users className="w-4 h-4 text-green-500" />
         },
         {
+            name: "Previous Year Cutoff",
+            link: "https://iisc.ac.in/wp-content/uploads/2025/08/BS-PROGRAM-CUT-OFFS-2021-2025_AR_final.pdf",
+            external: true,
+            icon: <BookOpen className="w-4 h-4 text-teal-500" />
+        },
+        {
             name: "Fee Structure",
             link: "/admissions/fee-structure",
             icon: <Calendar className="w-4 h-4 text-pink-500" />

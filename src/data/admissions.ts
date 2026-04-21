@@ -23,8 +23,8 @@ export const ELIGIBILITY = {
 };
 
 export const INTAKE = {
-    total: 138,
-    breakup: "111 + 22 (20% of supernumerary seats for females) + 5 (Foreign nationals/OCI(F))",
+    total: 125,
+    breakup: "100 + 20 (20% of supernumerary seats for females) + 5 (Foreign nationals/OCI(F))",
     supernumeraryQuota: "20%",
 };
 

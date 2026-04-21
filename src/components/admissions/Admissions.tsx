@@ -45,6 +45,15 @@ const Admissions = () => {
             theme: "green"
         },
         {
+            title: "Previous Year Cutoff",
+            description: "Historical cutoff trends.",
+            icon: <MdDescription className="w-6 h-6" />,
+            url: "https://iisc.ac.in/wp-content/uploads/2025/08/BS-PROGRAM-CUT-OFFS-2021-2025_AR_final.pdf",
+            external: true,
+            disabled: false,
+            theme: "teal"
+        },
+        {
             title: "Fee Structure",
             description: "Tuition, fees & installments.",
             icon: <Calendar className="w-6 h-6" />,
@@ -70,6 +79,8 @@ const Admissions = () => {
             case 'orange': return { text: 'text-orange-600', bg: 'bg-orange-50', hover: 'hover:bg-orange-50 hover:border-orange-200' };
             case 'green': return { text: 'text-green-600', bg: 'bg-green-50', hover: 'hover:bg-green-50 hover:border-green-200' };
             case 'purple': return { text: 'text-purple-600', bg: 'bg-purple-50', hover: 'hover:bg-purple-50 hover:border-purple-200' };
+            case 'pink': return { text: 'text-pink-600', bg: 'bg-pink-50', hover: 'hover:bg-pink-50 hover:border-pink-200' };
+            case 'teal': return { text: 'text-teal-600', bg: 'bg-teal-50', hover: 'hover:bg-teal-50 hover:border-teal-200' };
             default: return { text: 'text-slate-600', bg: 'bg-slate-50', hover: 'hover:bg-slate-50' };
         }
     };
