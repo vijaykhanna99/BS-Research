@@ -10,7 +10,6 @@ export default function PeopleSubNav() {
         // { name: "Coordinators", path: "/people/coordinators" },
         // { name: "UG Instructors", path: "/people/instructors" },
         // { name: "Teaching Assistants", path: "/people/teaching-assistants" },
-        { name: "Office Staff", path: "/people/office-staff" }
     ];
 
     return (

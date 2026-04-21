@@ -12,7 +12,6 @@ export default function PeopleHubPage() {
         { id: 'coordinators', label: 'Coordinators' },
         { id: 'instructors', label: 'UG Instructors' },
         { id: 'ta', label: 'Teaching Assistants' },
-        { id: 'staff', label: 'Office Staff' },
     ];
 
     const renderContent = () => {
@@ -25,8 +24,6 @@ export default function PeopleHubPage() {
                 return <PlaceholderList name="UG Instructors" />;
             case 'ta':
                 return <PlaceholderList name="Teaching Assistants" />;
-            case 'staff':
-                return <PlaceholderList name="Office Staff" />;
             default:
                 return <DeansList />;
         }

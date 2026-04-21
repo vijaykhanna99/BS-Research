@@ -403,18 +403,6 @@ const Navbar = () => {
                                     >
                                         Teaching Assistants
                                     </Link>
-                                    <Link
-                                        href="/people/office-staff"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Office Staff
-                                    </Link>
-                                    <Link
-                                        href="/alumni"
-                                        className="block px-6 py-3 text-sm font-bold text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
-                                    >
-                                        Alumni
-                                    </Link>
                                 </div>
                             </div>
                         </li>
@@ -543,8 +531,6 @@ const Navbar = () => {
                                     <Link href="/people/coordinators" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Coordinators</Link>
                                     <Link href="/people/instructors" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>UG Instructors</Link>
                                     <Link href="/people/teaching-assistants" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Teaching Assistants</Link>
-                                    <Link href="/people/office-staff" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Office Staff</Link>
-                                    <Link href="/alumni" className="block py-2 text-sm text-blue-200 hover:text-white" onClick={toggleMenu}>Alumni</Link>
                                 </div>
                             </li>
 
