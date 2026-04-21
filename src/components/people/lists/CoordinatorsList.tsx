@@ -95,12 +95,12 @@ export default function CoordinatorsList() {
                         rel="noopener noreferrer"
                         className="group text-center"
                     >
-                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-50 shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                        <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                             <Image
                                 src={person.image}
                                 alt={person.name}
                                 fill
-                                className="object-contain p-1"
+                                className="object-contain object-center"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                             />
                         </div>

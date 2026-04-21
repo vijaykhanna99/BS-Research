@@ -21,21 +21,21 @@ export const deansData = [
 
 export default function DeansList() {
     return (
-        <div className="grid lg:grid-cols-2 gap-8 justify-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-12 justify-center max-w-5xl mx-auto">
             {deansData.map((person, index) => (
-                <div key={index} className="flex flex-col md:flex-row items-center md:items-start p-8 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300 gap-6 group hover:-translate-y-1">
-                    <div className="relative w-32 h-32 md:w-36 md:h-36 shrink-0 rounded-full overflow-hidden border-4 border-slate-50 shadow-inner group-hover:scale-105 transition-transform duration-500">
+                <div key={index} className="text-center group">
+                    <div className="relative aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                         <Image
                             src={person.image}
                             alt={person.name}
                             fill
-                            className="object-cover"
+                            className="object-cover object-top"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                     </div>
 
-                    <div className="text-center md:text-left pt-2 flex-grow">
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
+                    <div className="pt-5">
+                        <h3 className="text-2xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-700 transition-colors">
                             Prof. {person.name}
                         </h3>
                         <div className="text-blue-600 font-bold mb-1 text-lg leading-snug">
@@ -48,7 +48,8 @@ export default function DeansList() {
                         <a
                             href={person.profile}
                             target="_blank"
-                            className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-600 font-semibold text-sm transition-colors mt-auto group-hover:underline underline-offset-4"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-600 font-semibold text-sm transition-colors group-hover:underline underline-offset-4"
                         >
                             View Profile <ExternalLink className="w-3.5 h-3.5" />
                         </a>

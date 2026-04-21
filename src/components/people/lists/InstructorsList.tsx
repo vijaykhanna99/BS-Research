@@ -5,7 +5,8 @@ export const instructorsData = [
     {
         name: "Dr. Eswara Rao Tatta",
         discipline: "Biology",
-        image: "/assets/INSTRUCTOR/BIOLOGY/Eswara Rao Tatta.jpg",
+        image: "/assets/INSTRUCTOR/BIOLOGY/eswara rao.png",
+        imagePosition: "object-center",
     },
     {
         name: "Dr. Safeena Majeed",
@@ -21,6 +22,7 @@ export const instructorsData = [
         name: "Dr. Shruthi Shree D P",
         discipline: "Biology",
         image: "/assets/INSTRUCTOR/BIOLOGY/Shruthi Shree D P.jpg",
+        imagePosition: "object-center",
     },
     {
         name: "Dr. Anusha H",
@@ -36,11 +38,13 @@ export const instructorsData = [
         name: "Dr. Sachind Prabha",
         discipline: "Chemistry",
         image: "/assets/INSTRUCTOR/CHEMISTRY/Sachind  Prabha P.jpg",
+        imagePosition: "object-center",
     },
     {
         name: "Dr. Siddhartha De",
         discipline: "Chemistry",
         image: "/assets/INSTRUCTOR/CHEMISTRY/Siddhartha De.jpg",
+        imagePosition: "object-center",
     },
     {
         name: "Dr. Ramkishore Matsa",
@@ -48,19 +52,19 @@ export const instructorsData = [
         image: "/assets/INSTRUCTOR/CHEMISTRY/Ramkishore Matsa.jpg",
     },
     {
-        name: "Dr. Sesha Kumar Nalluri",
+        name: "Sesha Kumar Nalluri",
         discipline: "Computer Science",
         image: "/assets/INSTRUCTOR/COMPUTER SCIENCE/Sesha Kumar Nalluri (1).jpg",
     },
     {
         name: "Dr. Sharath Raj",
         discipline: "Earth & Environmental Science",
-        image: "/assets/INSTRUCTOR/E & Envs/Sharath Raj Bayal (1).jpeg",
+        image: "/assets/INSTRUCTOR/E-and-Envs/Sharath Raj Bayal (1).jpeg",
     },
     {
         name: "Dr. Saranya K",
         discipline: "Earth & Environmental Science",
-        image: "/assets/INSTRUCTOR/E & Envs/Saranya Kumarasamy.jpeg",
+        image: "/assets/INSTRUCTOR/E-and-Envs/Saranya Kumarasamy.jpeg",
     },
     {
         name: "Dr. Manpreet Singh",
@@ -107,17 +111,17 @@ export default function InstructorsList() {
                 {instructorsData.map((person) => (
                     <article key={`${person.discipline}-${person.name}`} className="text-center group">
                         {person.image ? (
-                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-50 shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                            <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                                 <Image
                                     src={person.image}
                                     alt={person.name}
                                     fill
-                                    className="object-contain p-1"
+                                    className={`object-cover ${person.imagePosition || "object-top"}`}
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                 />
                             </div>
                         ) : (
-                            <div className="aspect-[4/3] w-full rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl flex items-center justify-center px-6">
+                            <div className="h-80 w-full rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl flex items-center justify-center px-6">
                                 <span className="text-2xl font-bold text-slate-300">
                                     {person.name
                                         .split(" ")

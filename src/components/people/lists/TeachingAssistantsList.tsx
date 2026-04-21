@@ -6,6 +6,7 @@ export const teachingAssistantsData = [
         name: "Rashmi R K",
         discipline: "Physics",
         image: "/assets/TEACHING ASSISTANT/PHYSICS/Rashmi R K.JPG",
+        imagePosition: "object-center",
     },
     {
         name: "Tyby Monachan",
@@ -21,6 +22,7 @@ export const teachingAssistantsData = [
         name: "Aria Kutty",
         discipline: "Physics",
         image: "/assets/TEACHING ASSISTANT/PHYSICS/Ariakutty C S.jpg",
+        imagePosition: "object-center",
     },
     {
         name: "Asiya Rehman",
@@ -31,6 +33,7 @@ export const teachingAssistantsData = [
         name: "Guruprasad B B",
         discipline: "Chemistry",
         image: "/assets/TEACHING ASSISTANT/CHEMISTRY/Guruprasad.jpg",
+        imagePosition: "object-center",
     },
     {
         name: "Veeresh S",
@@ -89,7 +92,7 @@ function NameOnlyCard({ name }: { name: string }) {
         .join("");
 
     return (
-        <div className="aspect-[4/3] w-full rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl flex items-center justify-center px-6">
+        <div className="h-80 w-full rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl flex items-center justify-center px-6">
             <span className="text-2xl font-bold text-slate-300">{initials}</span>
         </div>
     );
@@ -109,12 +112,12 @@ export default function TeachingAssistantsList() {
                 {teachingAssistantsData.map((person) => (
                     <article key={`${person.discipline}-${person.name}`} className="text-center group">
                         {person.image ? (
-                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-slate-50 shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                            <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                                 <Image
                                     src={person.image}
                                     alt={person.name}
                                     fill
-                                    className="object-contain p-1"
+                                    className={`object-cover ${person.imagePosition || "object-top"}`}
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                 />
                             </div>
