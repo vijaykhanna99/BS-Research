@@ -4,6 +4,7 @@ import { MoveLeft, ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, Chec
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { electiveMonth, semesters } from "@/data/sharedCurriculumData";
+import HandbookReferenceNote from "@/components/course-structure/HandbookReferenceNote";
 
 export interface DepartmentTemplateProps {
     name: string;
@@ -384,6 +385,8 @@ const DepartmentTemplate = ({
                             </div>
                         </div>
                     )}
+
+                    <HandbookReferenceNote />
 
                     {/* Requirement Note */}
                     {activeTab <= 2 && (

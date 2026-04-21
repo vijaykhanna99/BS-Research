@@ -4,6 +4,7 @@ import { MoveLeft, Info, AlignLeft, BookOpen, X, AlertCircle, Star } from "lucid
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { semesters } from "@/data/sharedCurriculumData";
+import HandbookReferenceNote from "@/components/course-structure/HandbookReferenceNote";
 
 const SharedCurriculum = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -234,6 +235,8 @@ const SharedCurriculum = () => {
                             </div>
                         </div>
                     )}
+
+                    <HandbookReferenceNote />
 
                     {/* Requirement Note */}
                     {(activeTab === 1 || activeTab === 2) && (

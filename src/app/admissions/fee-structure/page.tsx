@@ -105,7 +105,7 @@ export default function FeeStructurePage() {
                                     <div className="flex gap-3">
                                         <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                                         <p className="text-slate-700 text-sm leading-relaxed">
-                                            <strong className="text-amber-800">Note:</strong> Tuition fees and other charges (excluding refundable deposits) mentioned in the ensuing tables will increase uniformly at a rate of <strong>5% annually</strong>.
+                                            <strong className="text-amber-800">Note:</strong> Tuition fees and other charges (excluding refundable deposits) mentioned in the above tables will increase uniformly at a rate of <strong>5% annually</strong>.
                                         </p>
                                     </div>
                                 </div>
