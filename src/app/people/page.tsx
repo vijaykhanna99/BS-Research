@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import DeansList from "@/components/people/lists/DeansList";
 import CoordinatorsList from "@/components/people/lists/CoordinatorsList";
-import PlaceholderList from "@/components/people/lists/PlaceholderList";
+import InstructorsList from "@/components/people/lists/InstructorsList";
+import TeachingAssistantsList from "@/components/people/lists/TeachingAssistantsList";
 
 export default function PeopleHubPage() {
     const [activeTab, setActiveTab] = useState('deans');
@@ -21,9 +22,9 @@ export default function PeopleHubPage() {
             case 'coordinators':
                 return <CoordinatorsList />;
             case 'instructors':
-                return <PlaceholderList name="UG Instructors" />;
+                return <InstructorsList />;
             case 'ta':
-                return <PlaceholderList name="Teaching Assistants" />;
+                return <TeachingAssistantsList />;
             default:
                 return <DeansList />;
         }
