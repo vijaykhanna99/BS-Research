@@ -59,12 +59,12 @@ export const instructorsData = [
     {
         name: "Dr. Sharath Raj",
         discipline: "Earth & Environmental Science",
-        image: "/assets/INSTRUCTOR/E-and-Envs/Sharath Raj Bayal (1).jpeg",
+        image: "/assets/INSTRUCTOR/E-and-Envs/sharath-raj.jpeg",
     },
     {
         name: "Dr. Saranya K",
         discipline: "Earth & Environmental Science",
-        image: "/assets/INSTRUCTOR/E-and-Envs/Saranya Kumarasamy.jpeg",
+        image: "/assets/INSTRUCTOR/E-and-Envs/saranya-k.jpeg",
     },
     {
         name: "Dr. Manpreet Singh",

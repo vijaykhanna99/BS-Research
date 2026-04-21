@@ -38,7 +38,7 @@ export const teachingAssistantsData = [
     {
         name: "Veeresh S",
         discipline: "Earth & Environmental Science",
-        image: "/assets/TEACHING ASSISTANT/E&ENVS/Veeresh S.png",
+        image: "/assets/TEACHING ASSISTANT/E-and-Envs/veeresh-s.png",
     },
     {
         name: "V Madhuri",
