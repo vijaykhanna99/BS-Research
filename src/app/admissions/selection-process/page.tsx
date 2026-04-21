@@ -118,19 +118,27 @@ export default function SelectionProcessPage() {
                                 <p>If a board gives aggregate marks considering both Class XI and Class XII, then only Class XII (or equivalent) examination marks will be considered. The applicant should provide only Class XII marks while filling out the online application form.</p>
                             </div>
                             <div className="flex gap-4">
-                                <span className="font-bold text-blue-700 shrink-0">(f)</span>
+                                <span className="font-bold text-blue-700 shrink-0">(e)</span>
                                 <p>If a board gives aggregate marks considering the results of all three years of a 3-year diploma or courses of equivalent duration, then only the marks scored in the final year will be considered. Similarly, the marks scored in the final two semesters will be considered for boards that follow a semester system. The applicant should enter the 12th marks/diploma details accordingly in the admission portal.</p>
                             </div>
                             <div className="flex gap-4">
+                                <span className="font-bold text-blue-700 shrink-0">(f)</span>
+                                <p>In case any of the subjects Physics, Chemistry, Mathematics are not evaluated in the final year (e.g., in a 3-year diploma course), then the marks for the same subject from the previous year/s will be used for calculating percentage of aggregate marks.</p>
+                            </div>
+                            <div className="flex gap-4">
                                 <span className="font-bold text-blue-700 shrink-0">(g)</span>
-                                <p>If a board awards only letter grades without providing an equivalent percentage of marks on the grade sheet, the candidate should obtain a certificate from the board specifying the equivalent marks and submit it at the time of admission counselling.</p>
+                                <p>If a Board does not give marks scored in individual subjects but gives only the aggregate marks, then the aggregate marks given by the Board will be considered as such.</p>
                             </div>
                             <div className="flex gap-4">
                                 <span className="font-bold text-blue-700 shrink-0">(h)</span>
-                                <p>The percentage will be calculated using aggregate marks, that is, considering ALL the subjects taken in Class XII (or equivalent) level.</p>
+                                <p>If a board awards only letter grades without providing an equivalent percentage of marks on the grade sheet, the candidate should obtain a certificate from the board specifying the equivalent marks and submit it at the time of admission counselling.</p>
                             </div>
                             <div className="flex gap-4">
                                 <span className="font-bold text-blue-700 shrink-0">(i)</span>
+                                <p>The percentage will be calculated using aggregate marks, that is, considering ALL the subjects taken in Class XII (or equivalent) level.</p>
+                            </div>
+                            <div className="flex gap-4">
+                                <span className="font-bold text-blue-700 shrink-0">(j)</span>
                                 <p>The marksheet submitted by the candidates for their Class XII (or equivalent) examination must be issued by a single examination Board.</p>
                             </div>
                         </div>
