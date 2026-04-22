@@ -81,6 +81,11 @@ export const teachingAssistantsData = [
         name: "Soorya P S",
         discipline: "Earth & Environmental Science",
     },
+    {
+        name: "Jeevan S",
+        discipline: "Materials Science & Engineering",
+        image: "/assets/TEACHING ASSISTANT/Materials Science & Engineering/Jeevan S.jpg",
+    },
 ];
 
 function NameOnlyCard({ name }: { name: string }) {
