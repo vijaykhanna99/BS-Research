@@ -47,6 +47,9 @@ export default function NewsAndUpdatesPage() {
                                             <p>
                                                 Students applying from the 2026-27 admission cycle onwards will not have the option to choose this major.
                                             </p>
+                                            <p>
+                                                This change does not affect students currently enrolled in the programme.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
