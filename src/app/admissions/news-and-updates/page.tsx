@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ExternalLink, FileText } from "lucide-react";
 
 export default function NewsAndUpdatesPage() {
     return (
@@ -27,6 +27,31 @@ export default function NewsAndUpdatesPage() {
 
                     <div className="p-8 md:p-10 space-y-6">
                         <div className="space-y-8">
+                            {/* Materials Major Discontinuation Notice */}
+                            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-white text-amber-700 rounded-lg shrink-0 shadow-sm">
+                                        <AlertTriangle className="w-6 h-6" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-2">
+                                            Important Update
+                                        </div>
+                                        <h3 className="text-lg font-bold text-slate-800 mb-3">
+                                            Discontinuation of Materials Major (from AY 2026-27)
+                                        </h3>
+                                        <div className="space-y-3 text-slate-700 text-sm leading-relaxed">
+                                            <p>
+                                                The Materials major under the BS (Research) programme will be discontinued with effect from the Academic Year 2026-27.
+                                            </p>
+                                            <p>
+                                                Students applying from the 2026-27 admission cycle onwards will not have the option to choose this major.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             {/* Notice Link */}
                             <a
                                 href="https://iisc.ac.in/wp-content/uploads/2026/02/Admission-Notice_2026-27.pdf#page=9"
