@@ -1,21 +1,24 @@
 import React from "react";
 import { Eye, Calendar } from "lucide-react";
-import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 const StudentHandbook = () => {
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Student Corner"
-                title="Student Handbooks"
-                subtitle="Official academic documents, schemes of instruction, and rulebooks."
-                image="/assets/hero-course-structure.jpg"
-            />
+        <div className="min-h-screen bg-slate-50 py-16 px-4">
 
-            <ContentShell className="max-w-4xl space-y-8">
+            {/* Header */}
+            <div className="max-w-4xl mx-auto mb-10 border-b border-slate-200 pb-8">
+                <h1 className="text-3xl font-bold text-slate-800 mb-2">
+                    Student Handbooks
+                </h1>
+                <p className="text-slate-600">
+                    Official academic documents, schemes of instruction, and rulebooks.
+                </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-8">
 
                 {/* 2025-26 Item (Latest) */}
-                <div className="elevated-card overflow-hidden flex flex-col md:flex-row hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 group">
+                <div className="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-lg transition-all duration-300 group">
                     {/* Left Panel: Academic Year */}
                     <div className="bg-[#0e5475] p-8 md:w-64 shrink-0 flex flex-col justify-center items-center text-center text-white relative">
                         <Calendar className="absolute opacity-10 w-32 h-32 -left-4 -bottom-4 transform rotate-12" />
@@ -68,7 +71,7 @@ const StudentHandbook = () => {
                 </div>
 
                 {/* 2024-25 Item */}
-                <div className="elevated-card overflow-hidden flex flex-col md:flex-row hover:shadow-[var(--shadow-card-hover)] transition-all duration-300 group">
+                <div className="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col md:flex-row shadow-sm hover:shadow-lg transition-all duration-300 group">
                     {/* Left Panel: Academic Year */}
                     <div className="bg-slate-700 p-8 md:w-64 shrink-0 flex flex-col justify-center items-center text-center text-white relative">
                         <Calendar className="absolute opacity-10 w-32 h-32 -left-4 -bottom-4 transform rotate-12" />
@@ -117,8 +120,8 @@ const StudentHandbook = () => {
                     </div>
                 </div>
 
-            </ContentShell>
-        </PageBody>
+            </div>
+        </div>
     );
 }
 

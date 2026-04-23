@@ -80,22 +80,22 @@ export default function CoordinatorsList() {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
-                <span className="section-eyebrow">Directory</span>
-                <h2 className="section-title mt-3">
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">
                     Programme Coordinators
                 </h2>
+                <div className="h-px w-20 bg-slate-200 mx-auto"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12">
                 {coordinatorsData.map((person) => (
                     <a
                         key={`${person.major}-${person.name}`}
                         href={person.profile}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="elevated-card group overflow-hidden text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]"
+                        className="group text-center"
                     >
-                        <div className="relative h-80 w-full overflow-hidden bg-slate-100">
+                        <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                             <Image
                                 src={person.image}
                                 alt={person.name}
@@ -109,7 +109,7 @@ export default function CoordinatorsList() {
                             {person.major}
                         </div>
 
-                        <h3 className="px-5 pb-6 mt-2 text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-700 transition-colors">
+                        <h3 className="mt-2 text-xl font-bold text-slate-900 leading-tight group-hover:text-blue-700 transition-colors">
                             Prof. {person.name}
                         </h3>
                     </a>

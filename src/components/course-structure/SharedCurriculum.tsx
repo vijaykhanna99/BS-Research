@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Info, AlignLeft, BookOpen, X, AlertCircle, Star } from "lucide-react";
+import { MoveLeft, Info, AlignLeft, BookOpen, X, AlertCircle, Star } from "lucide-react";
+import Link from "next/link";
 import { createPortal } from "react-dom";
 import { semesters } from "@/data/sharedCurriculumData";
 import HandbookReferenceNote from "@/components/course-structure/HandbookReferenceNote";
-import { ContentShell, PageBody, PageHero, SectionHeading } from "@/components/ui/PageChrome";
 
 const SharedCurriculum = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -23,21 +23,49 @@ const SharedCurriculum = () => {
     const currentSemester = semesters[activeTab];
 
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Bachelor of Science (Research)"
-                title="Shared Curriculum"
-                subtitle="Foundation phase covering semesters 1-3."
-                image="/assets/hero-course-structure.jpg"
-                backHref={showBack ? "/" : undefined}
-                backLabel="Back"
-            />
+        <div className="bg-white pb-8 font-sans text-gray-900">
+            <div className={`bg-white sticky top-0 z-40 px-6 h-16 shadow-sm relative ${showBack ? "border-b border-gray-100 flex items-center" : "hidden"}`}>
+                {showBack && (
+                    <Link
+                        href="/"
+                        className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors absolute left-6"
+                    >
+                        <MoveLeft className="w-5 h-5 mr-2" /> Back
+                    </Link>
+                )}
+            </div>
 
-            <ContentShell>
+            {/* 1. Background Image / Hero */}
+            <div
+                className="relative w-full h-[300px] flex items-center justify-center bg-gray-900"
+                style={{
+                    backgroundImage: `url('/assets/hero-course-structure.jpg')`, // Generic academic background
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+            >
+                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                    <span className="inline-block py-1 px-3 rounded bg-blue-600 text-white text-xs font-bold tracking-widest uppercase mb-4">
+                        Bachelor of Science (Research)
+                    </span>
+                    <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
+                        Shared Curriculum
+                    </h1>
+                    <p className="text-gray-200 text-lg mt-2 max-w-2xl mx-auto">
+                        Foundation Phase (Semesters 1-3)
+                    </p>
+                </div>
+            </div>
+
+            {/* Main Content Container */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
 
                 {/* 1. Course Overview */}
                 <div className="mb-12">
-                    <SectionHeading title="Overview" />
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                        Overview
+                    </h2>
                     <div className="prose max-w-none text-gray-700">
                         <p className="text-lg leading-relaxed">
                             The first three semesters are common to all students, designed to build a strong foundation in Physics, Chemistry, Mathematics, Biology, Engineering, and Earth & Environmental Science. This interdisciplinary approach ensures that students develop a holistic understanding of scientific principles before specializing in a major discipline.
@@ -67,7 +95,7 @@ const SharedCurriculum = () => {
 
                     {/* Course Table */}
                     {currentSemester && (
-                        <div className="data-panel mb-6">
+                        <div className="border border-gray-300 rounded overflow-hidden mb-6 shadow-sm">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm text-left border-collapse min-w-[600px]">
                                     <thead className="bg-gray-50 text-gray-900 font-bold border-b border-gray-300">
@@ -374,8 +402,8 @@ const SharedCurriculum = () => {
                     </div>,
                     document.body
                 )}
-            </ContentShell>
-        </PageBody>
+            </div>
+        </div >
     );
 };
 

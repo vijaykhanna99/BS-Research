@@ -1,30 +1,32 @@
 "use client";
 import React from "react";
-import { Calendar } from "lucide-react";
-import { ADMISSION_DATES, ACADEMIC_SESSION } from "@/data/admissions";
-import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
+import { Calendar, ArrowLeft } from "lucide-react";
+import Link from "next/link";
+import { ADMISSION_DATES, ACADEMIC_SESSION, ADMISSION_YEAR } from "@/data/admissions";
 
 export default function ImportantDatesPage() {
     return (
-        <PageBody>
-            <PageHero
-                eyebrow={`Academic Session ${ACADEMIC_SESSION}`}
-                title="Important Dates"
-                subtitle="Application, counselling, reporting, and class commencement schedule."
-                image="/assets/champions1.png"
-                backHref="/admissions"
-                backLabel="Back to Admissions"
-            />
-            <ContentShell className="max-w-4xl">
-                <div className="elevated-card overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="min-h-screen bg-slate-50 py-20 px-4">
+            <div className="max-w-4xl mx-auto">
+
+                {/* Back Button */}
+                <Link
+                    href="/admissions"
+                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 mb-8 transition-colors font-medium"
+                >
+                    <ArrowLeft className="w-4 h-4" />
+                    Back to Admissions
+                </Link>
+
+                <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
 
                     {/* Header */}
-                    <div className="border-b border-slate-200 bg-white p-8 md:p-10">
-                        <h2 className="text-2xl md:text-3xl font-bold mb-3 flex items-center gap-4 text-slate-900">
-                            <Calendar className="w-8 h-8 text-orange-500" />
-                            Admission Timeline
-                        </h2>
-                        <p className="text-slate-500 text-lg">Schedule for the {ACADEMIC_SESSION} academic session.</p>
+                    <div className="bg-orange-500 p-8 md:p-10 text-white">
+                        <h1 className="text-3xl md:text-4xl font-bold mb-3 flex items-center gap-4">
+                            <Calendar className="w-8 h-8 md:w-10 md:h-10 text-orange-100" />
+                            Important Dates
+                        </h1>
+                        <p className="text-orange-100 text-lg opacity-90">Schedule for the {ACADEMIC_SESSION} Academic Session</p>
                     </div>
 
                     <div className="p-8 md:p-10">
@@ -33,7 +35,7 @@ export default function ImportantDatesPage() {
                             <h3 className="text-xl font-bold text-slate-800 mb-6 border-l-4 border-orange-500 pl-4 flex items-center">
                                 General Schedule
                             </h3>
-                            <div className="data-panel overflow-x-auto">
+                            <div className="border rounded-xl overflow-hidden shadow-sm overflow-x-auto">
                                 <table className="w-full text-left min-w-[500px]">
                                     <thead className="bg-slate-50/80 border-b">
                                         <tr>
@@ -71,7 +73,7 @@ export default function ImportantDatesPage() {
                             <h3 className="text-xl font-bold text-slate-800 mb-6 border-l-4 border-blue-500 pl-4">
                                 Admission Counselling (Tentative)
                             </h3>
-                            <div className="data-panel overflow-x-auto">
+                            <div className="border rounded-xl overflow-hidden shadow-sm overflow-x-auto">
                                 <table className="w-full text-left min-w-[500px]">
                                     <thead className="bg-slate-50/80 border-b">
                                         <tr>
@@ -97,7 +99,7 @@ export default function ImportantDatesPage() {
                         </div>
                     </div>
                 </div>
-            </ContentShell>
-        </PageBody>
+            </div>
+        </div>
     );
 }

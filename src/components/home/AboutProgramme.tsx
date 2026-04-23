@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Atom, FlaskConical, Calculator, Dna, Globe2, Cpu, Stethoscope } from "lucide-react";
 
 import Image from "next/image";
 

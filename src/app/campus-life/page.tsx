@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { X } from 'lucide-react';
-import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 const CampusLifePage = () => {
     const gallerySections = [
@@ -113,19 +112,13 @@ const CampusLifePage = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Student Corner"
-                title="Campus Life"
-                subtitle="Explore the campus environment, laboratories, sports, and student culture that shape undergraduate life at IISc."
-                image="/assets/IMG_9485.JPG"
-            />
+        <div className="bg-slate-50 min-h-screen">
             {/* Gallery Sections */}
-            <ContentShell className="space-y-24">
+            <div className="container mx-auto px-4 py-16 space-y-24">
                 {gallerySections.map((section, idx) => (
                     <div key={idx} className="space-y-8">
                         <div className="text-center space-y-4">
-                            <h2 className="section-title">{section.title}</h2>
+                            <h2 className="text-3xl font-bold text-slate-900">{section.title}</h2>
                             <p className="text-slate-600 max-w-2xl mx-auto font-medium">{section.description}</p>
                         </div>
 
@@ -135,7 +128,7 @@ const CampusLifePage = () => {
                                 <div
                                     key={imgIdx}
                                     onClick={() => setSelectedImage(src)}
-                                    className="elevated-card group relative aspect-[4/3] cursor-pointer overflow-hidden transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]"
+                                    className="group relative aspect-[4/3] cursor-pointer rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ring-1 ring-slate-100"
                                 >
                                     <Image
                                         src={src}
@@ -158,7 +151,7 @@ const CampusLifePage = () => {
                         )}
                     </div>
                 ))}
-            </ContentShell>
+            </div>
 
             {/* Fullscreen Modal Image Viewer */}
             {selectedImage && (
@@ -189,7 +182,7 @@ const CampusLifePage = () => {
                     </div>
                 </div>
             )}
-        </PageBody>
+        </div>
     );
 };
 

@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
-import { ContentShell, PageBody, PageHero } from '@/components/ui/PageChrome';
 
 const BASE = 'https://openday.iisc.ac.in';
 
@@ -19,14 +18,18 @@ export default function GreenOpenDayPage() {
     const activePoster = languages.find(l => l.id === activeLang)!;
 
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Open Day 2026"
-                title="Green Open Day"
-                subtitle="Join us in our initiative towards a sustainable and eco-friendly IISc Open Day."
-                image="/assets/IMG_9485.JPG"
-            />
-            <ContentShell>
+        <main className={styles.page}>
+            <div className={styles.container}>
+                <header className={styles.header}>
+                    <h1 className={styles.title}>
+                        <span>🌱</span> Green Open Day 2026
+                    </h1>
+                    <p className={styles.subtitle}>
+                        Join us in our initiative towards a sustainable and eco-friendly IISc Open Day.
+                        Let&apos;s act responsibly and cherish our environment.
+                    </p>
+                </header>
+
                 <div className={styles.contentSection}>
                     {/* Video */}
                     <h2 className={styles.sectionTitle}>A Message for Sustainability</h2>
@@ -73,7 +76,7 @@ export default function GreenOpenDayPage() {
                         />
                     </div>
                 </div>
-            </ContentShell>
-        </PageBody>
+            </div>
+        </main>
     );
 }

@@ -7,8 +7,8 @@ import Image from "next/image";
 
 export default function JayalakshmiVenkataramanacharFellowshipPage() {
     return (
-        <div className="min-h-screen bg-slate-50">
-            <div className="section-shell py-12 md:py-16 max-w-4xl">
+        <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
                 {/* Back Button */}
                 <div className="mb-8">
                     <Link
@@ -21,8 +21,11 @@ export default function JayalakshmiVenkataramanacharFellowshipPage() {
                 </div>
 
                 {/* Header Section */}
-                <div className="elevated-card overflow-hidden mb-8">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-8">
                     <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-8 sm:p-10 text-white relative overflow-hidden">
+                        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                        <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+
                         <div className="relative z-10">
                             <h1 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 leading-tight">
                                 Smt Jayalakshmi & Late Sri KT Venkataramanachar Fellowship for Women Students
@@ -62,7 +65,7 @@ export default function JayalakshmiVenkataramanacharFellowshipPage() {
                         {/* Details Grid */}
                         <div className="grid md:grid-cols-2 gap-8 mb-12">
                             {/* Eligibility */}
-                            <div className="elevated-card bg-slate-50 p-6 h-full">
+                            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 h-full">
                                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center">
                                     <Users className="w-5 h-5 text-purple-600 mr-2" />
                                     Eligibility
@@ -80,7 +83,7 @@ export default function JayalakshmiVenkataramanacharFellowshipPage() {
                             </div>
 
                             {/* Entitlements */}
-                            <div className="elevated-card bg-slate-50 p-6 h-full">
+                            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 h-full">
                                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center">
                                     <Award className="w-5 h-5 text-amber-600 mr-2" />
                                     Entitlements
@@ -102,7 +105,7 @@ export default function JayalakshmiVenkataramanacharFellowshipPage() {
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Fellowship Awardees</h2>
                             <div className="max-w-md mx-auto">
-                                <div className="elevated-card overflow-hidden">
+                                <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
                                     <div className="bg-blue-50 py-3 px-4 border-b border-blue-100">
                                         <h3 className="font-bold text-blue-900 text-center">2022</h3>
                                     </div>
@@ -131,7 +134,9 @@ export default function JayalakshmiVenkataramanacharFellowshipPage() {
                                         This fellowship is to honour their commitment to education, especially to that of girl students.
                                     </p>
                                 </div>
-                            </div>                        </div>
+                            </div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                        </div>
 
                     </div>
                 </div>

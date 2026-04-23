@@ -6,9 +6,9 @@ import { MoveLeft, BookOpen, FlaskConical } from "lucide-react";
 
 export default function ChemistryMinorPage() {
     return (
-        <div className="bg-slate-50 pb-16 font-sans text-gray-900 min-h-screen">
+        <div className="bg-white pb-16 font-sans text-gray-900 min-h-screen">
             {/* Nav / Back Button */}
-            <div className="bg-white/95 sticky top-[68px] z-40 border-b border-slate-200 px-6 h-14 flex items-center justify-between shadow-sm backdrop-blur">
+            <div className="bg-white sticky top-0 z-40 border-b border-gray-100 px-6 h-16 flex items-center justify-between shadow-sm">
                 <Link
                     href="/"
                     className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors"
@@ -29,9 +29,9 @@ export default function ChemistryMinorPage() {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001c41]/90 via-[#001c41]/60 to-[#001c41]/25"></div>
+                <div className="absolute inset-0 bg-black/60"></div>
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-200 backdrop-blur mb-4">
+                    <span className="inline-block py-1 px-3 rounded bg-blue-600 text-white text-xs font-bold tracking-widest uppercase mb-4">
                         Minor in Chemistry
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight">
@@ -44,11 +44,11 @@ export default function ChemistryMinorPage() {
             </div>
 
             {/* Main Content Container */}
-            <div className="section-shell py-14 md:py-16 relative z-10">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
 
                 {/* 1. Overview */}
                 <div className="mb-16">
-                    <h2 className="section-title mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-gray-900 pb-2 inline-block">
                         Overview
                     </h2>
 
@@ -61,11 +61,11 @@ export default function ChemistryMinorPage() {
 
                 {/* 3. Curriculum Structure */}
                 <div className="mb-12">
-                    <h2 className="section-title mb-6">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-gray-900 pb-2 inline-block">
                         Curriculum Structure
                     </h2>
 
-                    <div className="elevated-card bg-blue-50 border-blue-100 p-6 mb-8">
+                    <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8 shadow-sm">
                         <h3 className="text-lg font-bold text-blue-900 mb-2 flex items-center gap-2">
                             <BookOpen className="w-5 h-5 flex-shrink-0" />
                             Credit Requirement for Minor: 15 Credits Total
@@ -76,7 +76,7 @@ export default function ChemistryMinorPage() {
                     </div>
 
                     {/* Core Courses */}
-                    <div className="data-panel mb-12">
+                    <div className="mb-12 border border-gray-300 rounded-lg overflow-hidden shadow-sm">
                         <div className="bg-gray-50 px-6 py-4 border-b border-gray-300 flex justify-between items-center">
                             <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
                                 <FlaskConical className="w-5 h-5 text-blue-600" /> Core Courses
@@ -104,7 +104,7 @@ export default function ChemistryMinorPage() {
                     </div>
 
                     {/* Elective Courses */}
-                    <div className="data-panel">
+                    <div className="border border-gray-300 rounded-lg overflow-hidden shadow-sm">
                         <div className="bg-gray-50 px-6 py-4 border-b border-gray-300 flex justify-between items-center">
                             <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
                                 <BookOpen className="w-5 h-5 text-gray-600" /> Elective Courses

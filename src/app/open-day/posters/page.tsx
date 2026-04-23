@@ -1,23 +1,15 @@
 import React from 'react';
-import { ContentShell, PageBody, PageHero } from '@/components/ui/PageChrome';
 
 export default function OpenDayPostersPage() {
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Open Day 2026"
-                title="Open Day Posters"
-                subtitle="Scientific and creative posters from undergraduate programme activities."
-                image="/assets/IMG_9389.JPG"
-            />
-            <ContentShell className="max-w-3xl">
-                <div className="elevated-card p-10 text-center">
-                <h2 className="section-title mb-4">Posters coming soon</h2>
-                <p className="section-copy text-lg">
+        <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8fafc', padding: '2rem' }}>
+            <div style={{ textAlign: 'center', padding: '4rem 2rem', background: 'white', borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)', maxWidth: '600px', width: '100%' }}>
+                <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🖼️</div>
+                <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem' }}>Open Day Posters</h1>
+                <p style={{ fontSize: '1.1rem', color: '#64748b', lineHeight: 1.6 }}>
                     The scientific and creative posters for Open Day 2026 will be showcased here shortly. Check back soon for updates!
                 </p>
-                </div>
-            </ContentShell>
-        </PageBody>
+            </div>
+        </main>
     );
 }

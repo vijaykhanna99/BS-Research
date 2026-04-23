@@ -3,20 +3,17 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
-import { ContentShell, PageBody, PageHero } from '@/components/ui/PageChrome';
 
 export default function OpenDayMapPage() {
     const [isZoomed, setIsZoomed] = useState(false);
 
     return (
-        <PageBody>
-            <PageHero
-                eyebrow="Open Day 2026"
-                title="Open Day Map"
-                subtitle="Find the UG programme location and download the high-resolution IISc Open Day map."
-                image="/assets/IMG_9424.JPG"
-            />
-            <ContentShell>
+        <main className={styles.page}>
+            <div className={styles.container}>
+                <header className={styles.header}>
+                    <h1 className={styles.title}>Open Day Map 2026</h1>
+                </header>
+
                 <div className={styles.mapSection}>
                     <div className={styles.mapContainer} onClick={() => setIsZoomed(!isZoomed)} style={{ cursor: isZoomed ? 'zoom-out' : 'zoom-in' }}>
                         <div className={`${styles.imageWrapper} ${isZoomed ? styles.zoomed : ''}`}>
@@ -39,7 +36,7 @@ export default function OpenDayMapPage() {
                         </a>
                     </div>
                 </div>
-            </ContentShell>
-        </PageBody>
+            </div>
+        </main>
     );
 }

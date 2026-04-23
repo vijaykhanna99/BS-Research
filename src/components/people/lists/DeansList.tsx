@@ -21,10 +21,10 @@ export const deansData = [
 
 export default function DeansList() {
     return (
-        <div className="grid md:grid-cols-2 gap-6 justify-center max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-12 justify-center max-w-5xl mx-auto">
             {deansData.map((person, index) => (
-                <div key={index} className="elevated-card group overflow-hidden text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
-                    <div className="relative aspect-square w-full overflow-hidden bg-slate-100">
+                <div key={index} className="text-center group">
+                    <div className="relative aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
                         <Image
                             src={person.image}
                             alt={person.name}
@@ -34,7 +34,7 @@ export default function DeansList() {
                         />
                     </div>
 
-                    <div className="p-6">
+                    <div className="pt-5">
                         <h3 className="text-2xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-700 transition-colors">
                             Prof. {person.name}
                         </h3>

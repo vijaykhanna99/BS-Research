@@ -14,6 +14,48 @@ import ScienceDisciplines from "./ScienceDisciplines";
 
 
 const HomeContent = () => {
+    // Assets paths
+
+    // Standard Typography Classes
+    const headingClass = "text-2xl font-bold text-slate-900 tracking-tight";
+    const sectionHeaderClass = "flex items-center gap-3 mb-2";
+
+    // News Item Styles
+    // News Item Styles
+    const newsTitleClass = "text-sm font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors";
+    const newsMetaClass = "text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2 flex items-center gap-2";
+
+    // Announcement Item Styles
+    const announceTextClass = "text-base font-semibold text-slate-800 leading-snug group-hover:text-blue-700 transition-colors";
+    const announceDateClass = "text-xs font-bold text-slate-400 uppercase tracking-wide";
+
+    // Date formatter helper
+    const formatDate = (dateString: string) => {
+        // Handle Month Year format (e.g. "October 2025")
+        if (/^[a-zA-Z]+ \d{4}$/.test(dateString)) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase();
+        }
+
+        const date = new Date(dateString);
+        const today = new Date();
+
+        const isToday = date.getDate() === today.getDate() &&
+            date.getMonth() === today.getMonth() &&
+            date.getFullYear() === today.getFullYear();
+
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+        const isYesterday = date.getDate() === yesterday.getDate() &&
+            date.getMonth() === yesterday.getMonth() &&
+            date.getFullYear() === yesterday.getFullYear();
+
+        if (isToday) return "TODAY";
+        if (isYesterday) return "YESTERDAY";
+
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    };
+
     return (
         <div className="bg-white">
 
