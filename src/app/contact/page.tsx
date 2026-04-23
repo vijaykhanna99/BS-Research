@@ -1,26 +1,25 @@
 "use client";
 import React from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, Clock } from 'lucide-react';
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 export default function ContactPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4 md:px-6">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-12 text-center">
-                    <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-                        Contact Us
-                    </h1>
-                    <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-                        Get in touch with the admissions office.
-                    </p>
-                </div>
+        <PageBody>
+            <PageHero
+                eyebrow="UG Office"
+                title="Contact Us"
+                subtitle="Get in touch with the admissions office and programme administration."
+                image="/assets/IMG_9424.JPG"
+            />
+            <ContentShell>
 
                 <div className="grid lg:grid-cols-2 gap-8">
                     {/* Left Column: Contact Information */}
                     <div className="space-y-6">
 
                         {/* Admission Queries Card */}
-                        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
+                        <div className="elevated-card p-8">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center shrink-0">
                                     <Phone className="w-5 h-5" />
@@ -87,7 +86,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Other Contact Details Card */}
-                        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
+                        <div className="elevated-card p-8">
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center shrink-0">
                                     <Mail className="w-5 h-5" />
@@ -132,7 +131,7 @@ export default function ContactPage() {
 
                     {/* Right Column: Map */}
                     <div className="space-y-6">
-                        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden h-full min-h-[400px] sticky top-6">
+                        <div className="elevated-card overflow-hidden h-full min-h-[400px] sticky top-24">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7246323453655!2d77.56543631482233!3d12.991813990839756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17d757000001%3A0x349e8b69c2a5a78c!2sIndian%20Institute%20of%20Science!5e0!3m2!1sen!2sin!4v1647935908386!5m2!1sen!2sin"
                                 width="100%"
@@ -146,7 +145,7 @@ export default function ContactPage() {
                     </div>
 
                 </div>
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 };

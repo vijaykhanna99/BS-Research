@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowLeft, ChevronDown, CheckCircle2, GraduationCap, Users, Globe, Building2, ShieldCheck, FileCheck } from "lucide-react";
-import Link from "next/link";
+import { ChevronDown, CheckCircle2, GraduationCap, Users, Globe, Building2, ShieldCheck, FileCheck } from "lucide-react";
 import { ADMISSION_YEAR } from "@/data/admissions";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 const AccordionItem = ({ title, icon: Icon, defaultOpen = false, children }: any) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -37,26 +37,16 @@ const AccordionItem = ({ title, icon: Icon, defaultOpen = false, children }: any
 
 export default function SelectionProcessPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-                <Link
-                    href="/admissions"
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 mb-8 transition-colors font-medium group"
-                >
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    Back to Admissions
-                </Link>
-
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
-                    <div className="bg-[#002147] p-8 md:p-10 text-white">
-                        <div className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold tracking-wider mb-4 border border-white/20">
-                            ADMISSIONS {ADMISSION_YEAR || "2026"}
-                        </div>
-                        <h1 className="text-2xl md:text-3xl font-bold leading-tight">
-                            Four-Year Bachelor of Science (Research) Programme
-                        </h1>
-                    </div>
-                </div>
+        <PageBody>
+            <PageHero
+                eyebrow={`Admissions ${ADMISSION_YEAR || "2026"}`}
+                title="Selection Process"
+                subtitle="Eligibility, intake, entry modes, reservation policy, and selection criteria for the Four-Year Bachelor of Science (Research) Programme."
+                image="/assets/champions1.png"
+                backHref="/admissions"
+                backLabel="Back to Admissions"
+            />
+            <ContentShell className="max-w-4xl">
 
                 {/* ACCORDIONS */}
                 <div className="space-y-4">
@@ -266,7 +256,7 @@ export default function SelectionProcessPage() {
                         </div>
                     </AccordionItem>
                 </div>
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 }

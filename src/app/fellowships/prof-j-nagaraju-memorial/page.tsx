@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 
 export default function ProfJNagarajuFellowshipPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+        <div className="min-h-screen bg-slate-50">
+            <div className="section-shell py-12 md:py-16 max-w-4xl">
                 {/* Back Button */}
                 <div className="mb-8">
                     <Link
@@ -25,11 +25,8 @@ export default function ProfJNagarajuFellowshipPage() {
                 </div>
 
                 {/* Header Section */}
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-8">
+                <div className="elevated-card overflow-hidden mb-8">
                     <div className="bg-gradient-to-r from-blue-900 to-blue-800 p-8 sm:p-10 text-white relative overflow-hidden">
-                        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                        <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-
                         <div className="relative z-10">
                             <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
                                 Prof J Nagaraju Memorial Fellowship for Women UG Students
@@ -71,7 +68,7 @@ export default function ProfJNagarajuFellowshipPage() {
                         {/* Details Grid */}
                         <div className="grid md:grid-cols-2 gap-8 mb-12">
                             {/* Eligibility */}
-                            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 h-full">
+                            <div className="elevated-card bg-slate-50 p-6 h-full">
                                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center">
                                     <Users className="w-5 h-5 text-purple-600 mr-2" />
                                     Eligibility
@@ -89,7 +86,7 @@ export default function ProfJNagarajuFellowshipPage() {
                             </div>
 
                             {/* Entitlements */}
-                            <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 h-full">
+                            <div className="elevated-card bg-slate-50 p-6 h-full">
                                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center">
                                     <Award className="w-5 h-5 text-amber-600 mr-2" />
                                     Entitlements
@@ -111,7 +108,7 @@ export default function ProfJNagarajuFellowshipPage() {
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">Fellowship Awardees</h2>
                             <div className="max-w-md mx-auto">
-                                <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                                <div className="elevated-card overflow-hidden">
                                     <div className="bg-blue-50 py-3 px-4 border-b border-blue-100">
                                         <h3 className="font-bold text-blue-900 text-center">2021-2025</h3>
                                     </div>
@@ -150,9 +147,7 @@ export default function ProfJNagarajuFellowshipPage() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
-                        </div>
+                            </div>                        </div>
 
                     </div>
                 </div>

@@ -6,9 +6,9 @@ import { MoveLeft, BookOpen, Globe2 } from "lucide-react";
 
 export default function EarthEnvironmentalScienceMinorPage() {
     return (
-        <div className="bg-white pb-16 font-sans text-gray-900 min-h-screen">
+        <div className="bg-slate-50 pb-16 font-sans text-gray-900 min-h-screen">
             {/* Nav / Back Button */}
-            <div className="bg-white sticky top-0 z-40 border-b border-gray-100 px-6 h-16 flex items-center justify-between shadow-sm">
+            <div className="bg-white/95 sticky top-[68px] z-40 border-b border-slate-200 px-6 h-14 flex items-center justify-between shadow-sm backdrop-blur">
                 <Link
                     href="/"
                     className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors"
@@ -29,9 +29,9 @@ export default function EarthEnvironmentalScienceMinorPage() {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="absolute inset-0 bg-black/60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001c41]/90 via-[#001c41]/60 to-[#001c41]/25"></div>
                 <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <span className="inline-block py-1 px-3 rounded bg-blue-600 text-white text-xs font-bold tracking-widest uppercase mb-4">
+                    <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-amber-200 backdrop-blur mb-4">
                         Minor in Earth & Environmental Science
                     </span>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight">
@@ -44,11 +44,11 @@ export default function EarthEnvironmentalScienceMinorPage() {
             </div>
 
             {/* Main Content Container */}
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+            <div className="section-shell py-14 md:py-16 relative z-10">
 
                 {/* 1. Overview */}
                 <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-gray-900 pb-2 inline-block">
+                    <h2 className="section-title mb-6">
                         Overview
                     </h2>
 
@@ -61,7 +61,7 @@ export default function EarthEnvironmentalScienceMinorPage() {
 
                 {/* 3. Curriculum Structure */}
                 <div className="mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-gray-900 pb-2 inline-block">
+                    <h2 className="section-title mb-6">
                         Curriculum Structure
                     </h2>
 

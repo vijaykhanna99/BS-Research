@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import { MoveLeft, ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
 import { electiveMonth, semesters } from "@/data/sharedCurriculumData";
 import HandbookReferenceNote from "@/components/course-structure/HandbookReferenceNote";
+import { ContentShell, PageBody, PageHero, SectionHeading } from "@/components/ui/PageChrome";
 
 export interface DepartmentTemplateProps {
     name: string;
@@ -57,47 +58,21 @@ const DepartmentTemplate = ({
     const currentSemester = majorSemesters[activeTab];
 
     return (
-        <div className="bg-white pb-8 font-sans text-gray-900">
-            {/* Nav / Back Button */}
-            <div className={`bg-white sticky top-0 z-40 px-6 h-16 shadow-sm relative ${showBack ? "border-b border-gray-100 flex items-center" : "hidden"}`}>
-                {showBack && (
-                    <Link
-                        href="/"
-                        className="flex items-center text-gray-600 hover:text-blue-600 font-medium transition-colors absolute left-6"
-                    >
-                        <MoveLeft className="w-5 h-5 mr-2" /> Back
-                    </Link>
-                )}
-            </div>
+        <PageBody>
+            <PageHero
+                eyebrow="Bachelor of Science (Research) • Major"
+                title={name}
+                subtitle={overview}
+                image={image}
+                backHref={showBack ? "/" : undefined}
+                backLabel="Back"
+            />
 
-            {/* 1. Background Image / Hero */}
-            <div
-                className="relative w-full h-[300px] flex items-center justify-center bg-gray-900"
-                style={{
-                    backgroundImage: `url('${image}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            >
-                <div className="absolute inset-0 bg-black/60"></div>
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <span className="inline-block py-1 px-3 rounded bg-blue-600 text-white text-xs font-bold tracking-widest uppercase mb-4">
-                        Bachelor of Science (Research) <span className="text-blue-200 mx-1">•</span> Major
-                    </span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-2 tracking-tight">
-                        {name}
-                    </h1>
-                </div>
-            </div>
-
-            {/* Main Content Container */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+            <ContentShell>
 
                 {/* 1. Basic Structure */}
                 <div className="mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                        Basic Structure
-                    </h2>
+                    <SectionHeading title="Basic Structure" />
 
                     <div className="prose max-w-none text-gray-700 mb-8">
                         <p className="text-lg leading-relaxed">
@@ -106,7 +81,7 @@ const DepartmentTemplate = ({
                     </div>
 
                     {/* Degree Award Requirement Table */}
-                    <div className="overflow-x-auto border border-gray-300 rounded-lg shadow-sm mb-6">
+                    <div className="data-panel overflow-x-auto mb-6">
                         <table className="w-full text-center border-collapse min-w-[800px]">
                             <thead>
 
@@ -183,7 +158,7 @@ const DepartmentTemplate = ({
 
                     {/* Course Table */}
                     {currentSemester && (
-                        <div className="border border-gray-300 rounded overflow-hidden mb-6 shadow-sm">
+                        <div className="data-panel mb-6">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm text-left border-collapse min-w-[600px]">
                                     <thead className="bg-gray-50 text-gray-900 font-bold border-b border-gray-300">
@@ -744,8 +719,8 @@ const DepartmentTemplate = ({
                     </div>,
                     document.body
                 )}
-            </div>
-        </div >
+            </ContentShell>
+        </PageBody>
     );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './page.module.css';
 import ugExperimentsData from '../../../data/ug_experiments.json';
+import { ContentShell, PageBody, PageHero } from '@/components/ui/PageChrome';
 
 // Mapping icons to clubs
 const clubIcons: Record<string, string> = {
@@ -21,15 +22,14 @@ const clubIcons: Record<string, string> = {
 
 export default function UGExperimentsPage() {
     return (
-        <main className={styles.page}>
-            <div className={styles.container}>
-                <header className={styles.header}>
-                    <h1 className={styles.title}>UG Experiments 2026</h1>
-                    <p className={styles.subtitle}>
-                        Explore the fascinating world of science and technology through interactive experiments presented by the undergraduate student clubs of IISc.
-                    </p>
-                </header>
-
+        <PageBody>
+            <PageHero
+                eyebrow="Open Day 2026"
+                title="UG Experiments"
+                subtitle="Explore interactive experiments presented by the undergraduate student clubs of IISc."
+                image="/assets/IMG_9389.JPG"
+            />
+            <ContentShell>
                 {Object.entries(ugExperimentsData).map(([clubName, experiments]) => (
                     <section key={clubName} className={styles.clubSection}>
                         <div className={styles.clubHeader}>
@@ -49,7 +49,7 @@ export default function UGExperimentsPage() {
                         </div>
                     </section>
                 ))}
-            </div>
-        </main>
+            </ContentShell>
+        </PageBody>
     );
 }

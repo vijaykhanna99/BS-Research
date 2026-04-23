@@ -1,8 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowLeft, Plus, Minus, Search, ExternalLink } from "lucide-react";
+import { Plus, Minus, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { INTAKE } from "@/data/admissions";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 export default function FAQPage() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -160,26 +161,16 @@ export default function FAQPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-                {/* Back Button */}
-                <Link
-                    href="/admissions"
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 mb-8 transition-colors font-medium group"
-                >
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    Back to Admissions
-                </Link>
-
-                {/* Header */}
-                <div className="mb-10 text-center">
-                    <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
-                        Frequently Asked Questions
-                    </h1>
-                    <p className="text-slate-500 text-lg">
-                        Find answers to common questions about the Bachelor of Science (Research) Programme.
-                    </p>
-                </div>
+        <PageBody>
+            <PageHero
+                eyebrow="Admissions"
+                title="Frequently Asked Questions"
+                subtitle="Find answers to common questions about the Bachelor of Science (Research) Programme."
+                image="/assets/hero-course-structure.jpg"
+                backHref="/admissions"
+                backLabel="Back to Admissions"
+            />
+            <ContentShell className="max-w-4xl">
 
                 {/* Controls */}
                 <div className="flex justify-end gap-4 mb-6">
@@ -205,7 +196,7 @@ export default function FAQPage() {
                         return (
                             <div
                                 key={index}
-                                className={`bg-white rounded-xl border transition-all duration-300 overflow-hidden ${isOpen ? 'border-blue-200 shadow-md ring-1 ring-blue-100' : 'border-slate-200 hover:border-slate-300'}`}
+                                className={`elevated-card overflow-hidden transition-all duration-300 ${isOpen ? 'border-blue-200 ring-1 ring-blue-100' : 'hover:border-slate-300'}`}
                             >
                                 <button
                                     onClick={() => toggleAccordion(index)}
@@ -234,7 +225,7 @@ export default function FAQPage() {
                 </div>
 
                 {/* Footer Help */}
-                <div className="mt-16 text-center bg-blue-50 rounded-2xl p-8 border border-blue-100">
+                <div className="mt-16 text-center rounded-2xl border border-blue-100 bg-blue-50 p-8">
                     <h3 className="text-xl font-bold text-blue-900 mb-2">Still have questions?</h3>
                     <p className="text-blue-700 mb-6">Our admissions team is here to help.</p>
                     <Link
@@ -244,7 +235,7 @@ export default function FAQPage() {
                         Contact Admissions
                     </Link>
                 </div>
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 }

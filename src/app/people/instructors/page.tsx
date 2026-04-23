@@ -1,9 +1,13 @@
 import InstructorsList from "@/components/people/lists/InstructorsList";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 export default function StandaloneInstructorsPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-16 px-4 md:px-6">
-            <InstructorsList />
-        </div>
+        <PageBody>
+            <PageHero eyebrow="People" title="UG Instructors" image="/assets/IMG_9485.JPG" backHref="/people" backLabel="Back to People" />
+            <ContentShell>
+                <InstructorsList />
+            </ContentShell>
+        </PageBody>
     );
 }

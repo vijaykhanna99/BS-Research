@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, GraduationCap, Users, Heart, BookOpen, Star, Award, Zap, ChevronRight } from "lucide-react";
+import { Sparkles, GraduationCap, Users, Heart, BookOpen, Star, Award, Zap, ChevronRight } from "lucide-react";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 // Data
 const fellowships = [
@@ -85,20 +86,14 @@ const themeMap: any = {
 
 export default function FellowshipsPage() {
     return (
-        <div className="min-h-screen bg-slate-50 border-t border-slate-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-                <div className="text-center mb-16">
-                    <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-xs font-bold tracking-wider uppercase mb-3">
-                        BS Research
-                    </span>
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-                        Fellowships
-                    </h1>
-                    <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                        Explore opportunities designed to support academic excellence and diversity in research.
-                    </p>
-                </div>
+        <PageBody>
+            <PageHero
+                eyebrow="BS Research"
+                title="Fellowships"
+                subtitle="Explore opportunities designed to support academic excellence and diversity in research."
+                image="/assets/IMG_9389.JPG"
+            />
+            <ContentShell>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {fellowships.map((fellowship, index) => {
@@ -109,7 +104,7 @@ export default function FellowshipsPage() {
                             <Link
                                 key={index}
                                 href={`/fellowships/${fellowship.slug}`}
-                                className="flex flex-col bg-white rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-200 overflow-hidden group"
+                                className="elevated-card flex flex-col hover:shadow-[var(--shadow-card-hover)] hover:-translate-y-1 transition-all duration-300 overflow-hidden group"
                             >
                                 {/* Category Header */}
                                 <div className={`py-3 px-5 border-b flex justify-between items-center ${theme.header}`}>
@@ -142,7 +137,7 @@ export default function FellowshipsPage() {
                 </div>
 
 
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 }

@@ -111,17 +111,17 @@ export default function InstructorsList() {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                <span className="section-eyebrow">Directory</span>
+                <h2 className="section-title mt-3">
                     UG Instructors
                 </h2>
-                <div className="h-px w-20 bg-slate-200 mx-auto"></div>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-7 gap-y-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {instructorsData.map((person) => (
-                    <article key={`${person.discipline}-${person.name}`} className="text-center group">
+                    <article key={`${person.discipline}-${person.name}`} className="elevated-card overflow-hidden text-center group transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
                         {person.image ? (
-                            <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                            <div className="relative h-80 w-full overflow-hidden bg-slate-100">
                                 <Image
                                     src={person.image}
                                     alt={person.name}
@@ -131,7 +131,7 @@ export default function InstructorsList() {
                                 />
                             </div>
                         ) : (
-                            <div className="h-80 w-full rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-xl flex items-center justify-center px-6">
+                            <div className="h-80 w-full bg-slate-100 flex items-center justify-center px-6">
                                 <span className="text-2xl font-bold text-slate-300">
                                     {person.name
                                         .split(" ")
@@ -147,7 +147,7 @@ export default function InstructorsList() {
                             {person.discipline}
                         </div>
 
-                        <h3 className="mt-2 text-xl font-bold text-slate-900 leading-tight">
+                        <h3 className="px-5 pb-6 mt-2 text-xl font-bold text-slate-900 leading-tight">
                             {person.name}
                         </h3>
                     </article>

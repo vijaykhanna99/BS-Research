@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import Image from 'next/image';
 import { ExternalLink, Calendar, Users, HelpCircle, ArrowRight, Lock } from "lucide-react";
 import { MdDescription } from "react-icons/md";
+import { ContentShell, PageBody, PageHero, SectionHeading } from "@/components/ui/PageChrome";
 
 const Admissions = () => {
 
@@ -86,31 +86,21 @@ const Admissions = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50">
+        <PageBody>
+            <PageHero
+                eyebrow="BS Research"
+                title="Admissions"
+                subtitle="Gateway to India's premier research institute."
+                image="/assets/champions.png"
+            />
 
-            {/* Header Content with Image - Full Width */}
-            <div className="relative w-full h-[300px] overflow-hidden">
-                <Image
-                    src="/assets/champions.png"
-                    alt="Admission Header"
-                    fill
-                    className="object-cover"
-                    priority
+            <ContentShell>
+                <SectionHeading
+                    eyebrow="Apply and prepare"
+                    title="Admission resources"
+                    subtitle="Find notices, schedules, selection information, fee details, and common questions in one place."
                 />
-                <div className="absolute inset-0 bg-slate-900/80"></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                    <h1 className="text-5xl font-bold text-white tracking-tight mb-2">
-                        Admissions
-                    </h1>
-                    <p className="text-slate-300 text-lg max-w-2xl">
-                        Gateway to India's premier research institute
-                    </p>
-                </div>
-            </div>
-
-            {/* Content Area - Card Grid UI */}
-            <div className="container mx-auto px-4 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {links.map((link, index) => {
                         const theme = getThemeClasses(link.theme);
 
@@ -119,7 +109,7 @@ const Admissions = () => {
                             return (
                                 <div
                                     key={index}
-                                    className="group relative flex items-start gap-6 p-8 bg-white border border-slate-200 rounded-xl shadow-sm cursor-not-allowed select-none opacity-60"
+                                    className="elevated-card group relative flex items-start gap-6 p-6 md:p-7 cursor-not-allowed select-none opacity-60"
                                 >
                                     {/* Opening Soon badge – appears on hover */}
                                     <div className="pointer-events-none absolute top-3 right-3 px-2.5 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full border border-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -156,7 +146,7 @@ const Admissions = () => {
                                 href={link.url}
                                 target={link.external ? "_blank" : "_self"}
                                 rel={link.external ? "noopener noreferrer" : ""}
-                                className={`group flex items-start gap-6 p-8 bg-white border border-slate-200 rounded-xl transition-all duration-300 ${theme.hover} shadow-sm hover:shadow-md`}
+                                className={`elevated-card group flex items-start gap-6 p-6 md:p-7 transition-all duration-300 ${theme.hover} hover:-translate-y-0.5 hover:shadow-[var(--shadow-card-hover)]`}
                             >
                                 {/* Icon Box */}
                                 <div className={`w-14 h-14 rounded-xl ${theme.bg} ${theme.text} flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-105`}>
@@ -184,8 +174,8 @@ const Admissions = () => {
                         );
                     })}
                 </div>
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 };
 

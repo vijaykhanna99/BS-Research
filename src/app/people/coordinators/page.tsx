@@ -1,9 +1,13 @@
 import CoordinatorsList from "@/components/people/lists/CoordinatorsList";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 export default function StandaloneCoordinatorsPage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-16 px-4 md:px-6">
-            <CoordinatorsList />
-        </div>
+        <PageBody>
+            <PageHero eyebrow="People" title="Coordinators" image="/assets/IMG_9485.JPG" backHref="/people" backLabel="Back to People" />
+            <ContentShell>
+                <CoordinatorsList />
+            </ContentShell>
+        </PageBody>
     );
 }

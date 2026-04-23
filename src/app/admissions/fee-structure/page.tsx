@@ -1,35 +1,32 @@
 "use client";
 import React from "react";
-import { ArrowLeft, Wallet, AlertCircle, PieChart } from "lucide-react";
-import Link from "next/link";
+import { Wallet, AlertCircle, PieChart } from "lucide-react";
 import { ACADEMIC_SESSION } from "@/data/admissions";
+import { ContentShell, PageBody, PageHero } from "@/components/ui/PageChrome";
 
 export default function FeeStructurePage() {
     return (
-        <div className="min-h-screen bg-slate-50 py-12 px-4 md:px-6">
-            <div className="max-w-4xl mx-auto">
-
-                {/* Back Link */}
-                <Link
-                    href="/admissions"
-                    className="inline-flex items-center gap-2 text-slate-500 hover:text-blue-600 mb-8 transition-colors font-medium group"
-                >
-                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                    Back to Admissions
-                </Link>
-
-                {/* Main Content Card */}
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <PageBody>
+            <PageHero
+                eyebrow={`Academic Year ${ACADEMIC_SESSION}`}
+                title="Fee Structure"
+                subtitle="Annual fees, waivers, refundable deposits, and installment payment options."
+                image="/assets/fee-structur.jpg"
+                backHref="/admissions"
+                backLabel="Back to Admissions"
+            />
+            <ContentShell className="max-w-4xl">
+                <div className="elevated-card overflow-hidden">
 
                     {/* Header */}
-                    <div className="bg-[#002147] p-8 md:p-10 text-white">
-                        <div className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-semibold tracking-wider mb-4 border border-white/20">
+                    <div className="border-b border-slate-200 bg-white p-8 md:p-10">
+                        <div className="inline-block px-3 py-1 bg-blue-50 rounded-full text-xs font-semibold tracking-wider mb-4 border border-blue-100 text-blue-700">
                             ACADEMIC YEAR {ACADEMIC_SESSION}
                         </div>
-                        <h1 className="text-2xl md:text-3xl font-bold leading-tight flex items-center gap-3">
-                            <Wallet className="w-8 h-8 text-blue-200" />
+                        <h2 className="text-2xl md:text-3xl font-bold leading-tight flex items-center gap-3 text-slate-900">
+                            <Wallet className="w-8 h-8 text-blue-600" />
                             Fee Structure
-                        </h1>
+                        </h2>
                     </div>
 
                     <div className="p-8 md:p-10 space-y-12">
@@ -41,7 +38,7 @@ export default function FeeStructurePage() {
                                 Annual Fees
                             </h2>
 
-                            <div className="border rounded-xl overflow-hidden shadow-sm overflow-x-auto">
+                            <div className="data-panel overflow-x-auto">
                                 <table className="w-full text-left bg-white min-w-[600px]">
                                     <thead className="bg-slate-50 border-b border-slate-200">
                                         <tr>
@@ -151,7 +148,7 @@ export default function FeeStructurePage() {
 
                     </div>
                 </div>
-            </div>
-        </div>
+            </ContentShell>
+        </PageBody>
     );
 }
