@@ -79,12 +79,12 @@ export const instructorsData = [
     {
         name: "Dr. Arathi Ramachandran",
         discipline: "Materials Science & Engineering",
-        image: "/assets/INSTRUCTOR/Materials Science & Engineering/Arathi Ramachandran.jpg",
+        image: "/assets/INSTRUCTOR/MATERIALS/Arathi Ramachandran.jpg",
     },
     {
         name: "Dr. Elumalai P C",
         discipline: "Materials Science & Engineering",
-        image: "/assets/INSTRUCTOR/Materials Science & Engineering/Elumalai PC.jpg",
+        image: "/assets/INSTRUCTOR/MATERIALS/Elumalai PC.jpg",
     },
     {
         name: "Dr. Nandha Gopal P",

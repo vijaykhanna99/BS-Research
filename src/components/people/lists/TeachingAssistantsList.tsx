@@ -84,7 +84,7 @@ export const teachingAssistantsData = [
     {
         name: "Jeevan S",
         discipline: "Materials Science & Engineering",
-        image: "/assets/TEACHING ASSISTANT/Materials Science & Engineering/Jeevan S.jpg",
+        image: "/assets/TEACHING_ASSISTANT_MATERIALS/Jeevan S.jpg",
     },
 ];
 
