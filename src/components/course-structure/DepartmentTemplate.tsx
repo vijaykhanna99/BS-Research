@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MoveLeft, ArrowRight, BookOpen, X, Info, AlignLeft, GraduationCap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { createPortal } from "react-dom";
-import { electiveMonth, semesters } from "@/data/sharedCurriculumData";
+import { semesters } from "@/data/sharedCurriculumData";
 import HandbookReferenceNote from "@/components/course-structure/HandbookReferenceNote";
 
 export interface DepartmentTemplateProps {
@@ -21,9 +21,7 @@ export interface DepartmentTemplateProps {
     };
     majorSemesters: any[]; // The specific semester requirements for this major
     electives: any[]; // Nested array structure matching existing logic
-    electiveMonthData?: { title: string }[]; // Optional override, default to global
     electivesIntro?: React.ReactNode; // Optional intro text for electives
-    hideElectiveMonthTabs?: boolean;
     customMastersContent?: React.ReactNode; // Optional custom content for Master's degree section
 }
 
@@ -34,13 +32,10 @@ const DepartmentTemplate = ({
     staff,
     majorSemesters,
     electives,
-    electiveMonthData = electiveMonth,
     electivesIntro,
-    hideElectiveMonthTabs = false,
     customMastersContent
 }: DepartmentTemplateProps) => {
     const [activeTab, setActiveTab] = useState(0);
-    const [electiveTab, setElectiveTab] = useState(0);
     const [selectedCourse, setSelectedCourse] = useState<any>(null);
     const [showBack, setShowBack] = useState(false);
 
@@ -55,6 +50,7 @@ const DepartmentTemplate = ({
 
     // Use major semesters directly
     const currentSemester = majorSemesters[activeTab];
+    const electiveCourses = Array.isArray(electives?.[0]) ? electives.flat() : electives;
 
     return (
         <div className="bg-white pb-8 font-sans text-gray-900">
@@ -479,33 +475,13 @@ const DepartmentTemplate = ({
                         </p>
                     )}
 
-                    {!hideElectiveMonthTabs && (
-                        <>
-                            <div className="mb-6 text-sm text-gray-700 space-y-2">
-                                <p><strong className="text-gray-900">Note:</strong></p>
-                                <p><strong className="text-gray-900">January–April Semester:</strong> Select courses offered in the January intake. These courses are designed for students beginning their studies at the start of the year.</p>
-                                <p><strong className="text-gray-900">August–December Semester:</strong> Select courses offered in the August intake, suitable for students starting in the second half of the year.</p>
-                            </div>
+                    <div className="mb-6 text-sm text-gray-700 space-y-2">
+                        <p><strong className="text-gray-900">Note:</strong></p>
+                        <p><strong className="text-gray-900">January–April Semester:</strong> Select courses offered in the January intake. These courses are designed for students beginning their studies at the start of the year.</p>
+                        <p><strong className="text-gray-900">August–December Semester:</strong> Select courses offered in the August intake, suitable for students starting in the second half of the year.</p>
+                    </div>
 
-                            <div className="flex gap-4 mb-8 border-b border-gray-200">
-                                {electiveMonthData.map((month, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => setElectiveTab(idx)}
-                                        className={`px-6 py-2 text-sm font-bold transition-colors relative top-[1px] ${electiveTab === idx
-                                            ? "bg-blue-700 text-white rounded-t"
-                                            : "bg-gray-100 text-gray-600 hover:bg-gray-200 rounded-t"
-                                            }`}
-                                    >
-                                        {month.title}
-                                    </button>
-                                ))}
-                            </div>
-
-                        </>
-                    )}
-
-                    {electives?.[electiveTab]?.length > 0 && (electives[electiveTab][0].credits || electives[electiveTab][0].instructor) ? (
+                    {electiveCourses?.length > 0 && (
                         <div className="border border-gray-200 rounded-lg overflow-hidden shadow-sm">
                             <div className="overflow-x-auto max-h-[800px] overflow-y-auto custom-scrollbar">
                                 <table className="w-full text-sm text-left relative">
@@ -513,40 +489,20 @@ const DepartmentTemplate = ({
                                         <tr>
                                             <th className="px-6 py-3 border-r border-gray-200 whitespace-nowrap w-32 bg-gray-50">Course Code</th>
                                             <th className="px-6 py-3 border-r border-gray-200 min-w-[250px] bg-gray-50">Title</th>
-                                            <th className="px-6 py-3 border-r border-gray-200 whitespace-nowrap w-24 text-center bg-gray-50">Credits</th>
-                                            <th className="px-6 py-3 whitespace-nowrap min-w-[200px] bg-gray-50">Instructors</th>
+                                            <th className="px-6 py-3 whitespace-nowrap w-24 text-center bg-gray-50">Credits</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
-                                        {electives[electiveTab].map((sub: any, i: number) => (
+                                        {electiveCourses.map((sub: any, i: number) => (
                                             <tr key={i} className="hover:bg-gray-50 transition-colors">
                                                 <td className="px-6 py-3 font-bold text-blue-600 border-r border-gray-200">{sub.code}</td>
                                                 <td className="px-6 py-3 text-gray-900 font-medium border-r border-gray-200">{sub.name}</td>
-                                                <td className="px-6 py-3 text-center text-gray-700 border-r border-gray-200">{sub.credits || "-"}</td>
-                                                <td className="px-6 py-3 text-gray-700">{sub.instructor || "-"}</td>
+                                                <td className="px-6 py-3 text-center text-gray-700">{sub.credits || "-"}</td>
                                             </tr>
                                         ))}
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
-                            {electives?.[electiveTab]?.map((sub: any, i: number) => (
-                                <div key={i} className="flex flex-col gap-1 group">
-                                    <div className="flex items-start gap-2">
-                                        <span className="text-sm font-bold text-blue-600 whitespace-nowrap">{sub.code}</span>
-                                        <span className="text-sm text-gray-900 font-medium leading-tight group-hover:text-blue-700 transition-colors">
-                                            {sub.name}
-                                        </span>
-                                    </div>
-                                    {sub.description && (
-                                        <p className="text-xs text-gray-500 mt-1 leading-relaxed">
-                                            {sub.description}
-                                        </p>
-                                    )}
-                                </div>
-                            ))}
                         </div>
                     )}
                 </div>

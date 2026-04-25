@@ -95,8 +95,8 @@ export default function FellowshipsPage() {
                     <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
                         Fellowships
                     </h1>
-                    <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                        Explore opportunities designed to support academic excellence and diversity in research.
+                    <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Fellowships and scholarships from Indian and multinational agencies, as well as private donors, are available for meritorious students in the BS (Research) programme. Details are provided below.
                     </p>
                 </div>
 
@@ -141,6 +141,20 @@ export default function FellowshipsPage() {
                     })}
                 </div>
 
+                <div className="mt-12 rounded-lg border border-amber-200 bg-white shadow-sm overflow-hidden">
+                    <div className="flex flex-col sm:flex-row">
+                        <div className="bg-amber-50 px-5 py-4 sm:w-44 border-b sm:border-b-0 sm:border-r border-amber-200 flex items-center">
+                            <span className="text-sm font-bold uppercase tracking-wider text-amber-800">
+                                Important Note
+                            </span>
+                        </div>
+                        <div className="px-5 py-4 sm:px-6">
+                            <p className="text-base text-slate-700 leading-relaxed">
+                                The Indian Institute of Science Promotional Fellowship (IIScP) will be discontinued for students admitted from the Academic Year 2026–27 onwards. This change will not affect students already admitted under the existing scheme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
