@@ -5,7 +5,7 @@ export const ADMISSION_DATES = {
     applicationStart: "01 May 2026",
     applicationEnd: "04 June 2026",
     applicationEndWithTime: "04 June 2026 (23:59 hours)",
-    reportingTentative: "27 July 2026",
+    reportingTentative: "24 July 2026",
     classesStart: "03 August 2026",
     jeeRound1: "To Be Announced",
     iatRound2: "To Be Announced",
