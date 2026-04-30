@@ -4,7 +4,6 @@ import './globals.css'
 import Navbar from '../components/layout/Navbar'
 import Footer from '../components/layout/Footer'
 import Header from '../components/layout/Header'
-import { Search } from 'lucide-react'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,8 +22,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
         <div className="min-h-screen bg-white flex flex-col">
-          <Header />
-          <Navbar />
+          <div className="sticky top-0 z-50 shadow-md">
+            <Header />
+            <Navbar />
+          </div>
           <main className="flex-grow">
             {children}
           </main>

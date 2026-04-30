@@ -2,17 +2,17 @@ export const ADMISSION_YEAR = 2026;
 export const ACADEMIC_SESSION = "2026-27";
 
 export const ADMISSION_DATES = {
-    applicationStart: "To Be Announced",
-    applicationEnd: "To Be Announced",
-    applicationEndWithTime: "To Be Announced",
-    reportingTentative: "To Be Announced",
-    classesStart: "To Be Announced",
+    applicationStart: "01 May 2026",
+    applicationEnd: "04 June 2026",
+    applicationEndWithTime: "04 June 2026 (23:59 hours)",
+    reportingTentative: "27 July 2026",
+    classesStart: "03 August 2026",
     jeeRound1: "To Be Announced",
     iatRound2: "To Be Announced",
     cutoffDate: "To Be Announced",
     certValidFrom: "To Be Announced",
     certValidTo: "To Be Announced",
-    certFinancialYear: "2026-26",
+    certFinancialYear: "2026-27",
 };
 
 export const ELIGIBILITY = {

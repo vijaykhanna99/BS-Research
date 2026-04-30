@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowLeft, ExternalLink, FileText } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ExternalLink, FileText, Bell } from "lucide-react";
 
 export default function NewsAndUpdatesPage() {
     return (
@@ -27,6 +27,41 @@ export default function NewsAndUpdatesPage() {
 
                     <div className="p-8 md:p-10 space-y-6">
                         <div className="space-y-8">
+                            {/* Admissions Open Notice */}
+                            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-white text-green-600 rounded-lg shrink-0 shadow-sm">
+                                        <Bell className="w-6 h-6" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-xs font-bold uppercase tracking-wider text-green-700">Admissions Open</span>
+                                                <span className="relative flex h-2 w-2">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                                </span>
+                                            </div>
+                                            <span className="text-xs text-slate-400 font-medium">30 April 2026</span>
+                                        </div>
+                                        <h3 className="text-lg font-bold text-slate-800 mb-3">
+                                            Admissions Now Open for BS (Research) 2026–27
+                                        </h3>
+                                        <p className="text-slate-700 text-sm leading-relaxed">
+                                            The online admission portal will open on <span className="font-semibold text-slate-800">Friday, 01 May 2026</span>, and will remain open until <span className="font-semibold text-slate-800">Thursday, 04 June 2026</span>.
+                                        </p>
+                                        <Link
+                                            href="https://admissions-august.iisc.ac.in/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 mt-4 bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors"
+                                        >
+                                            Apply Now <ExternalLink className="w-3.5 h-3.5" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+
                             {/* Materials Major Discontinuation Notice */}
                             <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                                 <div className="flex items-start gap-4">
