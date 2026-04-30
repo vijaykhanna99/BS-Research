@@ -19,11 +19,11 @@ const Admissions = () => {
         },
         {
             title: "Apply Online",
-            description: "Apply online for the upcoming admissions cycle.",
+            description: "The online admission portal will open on 01 May 2026, and will remain open until 04 June 2026.",
             icon: <ExternalLink className="w-6 h-6" />,
             url: "https://admissions-august.iisc.ac.in/index.html",
             external: true,
-            disabled: true,
+            disabled: false,
             theme: "blue"
         },
         {
